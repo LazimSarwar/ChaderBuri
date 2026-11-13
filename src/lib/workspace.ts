@@ -11,11 +11,11 @@ export function initialWorkspacePanel(search: string, hash: string): WorkspacePa
   if(WORKSPACE_TOOLS.some(([key])=>key===view)) return view as WorkspacePanel
   return params.get('c') === '1' ? 'compare' : null
 }
-// Explicit mission/site bookmarks keep their destination; an ordinary Start
-// opens the planetary overview instead of inheriting the default lunar site.
+// An ordinary Start opens on the Moon, where the landing-site work happens. The full solar-system
+// overview is one click away, or opens directly with ?start=solar. Bookmarks keep their destination.
 export function startsInSolarSystem(search: string, hash: string, guidedLaunch = false): boolean {
   const params = new URLSearchParams(search)
-  return !guidedLaunch && initialWorkspacePanel(search, hash) === null &&
+  return !guidedLaunch && initialWorkspacePanel(search, hash) === null && params.get('start') === 'solar' &&
     !['site', 't', 'journey'].some(key => params.has(key))
 }
 export function toggleWorkspacePanel(current: WorkspacePanel, requested: Exclude<WorkspacePanel,null>): WorkspacePanel {
