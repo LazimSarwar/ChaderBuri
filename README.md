@@ -2,6 +2,9 @@
 
 Explore lunar terrain, compare landing windows, and understand a mission's power and Earth-visibility trade-offs.
 
+**Live demo:** https://chader-buri.vercel.app  
+**Video:** https://youtu.be/CTRUTLra130
+
 Chader Buri connects a mission-planning dashboard with an interactive 3D surface view and a conversational guide. It uses cached NASA/JPL predictions and measured lunar elevation data. It is an independent project with no NASA endorsement.
 
 ## What you can do
