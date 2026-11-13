@@ -807,6 +807,7 @@ export function MissionArchitect({ sites, eph, horizons, startMs, currentSlug, s
                 <div><dt>Checked</dt><dd>{verdict.assessed.join(', ')}, against the limits you set (not NASA requirements).</dd></div>
               </dl>}
               {verdict && <div className="mp-scope" aria-label="What this result covers">
+                <p><strong>Basis</strong><span>Nominal landing coordinate · hourly samples · LRO LOLA terrain (measured) and JPL Horizons positions (predicted) · illustrative lander hardware · uncertainty bound not established.</span></p>
                 <p><strong>Nearby touchdowns</strong><span>{nearby}</span></p>
                 <p><strong>Not checked</strong><span>{verdict.notAssessed.join(' · ')}. Meeting your requirements is not a landing-safety or mission-success assessment.</span></p>
               </div>}

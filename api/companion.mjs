@@ -320,7 +320,34 @@ function asciiDigits(text2) {
     return zero === void 0 ? d : String(cp - zero);
   });
 }
-function checkedCompanionReply(raw, evidence) {
+var NUMBER = /(?<![\p{L}\d.])[-−]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?/gu;
+function numbersIn(text2) {
+  return [...asciiDigits(text2).matchAll(NUMBER)].map((m) => {
+    const raw = m[0].replace("\u2212", "-").replace(/,/g, ""), dot = raw.indexOf(".");
+    return { raw: m[0], value: Number(raw), decimals: dot < 0 ? 0 : raw.length - dot - 1 };
+  }).filter((n) => Number.isFinite(n.value));
+}
+function sourceNumbers(value, out) {
+  if (typeof value === "number") {
+    if (Number.isFinite(value)) out.push(value);
+  } else if (typeof value === "string") {
+    for (const n of numbersIn(value)) out.push(n.value);
+  } else if (Array.isArray(value)) {
+    out.push(value.length);
+    for (const v of value) sourceNumbers(v, out);
+  } else if (value && typeof value === "object") for (const v of Object.values(value)) sourceNumbers(v, out);
+  return out;
+}
+function unverifiedNumbers(text2, sources) {
+  const allowed = sourceNumbers(sources, []);
+  const scales = [1, 100, 0.01, 24, 1 / 24, 1e3, 1e-3];
+  return numbersIn(text2).filter((n) => {
+    if (Number.isInteger(n.value) && Math.abs(n.value) <= 2) return false;
+    const tol = 0.5 * 10 ** -n.decimals + 1e-9;
+    return !allowed.some((v) => scales.some((k) => Math.abs(Math.abs(v * k) - Math.abs(n.value)) <= tol));
+  }).map((n) => n.raw);
+}
+function checkedCompanionReply(raw, evidence, sources = []) {
   const r = raw;
   if (!r || typeof r.message !== "string" || !r.message.trim() || r.message.length > 1800 || !["sun", "earth", "skyline", "none"].includes(r.focus) || !Array.isArray(r.questions) || r.questions.length > 3 || r.questions.some((q) => typeof q !== "string" || q.length > 120)) throw new Error("The AI returned an unsupported reply");
   if (r.visitSlug !== null && (typeof r.visitSlug !== "string" || !evidence.eligibleSlugs.includes(r.visitSlug))) throw new Error("The proposed destination did not pass the comparison checks");
@@ -342,6 +369,10 @@ function checkedCompanionReply(raw, evidence) {
     }
     if (proposed && typeof s.reason === "string" && s.reason.trim() && s.reason.length <= 240 && knownSite(proposed) && !(action && action.kind === proposed.kind && action.value === proposed.value)) suggestion = { action: proposed, reason: asciiDigits(s.reason.trim()) };
   }
+  const origins = [evidence, sources, m, action?.value];
+  const unverified = unverifiedNumbers(message, origins);
+  if (unverified.length) throw new Error("Unverified number in reply: " + unverified.slice(0, 3).join(", "));
+  if (suggestion && unverifiedNumbers(suggestion.reason, [...origins, suggestion.action.value]).length) suggestion = null;
   return { action, suggestion, message, visitSlug: r.visitSlug, focus: r.focus, questions: r.questions.map(asciiDigits), proposedMission: m === null ? null : { missionDays: m.missionDays, loadW: m.loadW, panelAreaM2: m.panelAreaM2 } };
 }
 
@@ -932,7 +963,7 @@ async function companionResponse(method, raw, config, upstream = fetch, evidence
     if (input.screen) context.push({ text: "screenDigest: " + JSON.stringify(input.screen) });
     if (input.dismissed.length) context.push({ text: "dismissedSuggestions: " + JSON.stringify(input.dismissed) });
     contents[contents.length - 1].parts.unshift(...context);
-    const request2 = JSON.stringify({ systemInstruction: { parts: [{ text: instructions }] }, contents, generationConfig: { responseMimeType: "application/json", responseJsonSchema: schema, maxOutputTokens: 4096 } });
+    const request2 = JSON.stringify({ systemInstruction: { parts: [{ text: instructions }, { text: "Numbers: use only numbers that appear in the calculated evidence, the screenDigest or the conversation, copied as given or rounded for display. Never estimate, extrapolate or invent a number, percentage, probability or uncertainty; if a value is not provided, say it is not calculated here. Replies containing other numbers are rejected." }] }, contents, generationConfig: { responseMimeType: "application/json", responseJsonSchema: schema, maxOutputTokens: 4096 } });
     const models = geminiModels(config.model), deadline = Date.now() + 3e4;
     let response = null, lastStatus = 0;
     for (const [i, model] of models.entries()) {
@@ -959,7 +990,7 @@ async function companionResponse(method, raw, config, upstream = fetch, evidence
     if (candidate?.finishReason !== "STOP") throw new Error("Incomplete response");
     const text2 = candidate.content?.parts?.filter((p) => !p.thought).map((p) => p.text ?? "").join("");
     if (!text2 || text2.length > 12e3) throw new Error("Unsupported response");
-    const reply = checkedCompanionReply(JSON.parse(text2), evidence);
+    const reply = checkedCompanionReply(JSON.parse(text2), evidence, [input.screen ?? null, input.messages.map((m) => m.content)]);
     return result(200, { reply, evidence });
   } catch {
     return result(502, { error: "Chader Buri could not verify that reply. Your scene and mission assumptions have not changed. Try asking again." });

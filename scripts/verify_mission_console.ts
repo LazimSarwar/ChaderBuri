@@ -8,6 +8,8 @@ import { SurfaceResolutionController } from '../src/space/renderQuality.ts'
 import { newObjective, objectiveLine } from '../src/explore/fieldObjective.ts'
 import { consoleGlanceStore, glanceForVisit, newGlanceVisitKey } from '../src/explore/consoleGlanceStore.ts'
 import type { EphRow, Horizon } from '../src/data.ts'
+import { nextPassingArrival, arrivalSearchText } from '../src/lib/arrivalSearch.ts'
+import { jointVisibility } from '../src/lib/jointVisibility.ts'
 let checks=0
 function check(value:unknown,message:string){assert.ok(value,message);checks++}
 const c:Constraints={missionDays:1,minLitPct:20,maxDarkH:24,minLinkPct:20,maxGapH:24}
@@ -64,4 +66,43 @@ check(visitA!==visitB,'each surface visit has an independent headset scope')
 const oldGlance={...glance,visitKey:visitA,verdict:'Meets',siteName:'Old site'}
 check(glanceForVisit(oldGlance,visitA,'Old site')===oldGlance,'matching headset context preserves its actual readout')
 check(glanceForVisit(oldGlance,visitB,'New site').verdict==='Loading mission'&&glanceForVisit(oldGlance,visitB,'New site').siteName==='New site','headset entry never reuses another visit verdict')
+// Next passing arrival: every hour (calendar granularity), never later than the old six-hour stepping, range stated.
+{
+  const { readFileSync } = await import('node:fs')
+  const { DEFAULT_POWER } = await import('../src/architect/power.ts')
+  const rd = (f: string) => JSON.parse(readFileSync('public/data/' + f, 'utf8'))
+  const ref: Constraints = { missionDays: 14, minLitPct: 60, maxDarkH: 72, minLinkPct: 60, maxGapH: 72, power: { ...DEFAULT_POWER, panelAreaM2: 3.08, loadW: 1200 } } as Constraints
+  for (const slug of ['malapert-massif', 'de-gerlache-rim', 'connecting-ridge']) {
+    const s = buildSeries(slug, rd(`ephemeris/${slug}.sun.json`).rows, rd(`ephemeris/${slug}.earth.json`).rows, rd(`horizons/${slug}.json`))
+    for (const row of [1272, 9000]) {
+      const found = nextPassingArrival(s, row, ref)
+      check(found.fromRow === row + 1 && found.checked === found.toRow - found.fromRow + 1, `${slug} ${row}: searched range is reported exactly`)
+      if (found.row !== null) {
+        check(evaluateWindow(s, found.row, found.row + 336, ref).pass, `${slug} ${row}: the found arrival really passes`)
+        let earlier = false; for (let h = found.fromRow; h < found.row; h++) if (evaluateWindow(s, h, h + 336, ref).pass) earlier = true
+        check(!earlier, `${slug} ${row}: no earlier hourly arrival was skipped`)
+        let six: number | null = null; for (let h = row + 6; h <= Math.min(s.hours - 336, row + 2160); h += 6) if (evaluateWindow(s, h, h + 336, ref).pass) { six = h; break }
+        check(six === null || found.row <= six, `${slug} ${row}: never later than six-hour stepping`)
+      }
+      check(/every hourly arrival from/.test(arrivalSearchText(found, r => String(r))), `${slug} ${row}: the notice states the searched hours`)
+    }
+    const end = nextPassingArrival(s, s.hours - 336, ref)
+    check(end.row === null && end.checked === 0 && /cached predictions/.test(arrivalSearchText(end, r => String(r))), `${slug}: no search beyond coverage, and it says so`)
+  }
+}
+// Sun and Earth visible together: same hourly flags as the solver; never more than either body alone.
+{
+  const { readFileSync } = await import('node:fs')
+  const rd = (f: string) => JSON.parse(readFileSync('public/data/' + f, 'utf8'))
+  const s = buildSeries('malapert-massif', rd('ephemeris/malapert-massif.sun.json').rows, rd('ephemeris/malapert-massif.earth.json').rows, rd('horizons/malapert-massif.json'))
+  for (const row of [1104, 1272, 5000, 9000]) {
+    const j = jointVisibility(s, row, row + 336), lit = s.litPrefix[row + 336] - s.litPrefix[row], link = s.linkPrefix[row + 336] - s.linkPrefix[row]
+    check(j.hours === 336 && j.both <= Math.min(lit, link) && j.both >= lit + link - 336, `row ${row}: shared hours lie between the overlap bounds of Sun and Earth hours`)
+    check(j.longestH <= j.both && (j.longestH === 0) === (j.longestStartRow === null), `row ${row}: longest shared window is consistent`)
+    let manual = 0; for (let i = row; i < row + 336; i++) if (s.litPrefix[i + 1] - s.litPrefix[i] && s.linkPrefix[i + 1] - s.linkPrefix[i]) manual++
+    check(manual === j.both, `row ${row}: shared hours match an hour-by-hour count`)
+  }
+  const ref = jointVisibility(s, 1104, 1440)
+  check(ref.both === 336 && ref.pct === 100 && ref.longestH === 336, 'Reference 17 Oct mission: Sun and Earth visible together all 336 hours (both 100% alone)')
+}
 console.log(`Mission console ranking, calendar, events, terrain, provenance and quality: ${checks} checks passed`)

@@ -30,7 +30,7 @@ export async function companionResponse(method:string,raw:unknown,config:Compani
   if(input.screen)context.push({text:'screenDigest: '+JSON.stringify(input.screen)})
   if(input.dismissed.length)context.push({text:'dismissedSuggestions: '+JSON.stringify(input.dismissed)})
   contents[contents.length-1].parts.unshift(...context)
-  const request=JSON.stringify({systemInstruction:{parts:[{text:instructions}]},contents,generationConfig:{responseMimeType:'application/json',responseJsonSchema:schema,maxOutputTokens:4096}})
+  const request=JSON.stringify({systemInstruction:{parts:[{text:instructions},{text:'Numbers: use only numbers that appear in the calculated evidence, the screenDigest or the conversation, copied as given or rounded for display. Never estimate, extrapolate or invent a number, percentage, probability or uncertainty; if a value is not provided, say it is not calculated here. Replies containing other numbers are rejected.'}]},contents,generationConfig:{responseMimeType:'application/json',responseJsonSchema:schema,maxOutputTokens:4096}})
   // One 30 s budget for the whole answer; leave each fallback model a fair share.
   const models=geminiModels(config.model),deadline=Date.now()+30000
   let response:Response|null=null,lastStatus=0
@@ -54,7 +54,8 @@ export async function companionResponse(method:string,raw:unknown,config:Compani
   if(candidate?.finishReason!=='STOP')throw new Error('Incomplete response')
   const text=candidate.content?.parts?.filter(p=>!p.thought).map(p=>p.text??'').join('')
   if(!text||text.length>12000)throw new Error('Unsupported response')
-  const reply=checkedCompanionReply(JSON.parse(text),evidence)
+  // Numbers in her reply must originate in the evidence, the screen digest or this conversation.
+  const reply=checkedCompanionReply(JSON.parse(text),evidence,[input.screen??null,input.messages.map(m=>m.content)])
   return result(200,{reply,evidence})
  }catch{return result(502,{error:'Chader Buri could not verify that reply. Your scene and mission assumptions have not changed. Try asking again.'})}
 }

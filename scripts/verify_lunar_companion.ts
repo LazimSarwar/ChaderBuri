@@ -41,6 +41,16 @@ const reply:CompanionReply={message:'This mission needs a closer look at its ene
 check(checkedCompanionReply(reply,a).focus==='sun','Grounded scene focus accepted')
 for(const r of [{...reply,visitSlug:'haworth-rim'},{...reply,visitSlug:'unknown-site'},{...reply,focus:'delete-all'},{...reply,proposedMission:{missionDays:300,loadW:1200,panelAreaM2:3}},{...reply,proposedMission:{missionDays:7,loadW:NaN,panelAreaM2:3}}])bad(()=>checkedCompanionReply(r,a),'Unverified model actions rejected')
 check(checkedCompanionReply({...reply,proposedMission:{missionDays:7,loadW:800,panelAreaM2:3.08}},a).proposedMission?.missionDays===7,'Bounded mission proposal accepted without silently applying it')
+// Numeric origin: her numbers must come from the calculated evidence, the screen or the conversation.
+check(checkedCompanionReply({...reply,message:'Arriving 17 October keeps the battery at 28.1%, above your 20% reserve, over all 14 days.'},a).message.includes('28.1%'),'Exact evidence numbers pass')
+check(checkedCompanionReply({...reply,message:'The lowest battery is about 28% with a 1,200 W load.'},a).message.includes('28%'),'Rounded evidence numbers pass')
+check(checkedCompanionReply({...reply,message:'A week later it drops to 5.2%.'},b).message.includes('5.2%'),'Numbers from the other calculated arrival pass for that evidence')
+bad(()=>checkedCompanionReply({...reply,message:'The lowest battery is 41.7%, comfortably above reserve.'},a),'An invented battery figure rejects the reply')
+bad(()=>checkedCompanionReply({...reply,message:'There is a 67.4% chance this landing succeeds.'},a),'An invented probability rejects the reply')
+// Limit: the check proves origin, not meaning. A real evidence value reused for the wrong quantity (93% ≈ 13 of 14 sites) still passes.
+check(checkedCompanionReply({...reply,message:'93% of sites.'},a).message==='93% of sites.','Known limit documented: origin, not meaning')
+check(checkedCompanionReply({...reply,message:'You asked about 63 hours; that is within the reserve.'},a,['What happens after 63 hours?']).message.includes('63'),'A number the visitor typed may be repeated')
+check(checkedCompanionReply({...reply,message:'Look at the battery row.',suggestion:{action:{kind:'compareDates',value:'7'},reason:'A 41.7% reserve would hold.'}} as CompanionReply,a).suggestion===null,'A suggestion with an invented number is dropped, the explanation kept')
 const turn={question:'Help',reply,evidence:a}
 check(currentCompanionTurn(turn,context),'Actions enabled at the calculated context')
 for(const changed of [{...context,row:1272},{...context,slug:'shackleton-rim'},{...context,constraints:{...context.constraints,power:{...context.constraints.power!,loadW:1188}}}])check(!currentCompanionTurn(turn,changed),'Scene, site and hardware changes retire earlier actions')

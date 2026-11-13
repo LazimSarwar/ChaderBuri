@@ -2,7 +2,8 @@ import { indexedOptions } from '../lib/predictionIndex'
 import { requestJson } from '../lib/request'
 import { loadEphemeris, loadHorizon } from '../data'
 import { buildSeries, evaluateWindow, type SiteSeries, type Constraints, type Evaluated } from '../architect/solver'
-import { verifiedRepairs, nextPassingLanding } from '../architect/comparison'
+import { verifiedRepairs } from '../architect/comparison'
+import { nextPassingArrival } from '../lib/arrivalSearch'
 import type { PredictionIndex } from '../lib/predictionIndex'
 import { loadDsnGeometry } from '../lib/dsn'
 import { missionEvents, missionComms, type MissionEvent, type MissionComms } from './missionEvents'
@@ -36,7 +37,8 @@ self.onmessage = async ({ data: q }: MessageEvent<ConsoleRequest>) => {
     const current = evaluateWindow(p.series, q.row, end, q.c), events = missionEvents(p.series, q.row, q.c)
     const repairs = current.pass ? [] : verifiedRepairs(p.series, { id: 0, slug: q.slug, row: q.row, c: q.c }).map(r => ({ label: `${r.label}: ${r.value} ${r.unit}`, c: r.c }))
     const slips = Array.from({ length: 13 }, (_, i) => { const offsetH = (i - 6) * 12, row = q.row + offsetH; return { row, offsetH, pass: row >= 0 && row + q.c.missionDays * 24 <= p.series.hours ? evaluateWindow(p.series, row, row + q.c.missionDays * 24, q.c).pass : null } })
-    send({ current, ...events, repairs, slips, nextRow: current.pass ? q.row : nextPassingLanding(p.series,{id:0,slug:q.slug,row:q.row,c:q.c}) })
+    // Every hourly arrival for up to 90 days (the calendar's granularity), so no eligible hour is skipped.
+    send({ current, ...events, repairs, slips, nextRow: current.pass ? q.row : nextPassingArrival(p.series, q.row, q.c).row })
     const path='/data/benchmark/barker2021-roi4-ensemble.json'
     void requestJson(path,indexedOptions(q.index,path)).then(raw=>{const report=raw as {cloneCount?:number;rows?:{mastHeightM:number;ensemblePercentile:{meanPct:number};published:{meanPct:number};difference:{meanPct:number}}[]};const reference=report.rows?.find(r=>r.mastHeightM===1);if(reference&&Number.isFinite(reference.difference.meanPct))send({validationNote: 'ROI4 reference ensemble, 1 m mast, '+report.cloneCount+' clones: mean illumination '+reference.ensemblePercentile.meanPct.toFixed(2)+'% versus published '+reference.published.meanPct.toFixed(2)+'% ('+(reference.difference.meanPct>=0?'+':'')+reference.difference.meanPct.toFixed(2)+' percentage points). This specific comparison is not a general uncertainty or a bound for this site/date.'})}).catch(()=>{})
     void loadDsnGeometry().then(geo => send({ comms: missionComms(p.series, q.row, end - q.row, p.startMs, geo) })).catch(() => {})

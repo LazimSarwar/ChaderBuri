@@ -55,8 +55,34 @@ const DIGIT_ZEROS=[0x09E6,0x0966,0x0660,0x06F0,0x0A66,0x0AE6,0x0B66,0x0BE6,0x0C6
 export function asciiDigits(text:string){
  return text.replace(/\p{Nd}/gu,d=>{const cp=d.codePointAt(0)!,zero=DIGIT_ZEROS.find(z=>cp>=z&&cp<=z+9);return zero===undefined?d:String(cp-zero)})
 }
+/**
+ * Numeric-origin check. Every number in her prose must come from the calculated evidence, the screen
+ * the visitor is reading, or the conversation, allowing display rounding and common unit changes
+ * (fraction↔percent, hours↔days, Wh↔kWh). It proves a number's origin, not that it is used for the
+ * right quantity: a value copied from another site's row would still pass.
+ */
+const NUMBER=/(?<![\p{L}\d.])[-−]?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?/gu
+export function numbersIn(text:string){
+ return [...asciiDigits(text).matchAll(NUMBER)].map(m=>{const raw=m[0].replace('−','-').replace(/,/g,''),dot=raw.indexOf('.');return{raw:m[0],value:Number(raw),decimals:dot<0?0:raw.length-dot-1}}).filter(n=>Number.isFinite(n.value))
+}
+function sourceNumbers(value:unknown,out:number[]){
+ if(typeof value==='number'){if(Number.isFinite(value))out.push(value)}
+ else if(typeof value==='string'){for(const n of numbersIn(value))out.push(n.value)}
+ else if(Array.isArray(value)){out.push(value.length);for(const v of value)sourceNumbers(v,out)}
+ else if(value&&typeof value==='object')for(const v of Object.values(value))sourceNumbers(v,out)
+ return out
+}
+export function unverifiedNumbers(text:string,sources:unknown[]):string[]{
+ const allowed=sourceNumbers(sources,[])
+ const scales=[1,100,0.01,24,1/24,1000,0.001]
+ return numbersIn(text).filter(n=>{
+  if(Number.isInteger(n.value)&&Math.abs(n.value)<=2)return false
+  const tol=0.5*10**-n.decimals+1e-9
+  return !allowed.some(v=>scales.some(k=>Math.abs(Math.abs(v*k)-Math.abs(n.value))<=tol))
+ }).map(n=>n.raw)
+}
 /** Model navigation is a suggestion, checked against independently calculated candidates. */
-export function checkedCompanionReply(raw:unknown,evidence:CompanionEvidence):CompanionReply{
+export function checkedCompanionReply(raw:unknown,evidence:CompanionEvidence,sources:unknown[]=[]):CompanionReply{
  const r=raw as CompanionReply
  if(!r||typeof r.message!=='string'||!r.message.trim()||r.message.length>1800||!['sun','earth','skyline','none'].includes(r.focus)||!Array.isArray(r.questions)||r.questions.length>3||r.questions.some(q=>typeof q!=='string'||q.length>120))throw new Error('The AI returned an unsupported reply')
  if(r.visitSlug!==null&&(typeof r.visitSlug!=='string'||!evidence.eligibleSlugs.includes(r.visitSlug)))throw new Error('The proposed destination did not pass the comparison checks')
@@ -76,6 +102,12 @@ export function checkedCompanionReply(raw:unknown,evidence:CompanionEvidence):Co
   try{proposed=readGuideAction(s.action)}catch{proposed=null}
   if(proposed&&typeof s.reason==='string'&&s.reason.trim()&&s.reason.length<=240&&knownSite(proposed)&&!(action&&action.kind===proposed.kind&&action.value===proposed.value))suggestion={action:proposed,reason:asciiDigits(s.reason.trim())}
  }
+ // Numbers must have a calculated origin. An unsupported number in her explanation rejects the reply;
+ // in an optional suggestion it only drops that suggestion.
+ const origins=[evidence,sources,m,action?.value]
+ const unverified=unverifiedNumbers(message,origins)
+ if(unverified.length)throw new Error('Unverified number in reply: '+unverified.slice(0,3).join(', '))
+ if(suggestion&&unverifiedNumbers(suggestion.reason,[...origins,suggestion.action.value]).length)suggestion=null
  return {action,suggestion,message,visitSlug:r.visitSlug,focus:r.focus,questions:r.questions.map(asciiDigits),proposedMission:m===null?null:{missionDays:m.missionDays,loadW:m.loadW,panelAreaM2:m.panelAreaM2}}
 }
 /**
