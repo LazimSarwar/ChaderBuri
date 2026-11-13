@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import type { Horizon } from './data'
+import { horizonAt, type Horizon } from './data'
 
 // Surface-local semantic colours support light workspace panels and dark scene
 // overlays without changing the horizon measurements.
@@ -25,12 +25,19 @@ const azTicks = [
 const elTicks = [-10, 0, 10, 20, 30]
 
 type Marker = { az: number; el: number; name: string; color: string }
+/** Hourly Sun or Earth positions across a mission window (azimuth and elevation, degrees). */
+export type TrackPoint = { az: number; el: number }
+
+/** Tick marks for a zoomed elevation axis: 1°, 2° or 5° apart depending on the span. */
+function niceTicks(lo: number, hi: number) {
+  const step = hi - lo <= 8 ? 1 : hi - lo <= 16 ? 2 : 5
+  const out: number[] = []
+  for (let t = Math.ceil(lo / step) * step; t <= hi; t += step) out.push(t)
+  return out
+}
 
 function x(az: number) {
   return PAD.left + (az / 360) * (W - PAD.left - PAD.right)
-}
-function y(el: number) {
-  return PAD.top + (1 - (el - EL_MIN) / (EL_MAX - EL_MIN)) * (H - PAD.top - PAD.bottom)
 }
 
 export function SkyChart({
@@ -39,24 +46,55 @@ export function SkyChart({
   sunEl,
   earthAz,
   earthEl,
+  tracks,
 }: {
   horizon: Horizon
   sunAz: number
   sunEl: number
   earthAz: number
   earthEl: number
+  /** Optional paths over a mission window. With them, the elevation axis zooms to the low south-pole angles. */
+  tracks?: { sun: TrackPoint[]; earth: TrackPoint[]; label?: string }
 }) {
   const [hoverAz, setHoverAz] = useState<number | null>(null)
+  const [lo, hi] = useMemo(() => {
+    if (!tracks) return [EL_MIN, EL_MAX]
+    const pts = [...tracks.sun, ...tracks.earth].filter(p => Number.isFinite(p.az) && Number.isFinite(p.el))
+    const values = [...pts.map(p => p.el), ...pts.map(p => horizonAt(horizon, p.az)), sunEl, earthEl].filter(Number.isFinite)
+    let a = Math.floor(Math.min(...values)) - 1, b = Math.ceil(Math.max(...values)) + 1
+    if (b - a < 6) { const mid = (a + b) / 2; a = Math.floor(mid - 3); b = Math.ceil(mid + 3) }
+    return [Math.max(a, -15), Math.min(b, 40)]
+  }, [tracks, horizon, sunEl, earthEl])
+  const clampEl = (el: number) => Math.max(Math.min(el, hi), lo)
+  const Y = (el: number) => PAD.top + (1 - (el - lo) / (hi - lo)) * (H - PAD.top - PAD.bottom)
+  const ticks = tracks ? niceTicks(lo, hi) : elTicks
+  // Each hourly step of a path is solid while the body's centre is above the measured skyline, dashed while hidden.
+  const trackPaths = useMemo(() => {
+    if (!tracks) return []
+    return (['sun', 'earth'] as const).map(body => {
+      const pts = tracks[body].filter(p => Number.isFinite(p.az) && Number.isFinite(p.el))
+      const up = pts.map(p => p.el > horizonAt(horizon, p.az))
+      let shown = '', hidden = ''
+      for (let i = 1; i < pts.length; i++) {
+        const a = pts[i - 1], b = pts[i]
+        if (Math.abs(b.az - a.az) > 180) continue // wraps past north: start a new run
+        const seg = ` M ${x(((a.az % 360) + 360) % 360).toFixed(1)} ${Y(clampEl(a.el)).toFixed(1)} L ${x(((b.az % 360) + 360) % 360).toFixed(1)} ${Y(clampEl(b.el)).toFixed(1)}`
+        if (up[i - 1] && up[i]) shown += seg; else hidden += seg
+      }
+      return { body, shown, hidden, hiddenHours: up.filter(v => !v).length, hours: pts.length }
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tracks, horizon, lo, hi])
 
   const terrainPath = useMemo(() => {
-    let d = `M ${x(0)} ${y(EL_MIN)}`
+    let d = `M ${x(0)} ${Y(lo)}`
     for (let az = 0; az <= 360; az++) {
-      const el = Math.min(horizon.profile[az % 360], EL_MAX)
-      d += ` L ${x(az).toFixed(1)} ${y(Math.max(el, EL_MIN)).toFixed(1)}`
+      d += ` L ${x(az).toFixed(1)} ${Y(clampEl(horizon.profile[az % 360])).toFixed(1)}`
     }
-    d += ` L ${x(360)} ${y(EL_MIN)} Z`
+    d += ` L ${x(360)} ${Y(lo)} Z`
     return d
-  }, [horizon])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [horizon, lo, hi])
 
   const markers: Marker[] = [
     { az: sunAz, el: sunEl, name: 'Sun', color: SUN },
@@ -72,7 +110,7 @@ export function SkyChart({
           viewBox={`0 0 ${W} ${H}`}
           className="w-full"
           role="img"
-          aria-label={`Terrain horizon profile for ${horizon.site}: elevation versus azimuth, with current Sun and Earth positions`}
+          aria-label={`Terrain horizon profile for ${horizon.site}: elevation versus azimuth, with current Sun and Earth positions${tracks ? ' and their paths during the mission (dashed where hidden by terrain)' : ''}`}
           onMouseMove={(e) => {
             const rect = e.currentTarget.getBoundingClientRect()
             const px = ((e.clientX - rect.left) / rect.width) * W
@@ -81,17 +119,17 @@ export function SkyChart({
           }}
           onMouseLeave={() => setHoverAz(null)}
         >
-          {elTicks.map((t) => (
+          {ticks.map((t) => (
             <g key={t}>
               <line
                 x1={PAD.left}
                 x2={W - PAD.right}
-                y1={y(t)}
-                y2={y(t)}
+                y1={Y(t)}
+                y2={Y(t)}
                 stroke={t === 0 ? 'var(--color-edge)' : 'var(--color-rule)'}
                 strokeWidth={1}
               />
-              <text x={PAD.left - 4} y={y(t) + 3} textAnchor="end" fontSize={9} fill={TEXT_MUTED}>
+              <text x={PAD.left - 4} y={Y(t) + 3} textAnchor="end" fontSize={9} fill={TEXT_MUTED}>
                 {t}°
               </text>
             </g>
@@ -117,6 +155,13 @@ export function SkyChart({
             strokeWidth={1.1}
           />
 
+          {trackPaths.map((t) => (
+            <g key={t.body} fill="none" stroke={t.body === 'sun' ? SUN : EARTH} strokeLinecap="round">
+              {t.hidden && <path d={t.hidden} strokeWidth={1.2} strokeDasharray="2 3" strokeOpacity={0.55} />}
+              {t.shown && <path d={t.shown} strokeWidth={1.9} strokeOpacity={0.95} />}
+            </g>
+          ))}
+
           {hoverAz !== null && (
             <line
               x1={x(hoverAz)}
@@ -131,7 +176,7 @@ export function SkyChart({
 
           {markers.map((m) => {
             const mx = x(m.az)
-            const my = y(Math.max(Math.min(m.el, EL_MAX), EL_MIN))
+            const my = Y(clampEl(m.el))
             const labelRight = mx < W * 0.72
             return (
               <g key={m.name}>
@@ -183,7 +228,18 @@ export function SkyChart({
           </svg>
           terrain
         </span>
+        {tracks && (
+          <span className="flex items-center gap-1">
+            <svg width="18" height="8"><line x1="0" y1="4" x2="8" y2="4" stroke="var(--color-inkdim)" strokeWidth={2} /><line x1="10" y1="4" x2="18" y2="4" stroke="var(--color-inkdim)" strokeWidth={1.2} strokeDasharray="2 2" /></svg>
+            {tracks.label ?? 'path over the mission'} · dashed = behind terrain
+          </span>
+        )}
       </div>
+      {tracks && trackPaths.length === 2 && (
+        <p className="mt-1 text-[12px] text-inkdim">
+          Hourly samples: Sun behind terrain {trackPaths[0].hiddenHours} of {trackPaths[0].hours} h · Earth behind terrain {trackPaths[1].hiddenHours} of {trackPaths[1].hours} h.
+        </p>
+      )}
 
       <details className="mt-1.5">
         <summary className="cursor-pointer text-[12px] text-inkdim hover:text-ink">

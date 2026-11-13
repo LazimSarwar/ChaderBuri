@@ -110,7 +110,7 @@ type State = {
   totalHours: number
 }
 
-export default function App({guidedLaunch=false}:{guidedLaunch?:boolean}) {
+export default function App({guidedLaunch=false,openExample=false}:{guidedLaunch?:boolean;openExample?:boolean}) {
   // 3D failure state. A browser with no WebGL 2 at all gets the explanation at once and no scene is mounted;
   // otherwise the scene reports its own failures (error boundary, context lost and not restored, data load).
   // (The probe result is the evidence here, so the record carries its text without a meaningless stack.)
@@ -295,6 +295,9 @@ export default function App({guidedLaunch=false}:{guidedLaunch?:boolean}) {
     ] })
     setPanel('plan')
   }
+  // Welcome-screen shortcut: open the one-week comparison as soon as its reference data is ready (once).
+  const exampleOpened=useRef(false)
+  useEffect(()=>{if(openExample&&hook&&!exampleOpened.current){exampleOpened.current=true;openHook()}},[openExample,hook])
   const openQuickComparison=()=>{
     // One comparison page for sites and dates: the fair one, with the mission plan's lander for both options.
     if(!state||state.sites.length<2)return

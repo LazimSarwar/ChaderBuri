@@ -206,7 +206,8 @@ export function MissionCompare({ sites, eph, horizons, startMs, datasetIndex, mi
         <div className="fc-moment"><MomentTable cols={[{ label: A.label, when: fmt(mA.row), m: mA }, { label: B.label, when: fmt(mB.row), m: mB }]} caption={`Both options ${mA.hour} hours after landing`} /></div>
         <div className="fc-skies">{([[A, mA], [B, mB]] as const).map(([s, m]) => <div key={s.label} className="mp-moment-sky">
           <h5>{s.label}: why is the Sun or Earth blocked?</h5>
-          <SkyChart horizon={horizons[s.slug]} sunAz={m.sun.az} sunEl={m.sun.el} earthAz={m.earth.az} earthEl={m.earth.el} />
+          <SkyChart horizon={horizons[s.slug]} sunAz={m.sun.az} sunEl={m.sun.el} earthAz={m.earth.az} earthEl={m.earth.el}
+            tracks={{ sun: s.sunRows.slice(s.row, s.row + hours), earth: s.earthRows.slice(s.row, s.row + hours), label: `path over the ${c.missionDays}-day mission` }} />
           <p>{skylineSentence('The Sun', m.sun)}</p><p>{skylineSentence('Earth', m.earth)}</p>
         </div>)}</div>
         <p className="mp-muted">Skylines are measured from LRO LOLA terrain around each landing point; Sun and Earth positions are from JPL Horizons. Hourly screening estimates, not a success probability.</p>

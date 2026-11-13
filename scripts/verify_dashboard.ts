@@ -190,7 +190,7 @@ const header = readFileSync('src/DashboardHeader.tsx', 'utf8')
 check(/Larger text/.test(header) && /textSize/.test(header) && /data-text-size=large/.test(css), 'A larger-text option scales the dashboard content')
 check(/\.dash-nav\{flex-wrap:wrap/.test(css) && /min-height:44px/.test(css), 'Phone section menu wraps; 44px targets')
 const opening = readFileSync('src/OpeningScene.tsx', 'utf8'), app = readFileSync('src/App.tsx', 'utf8')
-check(/>Start<ArrowRight/.test(opening) && /<App\s*\/>/.test(readFileSync('src/main.tsx', 'utf8')), 'The welcome Start opens the solar-system workspace without an automatic landing')
+check(/'Explore the Moon' : 'Start'\}<ArrowRight/.test(opening) && /See how one week changes a mission/.test(opening) && /<App openExample=\{example\}\s*\/>/.test(readFileSync('src/main.tsx', 'utf8')) && !/guidedLaunch/.test(readFileSync('src/main.tsx', 'utf8')), 'The welcome opens the workspace (or the one-week example) without an automatic landing')
 check(/Showing conditions for/.test(app) && /missionConditions/.test(app) && /setConditionsOn\('scene'\)/.test(app), 'Site conditions show the mission by default, with an explicit mission/scene choice')
 
 console.log(`Dashboard wording checks passed: ${checks}`)
