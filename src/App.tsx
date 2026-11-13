@@ -71,6 +71,7 @@ import type { FairSeed } from './MissionCompare'
 import { ExplainContext, Glossary } from './Explain'
 import { clamp, fmtClock, fmtUTC, parseRowT } from './lib/sim'
 import { missionLanded, sunVerdict } from './data'
+import { SceneLoading } from './SceneLoading'
 import type { FlyRequest, SpaceOptions } from './space/ephemeris'
 import type { TerrainView } from './space/LunarTerrain'
 import {
@@ -877,6 +878,7 @@ export default function App({guidedLaunch=false}:{guidedLaunch?:boolean}) {
         <WorkspaceBar onSetup={()=>openSupport('setup')} onHelp={()=>openSupport('guide')} onWeather={()=>openSupport('weather')} orbit={orbitalWorkspace} compact={drawerOpen} clockStr={fmtClock(simDate)} dateStr={fmtUTC(simDate).split(' · ')[0]} sitesOpen={panel==='sites'} toolsOpen={drawerOpen&&panel!=='sites'} onExplore={closePanel} onSites={()=>setPanel(p=>toggleWorkspacePanel(p,'sites'))} onTools={()=>setPanel(p=>hasWorkspaceDrawer(p)&&p!=='sites'?null:missionSummary?'plan':'setup')} onEvidence={()=>setPanel('evidence')} onQuickCompare={openQuickComparison} compareReady={state.sites.length>=2} onCompare={()=>setPanel('compare')} onMap={()=>setPanel('atlas')} onGlossary={()=>{setGlossary('all');setPanel('glossary')}} explain={explain} onExplain={setExplain} onReverse={toggleReverse} reverse={reverse} onNow={goLive} realtime={realtime} playing={playing} onPlay={togglePlay} speed={speed} onSpeed={changeSpeed} blink={<Blink clock={clock} startMs={state.startMs} totalHours={state.totalHours} onEngage={()=>{clock.current.realtime=false;setRealtime(false);setPlaying(false)}}/>}/>
         {orbitalWorkspace&&catalogProgress}
         <main className="relative min-h-0 flex-1" aria-label="Solar system workspace">
+          {!graphicsFailure&&!drawerOpen&&!visitLook&&!visitPending&&<SceneLoading label={bodyFocus==='Moon'?'Loading the Moon…':'Loading the scene…'}/>}
           {graphicsFailure&&!drawerOpen&&<GraphicsFailurePanel failure={graphicsFailure} retriesLeft={MAX_SCENE_RETRIES-sceneRetries} onRetry={retryScene} onDashboard={()=>{changeGuide('icon');setPanel(missionSummary?'plan':'setup')}}/>}
           {!graphicsFailure&&!drawerOpen&&!visitLook&&!visitPending&&<Suspense fallback={null}><SpaceNavigator compact={panel==='selection'} focus={bodyFocus} row={uiRow} options={spaceOptions} onOptions={setSpaceOptions} onFly={flyToBody} onOverview={()=>{setPanel(null);setFly({body:'Sun',overview:true,key:Date.now()});setSpaceOptions(o=>({...o,orbits:true,enhanced:true}));orbitPlayback(864000)}} onEarthMoon={()=>{setPanel(null);setFly({body:'Earth',system:true,key:Date.now()});setSpaceOptions(o=>({...o,orbits:true,enhanced:true}));orbitPlayback(86400)}} onAtlas={()=>setPanel('atlas')} onSky={()=>{setPanel(null);setFly({body:'Moon',sky:true,key:Date.now()});setSpaceOptions(o=>({...o,enhanced:false,orbits:false}))}}/></Suspense>}
           {!graphicsFailure&&orbitalWorkspace&&panel===null&&fly?.overview&&<section className="orbit-intro pointer-events-auto" aria-label="Explore the solar system">

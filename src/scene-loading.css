@@ -1,0 +1,4 @@
+.moon-loading{position:absolute;left:50%;top:44%;transform:translate(-50%,-50%);z-index:5;display:flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid #2a2a2a;border-radius:999px;background:rgba(0,0,0,.82);color:#f5f5f5;font-size:14px;font-weight:500;pointer-events:none;white-space:nowrap}
+.moon-loading-spinner{width:14px;height:14px;border:2px solid #555;border-top-color:#f5d48a;border-radius:50%;animation:moon-loading-spin .9s linear infinite}
+@keyframes moon-loading-spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.moon-loading-spinner{animation:none;border-top-color:#555;background:#f5d48a33}}
