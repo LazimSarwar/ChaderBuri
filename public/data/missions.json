@@ -1,0 +1,970 @@
+[
+ {
+  "name": "Peregrine Mission One",
+  "provider": "Astrobotic",
+  "vehicle": "Peregrine",
+  "status": "partially-flown",
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "launchDate": "2024-01-08",
+  "launchWindow": null,
+  "launchPrecision": "day",
+  "target": "Sinus Viscositatis (planned)",
+  "coordinateKind": null,
+  "payloadCount": 20,
+  "note": "Launched 8 January 2024 on Vulcan's maiden flight; a propellant leak prevented lunar insertion and the spacecraft reentered Earth's atmosphere 18 January 2024. No landing attempt.",
+  "sources": "Astrobotic launch packet and NASA updates. Curated snapshot, not a live manifest.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Peregrine_Mission_One"
+  ],
+  "lastReviewed": "2026-10-17",
+  "payloads": [
+   {
+    "name": "LRA",
+    "kind": "Laser & reflectors",
+    "purpose": "Eight retroreflectors enabling precision laser ranging and location marking.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-astrobotic/",
+    "unconfirmed": false
+   },
+   {
+    "name": "NSS",
+    "kind": "Volatiles & ice",
+    "purpose": "Detects hydrogen-bearing materials about 1 m below the surface.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-astrobotic/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LETS",
+    "kind": "Thermal & radiation",
+    "purpose": "Radiation monitor measuring the lunar surface environment for crew safety.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-astrobotic/",
+    "unconfirmed": false
+   },
+   {
+    "name": "NIRVSS",
+    "kind": "Volatiles & ice",
+    "purpose": "Near-infrared spectrometer mapping surface hydration, temperature, and morphology.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-astrobotic/",
+    "unconfirmed": false
+   },
+   {
+    "name": "PITMS",
+    "kind": "Volatiles & ice",
+    "purpose": "Ion-trap mass spectrometer characterizing exosphere volatile transport over a lunar day.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-astrobotic/",
+    "unconfirmed": false
+   },
+   {
+    "name": "NDL",
+    "kind": "Radio & navigation",
+    "purpose": "Doppler lidar measuring descent velocity and altitude for precision landing.",
+    "agency": "NASA",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "TRN",
+    "kind": "Radio & navigation",
+    "purpose": "Astrobotic terrain-relative navigation demo targeting sub-100 m landing accuracy.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "M-42",
+    "kind": "Thermal & radiation",
+    "purpose": "DLR radiation detector simulating dose to a human body on a lunar round trip.",
+    "agency": "international",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Colmena",
+    "kind": "Rover & mobility",
+    "purpose": "Five ~60 g Mexican micro-robots to be scattered onto the surface.",
+    "agency": "international",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Iris",
+    "kind": "Rover & mobility",
+    "purpose": "Carnegie Mellon student rover testing lightweight mobility and localization.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "MoonArk",
+    "kind": "Other science",
+    "purpose": "CMU lunar museum of art and cultural artifacts.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Arch Libraries",
+    "kind": "Other science",
+    "purpose": "Nickel time capsule archiving Wikipedia and the Rosetta Project.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Luna 02",
+    "kind": "Other science",
+    "purpose": "Celestis memorial capsule carrying human remains.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "DHL MoonBox",
+    "kind": "Other science",
+    "purpose": "Commercial cargo capsules of customer items.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Lunar Codex",
+    "kind": "Other science",
+    "purpose": "Archive of art, books, music, and stories.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Lunar Dream Capsule",
+    "kind": "Other science",
+    "purpose": "Astroscale (Japan) time capsule of messages.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   },
+   {
+    "name": "Memory of Mankind on the Moon",
+    "kind": "Other science",
+    "purpose": "Puli Space (Hungary) time capsule.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/Peregrine_Mission_One",
+    "unconfirmed": true
+   }
+  ]
+ },
+ {
+  "name": "IM-1 Odysseus",
+  "provider": "Intuitive Machines",
+  "status": "flown",
+  "landingUTC": "2024-02-22T23:23:00Z",
+  "lat": -80.3,
+  "lonEast": 1.3,
+  "siteSlug": "im-1-odysseus-site",
+  "sunAtTouchdown": {
+   "az": 18.6,
+   "el": 10.3
+  },
+  "note": "Landed near Malapert A on 22 February 2024 and returned surface data despite tipping. Coordinates represent the approximate landing region. The displayed touchdown Sun angle is a geometry estimate, not a reconstruction of panel power. Refined trajectory analyses place the touchdown near 80.13 S, 1.44 E; the displayed site keeps the original reported coordinates for consistency with its duty-cycle series.",
+  "sources": "Provider and NASA mission records. Curated snapshot, not a live manifest.",
+  "sourceUrls": [
+   "https://science.nasa.gov/moon/missions/",
+   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_artifact_impacts.html"
+  ],
+  "lastReviewed": "2026-10-12",
+  "vehicle": "Nova-C 'Odysseus'",
+  "launchDate": "2024-02-15",
+  "launchPrecision": "day",
+  "coordinateKind": "landing-site",
+  "payloadCount": 6,
+  "payloads": [
+   {
+    "name": "LRA",
+    "kind": "Laser & reflectors",
+    "purpose": "Eight retroreflectors for precision laser ranging; permanent location marker.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "NDL",
+    "kind": "Radio & navigation",
+    "purpose": "Doppler lidar giving precise descent velocity and altitude; used operationally for landing.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LN-1",
+    "kind": "Radio & navigation",
+    "purpose": "Autonomous S-band navigation beacon linking landers, orbiters, and ground.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "SCALPSS",
+    "kind": "Imaging & cameras",
+    "purpose": "Stereo camera pairs capturing engine plume interaction with the surface during descent.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "ROLSES",
+    "kind": "Space environment",
+    "purpose": "Low-frequency radio spectrometer measuring the lunar photoelectron sheath and radio emissions.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "RFMG",
+    "kind": "Surface tech demo",
+    "purpose": "Radio-frequency gauging of cryogenic propellant remaining in lander tanks.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to2-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "EagleCam",
+    "kind": "Imaging & cameras",
+    "purpose": "CubeSat camera intended to photograph the lander's descent; tested dust-shielding tech.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-1",
+    "unconfirmed": true
+   },
+   {
+    "name": "ILO-X",
+    "kind": "Imaging & cameras",
+    "purpose": "Proof-of-concept wide- and narrow-field lunar imagers.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-1",
+    "unconfirmed": true
+   },
+   {
+    "name": "Omni-Heat",
+    "kind": "Thermal & radiation",
+    "purpose": "Columbia Sportswear reflective insulation tested in the lunar environment.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-1",
+    "unconfirmed": true
+   },
+   {
+    "name": "Independence",
+    "kind": "Surface tech demo",
+    "purpose": "Lonestar test of a small lunar data storage and processing center.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-1",
+    "unconfirmed": true
+   },
+   {
+    "name": "Lunaprise (Arch Mission Lunar Library)",
+    "kind": "Other science",
+    "purpose": "Nickel time capsule archiving Wikipedia and other cultural works.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-1",
+    "unconfirmed": true
+   },
+   {
+    "name": "Moon Phases",
+    "kind": "Other science",
+    "purpose": "Jeff Koons art cube of 125 miniature Moon sculptures.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-1",
+    "unconfirmed": true
+   }
+  ]
+ },
+ {
+  "name": "Blue Ghost 1",
+  "provider": "Firefly Aerospace",
+  "status": "flown",
+  "landingUTC": "2025-03-02T08:35:00Z",
+  "lat": 18.56,
+  "lonEast": 61.81,
+  "siteSlug": null,
+  "sunAtTouchdown": {
+   "az": 91.6,
+   "el": 3.4
+  },
+  "note": "Landed in Mare Crisium on 2 March 2025 and completed a lunar-day surface mission. The displayed Sun angle is a geometry estimate. It does not validate this app’s polar terrain or battery model.",
+  "sources": "Provider and NASA mission records. Curated snapshot, not a live manifest.",
+  "sourceUrls": [
+   "https://investors.fireflyspace.com/node/6761/pdf",
+   "https://science.nasa.gov/moon/missions/"
+  ],
+  "lastReviewed": "2026-10-12",
+  "vehicle": "Blue Ghost",
+  "launchDate": "2025-01-15",
+  "launchPrecision": "day",
+  "coordinateKind": "landing-site",
+  "payloadCount": 10,
+  "payloads": [
+   {
+    "name": "NGLR",
+    "kind": "Laser & reflectors",
+    "purpose": "Next-gen retroreflector for sub-millimeter Earth-Moon distance measurement.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "RadPC",
+    "kind": "Thermal & radiation",
+    "purpose": "Fault-tolerant computer demonstrating radiation recovery; maps site radiation.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "RAC",
+    "kind": "Surface tech demo",
+    "purpose": "Measures how lunar dust adheres to and sheds from material samples.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LMS",
+    "kind": "Other science",
+    "purpose": "Magnetotelluric sounding of electric and magnetic fields to probe the lunar interior.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LEXI",
+    "kind": "Space environment",
+    "purpose": "Soft X-ray imager viewing Earth's magnetosphere from the lunar surface.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LPV",
+    "kind": "Drill & sampling",
+    "purpose": "Pneumatically collects and delivers regolith samples for analysis.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LISTER",
+    "kind": "Drill & sampling",
+    "purpose": "Pneumatic drill to 2-3 m measuring lunar heat flow and conductivity.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "SCALPSS 1.1",
+    "kind": "Imaging & cameras",
+    "purpose": "Stereo cameras measuring engine plume erosion and crater formation.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "EDS",
+    "kind": "Surface tech demo",
+    "purpose": "Electric-field dust removal demonstration on material surfaces, no moving parts.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LuGRE",
+    "kind": "Radio & navigation",
+    "purpose": "First use of GPS and Galileo signals for positioning at the Moon.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to19d-firefly/",
+    "unconfirmed": false
+   }
+  ]
+ },
+ {
+  "name": "IM-2 Athena",
+  "provider": "Intuitive Machines",
+  "status": "partially-flown",
+  "landingUTC": "2025-03-06T17:30:00Z",
+  "lat": -84.7906,
+  "lonEast": 29.1957,
+  "siteSlug": null,
+  "sunAtTouchdown": {
+   "az": 65.7,
+   "el": 2.5
+  },
+  "note": "Landed in a crater in the Mons Mouton region on 6 March 2025. NASA reported an early end of mission after some data were collected. Sun elevation alone does not explain the outcome; terrain, lander orientation and thermal conditions also matter.",
+  "sources": "Provider and NASA mission records. Curated snapshot, not a live manifest.",
+  "sourceUrls": [
+   "https://www.nasa.gov/news-release/nasa-receives-some-data-before-intuitive-machines-ends-lunar-mission/",
+   "https://nssdc.gsfc.nasa.gov/planetary/lunar/lunar_artifact_impacts.html"
+  ],
+  "lastReviewed": "2026-10-12",
+  "vehicle": "Nova-C 'Athena'",
+  "launchDate": "2025-02-27",
+  "launchPrecision": "day",
+  "coordinateKind": "landing-site",
+  "payloadCount": null,
+  "payloads": [
+   {
+    "name": "PRIME-1",
+    "kind": "Volatiles & ice",
+    "purpose": "Drill-and-analyze experiment searching south-pole subsurface for water ice.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/prime-1-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "TRIDENT",
+    "kind": "Drill & sampling",
+    "purpose": "Rotary-percussive drill to 1 m; records subsurface strength and temperature.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/prime-1-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "MSolo",
+    "kind": "Volatiles & ice",
+    "purpose": "Mass spectrometer analyzing drill cuttings for water and other volatiles.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/prime-1-im/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LRA",
+    "kind": "Laser & reflectors",
+    "purpose": "Passive retroreflector array on the top deck for laser ranging and landing accuracy.",
+    "agency": "NASA",
+    "sourceUrl": "https://www.jpl.nasa.gov/news/nasa-sets-coverage-for-intuitive-machines-next-commercial-moon-launch",
+    "unconfirmed": false
+   },
+   {
+    "name": "Micro Nova (Grace)",
+    "kind": "Rover & mobility",
+    "purpose": "Hopper exploring PSRs with a neutron spectrometer for hydrogen detection.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "MAPP",
+    "kind": "Rover & mobility",
+    "purpose": "Lunar Outpost rover autonomously mapping surface with stereo and thermal imaging.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "AstroAnt",
+    "kind": "Rover & mobility",
+    "purpose": "Matchbox rover on MAPP's roof taking contactless temperature readings.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "Yaoki",
+    "kind": "Rover & mobility",
+    "purpose": "498-gram Dymon (Japan) rover demonstrating surface mobility.",
+    "agency": "international",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "Nokia 4G/LTE",
+    "kind": "Radio & navigation",
+    "purpose": "Cellular network demo linking lander, MAPP rover, and Micro Nova hopper.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "MiniPIX TPX3 SPACE",
+    "kind": "Thermal & radiation",
+    "purpose": "ADVACAM (Czech Republic) monitor of the lunar radiation field.",
+    "agency": "international",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "RESOURCE",
+    "kind": "Imaging & cameras",
+    "purpose": "MIT camera capturing 3D imagery from the MAPP rover.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   },
+   {
+    "name": "ILO-1 optical payload",
+    "kind": "Imaging & cameras",
+    "purpose": "Canadensys optical imager ruggedized for the lunar south pole.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-2",
+    "unconfirmed": true
+   }
+  ]
+ },
+ {
+  "name": "Griffin Mission One",
+  "provider": "Astrobotic",
+  "vehicle": "Griffin",
+  "launchDate": "2026-11",
+  "launchWindow": "NET Nov 2026",
+  "launchPrecision": "month",
+  "target": "Nobile Crater region, lunar south pole",
+  "note": "In final integration and environmental testing after repeated slips; carries the Astrolab FLIP rover after NASA's VIPER rover was cancelled in 2024. The next candidate CLPS launch.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Griffin_Mission_One",
+   "https://www.nasa.gov/event/clps-flight-astrobotics-griffin-mission-one"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest.",
+  "payloads": [
+   {
+    "name": "LRA",
+    "kind": "Laser & reflectors",
+    "purpose": "Retroreflector array at Mons Mouton for spacecraft laser ranging and positioning.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/to20a-astrobotic/",
+    "unconfirmed": false
+   }
+  ]
+ },
+ {
+  "name": "Blue Moon Pathfinder 1",
+  "provider": "Blue Origin",
+  "vehicle": "Blue Moon Mark 1",
+  "launchDate": "2027",
+  "launchWindow": "2027",
+  "target": "Shackleton Connecting Ridge",
+  "note": "CLPS task order TO CT-3. Mark 1 demonstration flight carrying NASA stereo cameras and a laser retroreflector; de-risks future Artemis crewed landings. Launch timing not firm.",
+  "sourceUrls": [
+   "https://www.nasa.gov/event/clps-flight-blue-origins-blue-moon-mark-1"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Blue Moon Pathfinder 2",
+  "provider": "Blue Origin",
+  "vehicle": "Blue Moon Mark 1 (SN002)",
+  "launchDate": "2027",
+  "launchWindow": "2027",
+  "target": "Lunar south pole region (reported)",
+  "unconfirmed": true,
+  "note": "Second Mark 1 flight to the south pole, reported as an opportunity to carry NASA's VIPER rover (rebaselined after the 2024 cancellation). Thinly sourced - treat details as provisional.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "IM-4",
+  "provider": "Intuitive Machines",
+  "vehicle": "Nova-C",
+  "launchDate": "2027",
+  "launchWindow": "2027",
+  "target": "Lunar south pole region",
+  "payloadCount": 6,
+  "note": "Awarded August 2024 (task order CP-22). Six NASA payloads to study south-polar volatiles.",
+  "sourceUrls": [
+   "https://www.nasa.gov/news-release/nasa-awards-intuitive-machines-lunar-south-pole-research-delivery"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Blue Ghost 3",
+  "provider": "Firefly Aerospace",
+  "vehicle": "Blue Ghost + Elytra",
+  "launchDate": "2028",
+  "launchWindow": "2028",
+  "target": "Gruithuisen Domes",
+  "lat": 36.46,
+  "lonEast": -40.8,
+  "coordinateKind": "approximate",
+  "payloadCount": 6,
+  "note": "Awarded December 2024 (task order CP-21). Six NASA instruments including Lunar-VISE to Mons Gruithuisen Gamma, plus an Elytra orbital element. Coordinates approximate the region, not a published landing ellipse.",
+  "sourceUrls": [
+   "https://fireflyspace.com/missions/blue-ghost-elytra-gruithuisen-domes"
+  ],
+  "landingUTC": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Blue Ghost 5",
+  "provider": "Firefly Aerospace",
+  "vehicle": "Blue Ghost",
+  "launchDate": "2028",
+  "launchWindow": "2028",
+  "target": "Lunar near side (reported)",
+  "unconfirmed": true,
+  "note": "Awarded 30 June 2026 (Firefly's sixth CLPS task order). Near-side delivery reported; details not yet published.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "IM-6",
+  "provider": "Intuitive Machines",
+  "vehicle": "Nova-C",
+  "launchDate": "2028",
+  "launchWindow": "2028",
+  "target": null,
+  "unconfirmed": true,
+  "note": "Announced 30 June 2026 as Intuitive Machines' sixth CLPS award (up to $148.3M). Details not yet published.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Peregrine 2",
+  "provider": "Astrobotic",
+  "vehicle": "Peregrine",
+  "launchDate": "2028",
+  "launchWindow": "2028",
+  "target": null,
+  "unconfirmed": true,
+  "note": "Awarded 30 June 2026 in NASA's four-mission CLPS round. Details not yet published.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Peregrine 3",
+  "provider": "Astrobotic",
+  "vehicle": "Peregrine",
+  "launchDate": "2028",
+  "launchWindow": "2028",
+  "target": null,
+  "unconfirmed": true,
+  "note": "Awarded 30 June 2026 alongside Peregrine 2. Details not yet published.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Blue Ghost 4",
+  "provider": "Firefly Aerospace",
+  "vehicle": "Blue Ghost",
+  "launchDate": "2029",
+  "launchWindow": "2029",
+  "target": "Lunar south pole region",
+  "payloadCount": 5,
+  "note": "Awarded July 2025 (task order CS-6). First multi-rover CLPS delivery: two rovers plus NASA-sponsored instruments to the south pole.",
+  "sourceUrls": [
+   "https://fireflyspace.com/news/firefly-awarded-177-million-nasa-contract-for-mission-to-the-moons-south-pole"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "IM-5",
+  "provider": "Intuitive Machines",
+  "vehicle": "Nova-D",
+  "launchDate": "2030",
+  "launchWindow": "2030",
+  "target": "Mons Malapert",
+  "payloadCount": 7,
+  "note": "Awarded March 2026. First CLPS use of the larger Nova-D lander, seven payloads including Australia's Roo-ver rover.",
+  "sourceUrls": [
+   "https://www.nasa.gov/missions/artemis/clps/nasa-selects-intuitive-machines-to-deliver-artemis-science-tech-to-moon"
+  ],
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "status": "upcoming",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "lastReviewed": "2026-10-17",
+  "sources": "NASA CLPS announcements and provider mission pages. Curated snapshot, not a live manifest."
+ },
+ {
+  "name": "Blue Ghost 2",
+  "provider": "Firefly Aerospace",
+  "status": "upcoming",
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "note": "CLPS task order CS-3. Elytra Dark transfer stage plus a far-side lander carrying six payloads from five countries, including the LuSEE-Night radio telescope. Slipped from 2026 to NET 2027.",
+  "sources": "Provider and NASA mission records. Curated snapshot, not a live manifest.",
+  "sunAtTouchdown": null,
+  "target": "Lunar far side (radio-quiet site)",
+  "launchWindow": "NET 2027",
+  "sourceUrls": [
+   "https://fireflyspace.com/missions/blue-ghost-mission-2/",
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "lastReviewed": "2026-10-12",
+  "vehicle": "Blue Ghost + Elytra Dark",
+  "launchPrecision": "year",
+  "coordinateKind": null,
+  "payloadCount": 6,
+  "payloads": [
+   {
+    "name": "LuSEE-Night",
+    "kind": "Other science",
+    "purpose": "Far-side radio telescope probing the Dark Ages 21-cm signal below 50 MHz.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/cs-3/",
+    "unconfirmed": false
+   },
+   {
+    "name": "User Terminal",
+    "kind": "Radio & navigation",
+    "purpose": "JPL terminal commissioning Lunar Pathfinder; new S-band Proximity-1 lunar standard.",
+    "agency": "NASA",
+    "sourceUrl": "https://fireflyspace.com/missions/blue-ghost-mission-2/",
+    "unconfirmed": false
+   },
+   {
+    "name": "SPIDER",
+    "kind": "Seismology",
+    "purpose": "Fleet Space (Australia) tethered seismometer mapping the far-side subsurface.",
+    "agency": "international",
+    "sourceUrl": "https://fireflyspace.com/missions/blue-ghost-mission-2/",
+    "unconfirmed": false
+   },
+   {
+    "name": "Rashid Rover 2",
+    "kind": "Rover & mobility",
+    "purpose": "UAE rover demonstrating far-side mobility; studies dust, plasma, geology, thermal conditions.",
+    "agency": "international",
+    "sourceUrl": "https://fireflyspace.com/missions/blue-ghost-mission-2/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LightPort",
+    "kind": "Surface tech demo",
+    "purpose": "Volta (Canada) wireless laser-power receiver demo for the LightGrid network.",
+    "agency": "commercial",
+    "sourceUrl": "https://fireflyspace.com/missions/blue-ghost-mission-2/",
+    "unconfirmed": false
+   },
+   {
+    "name": "Lunar Pathfinder",
+    "kind": "Radio & navigation",
+    "purpose": "ESA/SSTL orbiter relaying far-side and polar mission communications.",
+    "agency": "international",
+    "sourceUrl": "https://fireflyspace.com/missions/blue-ghost-mission-2/",
+    "unconfirmed": false
+   }
+  ]
+ },
+ {
+  "name": "Draper Farside (CP-12)",
+  "provider": "Draper Laboratory (lander by ispace-U.S.)",
+  "vehicle": "APEX 1.0",
+  "status": "cancelled",
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "launchDate": null,
+  "launchWindow": null,
+  "launchPrecision": null,
+  "target": "Schrödinger basin",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "note": "Cancelled by mutual agreement of NASA and Draper in July 2026 after lander development delays. Would have been the first U.S. far-side landing, delivering the Farside Seismic Suite.",
+  "sources": "SpaceNews and NASA statements. Curated snapshot, not a live manifest.",
+  "sourceUrls": [
+   "https://spacenews.com/nasa-terminates-draper-lunar-lander-mission"
+  ],
+  "lastReviewed": "2026-10-17"
+ },
+ {
+  "name": "IM-3",
+  "provider": "Intuitive Machines",
+  "status": "upcoming",
+  "landingUTC": null,
+  "lat": 7.5,
+  "lonEast": -59.0,
+  "siteSlug": null,
+  "note": "CLPS task order CP-11. Slipped from H2 2026 to the first part of 2027. Carries 12 payloads including NASA's CADRE rovers and Lunar Vertex to the Reiner Gamma swirl.",
+  "sources": "Provider and NASA mission records. Curated snapshot, not a live manifest.",
+  "sunAtTouchdown": null,
+  "target": "Reiner Gamma",
+  "launchWindow": "NET 2027 Q1",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/IM-3",
+   "https://www.nasa.gov/event/clps-flight-intuitive-machines-im-3"
+  ],
+  "lastReviewed": "2026-10-12",
+  "vehicle": "Nova-C",
+  "launchPrecision": "quarter",
+  "coordinateKind": "region-centre",
+  "payloadCount": 12,
+  "payloads": [
+   {
+    "name": "Lunar Vertex",
+    "kind": "Other science",
+    "purpose": "Lander and rover magnetometers studying the Reiner Gamma magnetic anomaly and swirl.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-11/",
+    "unconfirmed": false
+   },
+   {
+    "name": "CADRE",
+    "kind": "Rover & mobility",
+    "purpose": "JPL rover team demonstrating autonomous cooperative exploration with ground-penetrating radar.",
+    "agency": "NASA",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-11/",
+    "unconfirmed": false
+   },
+   {
+    "name": "MPAc",
+    "kind": "Laser & reflectors",
+    "purpose": "ESA pointing actuator for the MoonLIGHT retroreflector; lunar geodesy and relativity tests.",
+    "agency": "international",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-11/",
+    "unconfirmed": false
+   },
+   {
+    "name": "LUSEM",
+    "kind": "Space environment",
+    "purpose": "KASI solid-state telescopes monitoring high-energy particles near the surface.",
+    "agency": "international",
+    "sourceUrl": "https://science.nasa.gov/lunar-science/clps-deliveries/cp-11/",
+    "unconfirmed": false
+   },
+   {
+    "name": "ALEPH-1",
+    "kind": "Biology & agriculture",
+    "purpose": "Lunaria One (Australia) test of plant growth in the lunar environment.",
+    "agency": "commercial",
+    "sourceUrl": "https://en.wikipedia.org/wiki/IM-3",
+    "unconfirmed": true
+   }
+  ]
+ },
+ {
+  "name": "Masten Mission One",
+  "provider": "Masten Space Systems",
+  "vehicle": "XL-1",
+  "status": "cancelled",
+  "landingUTC": null,
+  "lat": null,
+  "lonEast": null,
+  "siteSlug": null,
+  "sunAtTouchdown": null,
+  "launchDate": null,
+  "launchWindow": null,
+  "launchPrecision": null,
+  "target": "Lunar south pole region (planned)",
+  "coordinateKind": null,
+  "payloadCount": null,
+  "note": "Cancelled after Masten's July 2022 bankruptcy; assets acquired by Astrobotic. Had been awarded April 2020 for a south-pole delivery.",
+  "sources": "NASA CLPS announcements. Curated snapshot, not a live manifest.",
+  "sourceUrls": [
+   "https://en.wikipedia.org/wiki/Commercial_Lunar_Payload_Services"
+  ],
+  "unconfirmed": true,
+  "lastReviewed": "2026-10-17"
+ }
+]

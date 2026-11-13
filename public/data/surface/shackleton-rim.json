@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "shackleton-rim",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -89.936,
+  "lonEast": -137.5077,
+  "heightM": 1426,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/shackleton-rim.mesh.bin",
+  "uv": "/data/surface/shackleton-rim.uv.bin",
+  "minHeightM": 829.53,
+  "maxHeightM": 1525.15,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "6e29b00d3d4dc43a45e0689adfd1bf7994b684ff8893ddbea630633cca77803e",
+  "uvSha256": "75d6fc30e8639bc6157fd012324fd1a6ce194d4bd8992ebf07ae7f068ed67129"
+}

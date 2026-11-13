@@ -1,0 +1,39 @@
+.mission-handbook{max-width:1080px!important;padding:28px;color:#e4e4e7;line-height:1.65;font-size:15px;overflow-wrap:anywhere}
+.mission-handbook h1{font-size:clamp(26px,4vw,36px);font-weight:650;letter-spacing:-.6px;line-height:1.2;color:#fafafa;margin:10px 0}
+.mission-handbook h2{font-size:23px;font-weight:600;letter-spacing:-.35px;line-height:1.3;color:#fafafa;margin-bottom:10px}
+.mission-handbook h3{font-weight:600;font-size:16px;color:#fafafa}
+.mission-handbook p{margin:8px 0;max-width:78ch;color:#b4b4bf}
+.mission-handbook section{scroll-margin-top:16px;margin:32px 0;padding-top:24px;border-top:1px solid #262626}
+.handbook-intro>svg{color:#4cc9f0}
+.handbook-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.handbook-actions button,.handbook-ask{min-height:44px;white-space:normal;text-align:left}
+.handbook-jump{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:22px;padding:12px 0}
+.mission-handbook a{color:#7dd7f3;text-decoration:underline;text-underline-offset:3px}
+.handbook-jump a{display:inline-flex;align-items:center;min-height:44px}
+.handbook-region-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:18px 0 10px}
+.handbook-region-tabs button{display:flex;align-items:center;gap:8px;min-width:0;min-height:48px;padding:10px 12px;border:1px solid #303036;border-radius:8px;text-align:left;line-height:1.35;font-weight:600}
+.handbook-region-tabs button[aria-pressed=true]{border-color:#4cc9f0;background:#4cc9f010;color:#fafafa}
+.handbook-region-tabs b{display:grid;place-items:center;flex-shrink:0;width:23px;height:23px;border:1px solid #52525b;border-radius:50%;font-size:12px}
+.handbook-figure,.handbook-energy{margin:12px 0;border:1px solid #303036;border-radius:10px;overflow:hidden;background:#000}
+.handbook-annotated{position:relative}
+.handbook-annotated img{width:100%;height:auto;display:block}
+.handbook-annotated svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.mission-handbook figcaption{padding:12px 16px;font-size:14px;line-height:1.6;color:#c3c3cc;border-top:1px solid #262626}
+.mission-handbook figcaption strong{color:#fafafa}
+.mission-handbook figcaption a{display:inline-block;margin-left:4px;min-height:32px}
+.handbook-three{list-style:decimal;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;padding-left:22px;margin:22px 0}
+.handbook-three p{font-size:14px}
+.handbook-definitions details{border-bottom:1px solid #303036}
+.handbook-definitions summary{padding:16px 4px;min-height:52px;cursor:pointer;color:#fafafa;font-size:16px;font-weight:550}
+.handbook-definitions details>div{padding:0 4px 20px}
+.handbook-range{border-left:2px solid #4cc9f0;padding:8px 12px;background:#4cc9f007}
+.handbook-definitions strong{color:#e4e4e7;font-weight:600}
+.handbook-ask{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:8px 12px;border:1px solid #3f3f46;border-radius:8px;color:#7dd7f3}
+.handbook-energy{max-width:700px}
+.handbook-energy img{display:block;width:100%;height:auto}
+.handbook-tools>div{display:grid;grid-template-columns:150px minmax(0,1fr);gap:18px;padding:14px 0;border-bottom:1px solid #262626}
+.handbook-tools dt{color:#fafafa;font-weight:600}
+.handbook-tools dd{margin:0;color:#b4b4bf}
+.handbook-note{padding:12px 16px;border:1px solid #303036;border-radius:8px}
+.handbook-checklist{list-style:decimal;padding-left:22px;display:grid;gap:12px;max-width:78ch}
+@media(max-width:600px){.mission-handbook{padding:22px 16px;font-size:15px}.handbook-three{grid-template-columns:1fr;gap:10px}.handbook-region-tabs button{display:grid;justify-items:start;padding:8px;font-size:13px}.handbook-tools>div{grid-template-columns:1fr;gap:3px}.mission-handbook h2{font-size:21px}.handbook-actions button{flex:1 1 140px}}

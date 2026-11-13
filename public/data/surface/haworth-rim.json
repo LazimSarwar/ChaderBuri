@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "haworth-rim",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -86.2887,
+  "lonEast": 1.2877,
+  "heightM": 2874,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/haworth-rim.mesh.bin",
+  "uv": "/data/surface/haworth-rim.uv.bin",
+  "minHeightM": 2649.37,
+  "maxHeightM": 3198.16,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "7eca051e7a0e47948fb6648c4c6ef7f28f328ba020544c3e38ed518fa40438a8",
+  "uvSha256": "ab9cd1943a95f9eda6f6938e048572d6b9f84423edbdd402f524c3354ad4fee1"
+}

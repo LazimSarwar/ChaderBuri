@@ -1,0 +1,34 @@
+/* In-scene terrain overlay and observation-marker labels (src/space/TerrainOverlay.tsx, FieldMarkers.tsx).
+   One size scale: 11 px names, 10.5 px values; distance scales them between 78% and 100% only. Every label sits on a
+   dark backing (pill or halo) so it reads over lit regolith, shadow and the overlay tint alike. */
+.overlay-labels { position: absolute; inset: 0 auto auto 0; width: 0; height: 0; pointer-events: none; }
+.ovl-label {
+  position: absolute; left: 0; top: 0; transform-origin: 50% 100%; will-change: transform, opacity;
+  font: 500 11px/1.25 system-ui, -apple-system, 'Segoe UI', sans-serif; letter-spacing: .02em; color: #e6f6ff;
+  white-space: nowrap; pointer-events: none; user-select: none;
+  text-shadow: 0 1px 2px rgba(0, 6, 14, .95), 0 0 6px rgba(0, 10, 20, .8);
+}
+.ovl-ring, .ovl-contour {
+  padding: 1px 5px; border-radius: 3px; background: rgba(3, 14, 22, .62); font-size: 10.5px; font-variant-numeric: tabular-nums; text-shadow: none;
+}
+.ovl-ring { color: #f6e7c4; border: 1px dashed rgba(246, 231, 196, .45); }
+.ovl-contour { color: #ffffff; border: 1px solid rgba(191, 238, 255, .5); font-weight: 600; }
+.ovl-north { font-weight: 700; font-size: 12px; color: #ffc768; }
+.ovl-pin {
+  display: inline-flex; align-items: center; gap: 6px; padding: 3px 8px 3px 6px; border-radius: 3px;
+  background: rgba(6, 22, 34, .72); border: 1px solid rgba(143, 222, 255, .38);
+  text-shadow: none; font-variant-numeric: tabular-nums;
+}
+.ovl-pin i { width: 6px; height: 6px; border-radius: 50%; background: var(--pin, #8fdcff); box-shadow: 0 0 6px var(--pin, #8fdcff); flex: none; }
+.ovl-pin b { font-weight: 600; }
+.ovl-pin span { color: #a9c6d4; }
+.ovl-marker {
+  display: inline-flex; align-items: center; gap: 5px; padding: 2px 7px; border-radius: 3px;
+  background: rgba(8, 16, 24, .74); border: 1px solid var(--pin, #8fdcff); text-shadow: none; max-width: 220px;
+}
+.ovl-marker em { font-style: normal; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--pin, #8fdcff); }
+.ovl-marker span { overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 767px) {
+  .ovl-label { font-size: 10px; }
+  .ovl-ring, .ovl-contour { font-size: 10px; }
+}

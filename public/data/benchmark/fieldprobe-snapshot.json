@@ -1,0 +1,197 @@
+{
+ "version": 1,
+ "createdUTC": "2026-10-16T21:12:42.366136+00:00",
+ "note": "Recorded live from JPL Horizons (same observer convention as the app). Served by FieldProbe only in ?snapshot=1 demo mode, with a visible badge.",
+ "entries": [
+  {
+   "body": "sun",
+   "slug": "shackleton-rim",
+   "lat": -89.936,
+   "lonEast": 222.4923,
+   "epoch": "2026-Oct-12 16:00",
+   "epochMs": 1791820800000.0,
+   "row": {
+    "t": "2026-Oct-12 16:00",
+    "az": 297.946691,
+    "el": 1.267246,
+    "radiusDeg": 0.26762431,
+    "rangeKm": 148943162.567
+   },
+   "cachedRow": {
+    "az": 297.946691,
+    "el": 1.267246
+   }
+  },
+  {
+   "body": "earth",
+   "slug": "shackleton-rim",
+   "lat": -89.936,
+   "lonEast": 222.4923,
+   "epoch": "2026-Oct-12 16:00",
+   "epochMs": 1791820800000.0,
+   "row": {
+    "t": "2026-Oct-12 16:00",
+    "az": 141.627595,
+    "el": -6.737693,
+    "radiusDeg": 0.92407417,
+    "rangeKm": 395483.596
+   },
+   "cachedRow": {
+    "az": 141.627595,
+    "el": -6.737693
+   }
+  },
+  {
+   "body": "sun",
+   "slug": "malapert-massif",
+   "lat": -85.988,
+   "lonEast": 2.0577,
+   "epoch": "2027-Feb-23 00:00",
+   "epochMs": 1803340800000.0,
+   "row": {
+    "t": "2027-Feb-23 00:00",
+    "az": 336.356506,
+    "el": 3.266092,
+    "radiusDeg": 0.26875375,
+    "rangeKm": 148317296.223
+   },
+   "cachedRow": {
+    "az": 336.356506,
+    "el": 3.266092
+   }
+  },
+  {
+   "body": "earth",
+   "slug": "malapert-massif",
+   "lat": -85.988,
+   "lonEast": 2.0577,
+   "epoch": "2027-Feb-23 00:00",
+   "epochMs": 1803340800000.0,
+   "row": {
+    "t": "2027-Feb-23 00:00",
+    "az": 3.44263,
+    "el": -0.749365,
+    "radiusDeg": 0.98318944,
+    "rangeKm": 371706.833
+   },
+   "cachedRow": {
+    "az": 3.44263,
+    "el": -0.749365
+   }
+  },
+  {
+   "body": "sun",
+   "slug": "de-gerlache-rim",
+   "lat": -88.664,
+   "lonEast": 291.5939,
+   "epoch": "2027-Sep-19 08:00",
+   "epochMs": 1821340800000.0,
+   "row": {
+    "t": "2027-Sep-19 08:00",
+    "az": 23.895629,
+    "el": 2.35406,
+    "radiusDeg": 0.26468792,
+    "rangeKm": 150595515.92
+   },
+   "cachedRow": {
+    "az": 23.895629,
+    "el": 2.35406
+   }
+  },
+  {
+   "body": "earth",
+   "slug": "de-gerlache-rim",
+   "lat": -88.664,
+   "lonEast": 291.5939,
+   "epoch": "2027-Sep-19 08:00",
+   "epochMs": 1821340800000.0,
+   "row": {
+    "t": "2027-Sep-19 08:00",
+    "az": 63.080359,
+    "el": 7.009176,
+    "radiusDeg": 0.94030847,
+    "rangeKm": 388656.176
+   },
+   "cachedRow": {
+    "az": 63.080359,
+    "el": 7.009176
+   }
+  },
+  {
+   "body": "sun",
+   "slug": "faustini-rim",
+   "lat": -87.1277,
+   "lonEast": 65.3089,
+   "epoch": "2028-Apr-23 00:00",
+   "epochMs": 1840060800000.0,
+   "row": {
+    "t": "2028-Apr-23 00:00",
+    "az": 132.315473,
+    "el": -3.487416,
+    "radiusDeg": 0.2656525,
+    "rangeKm": 150048706.578
+   },
+   "cachedRow": {
+    "az": 132.315473,
+    "el": -3.487416
+   }
+  },
+  {
+   "body": "earth",
+   "slug": "faustini-rim",
+   "lat": -87.1277,
+   "lonEast": 65.3089,
+   "epoch": "2028-Apr-23 00:00",
+   "epochMs": 1840060800000.0,
+   "row": {
+    "t": "2028-Apr-23 00:00",
+    "az": 291.060899,
+    "el": 7.142863,
+    "radiusDeg": 0.91470861,
+    "rangeKm": 399532.511
+   },
+   "cachedRow": {
+    "az": 291.060899,
+    "el": 7.142863
+   }
+  },
+  {
+   "body": "sun",
+   "slug": "malapert-massif",
+   "lat": -85.988,
+   "lonEast": 2.0577,
+   "epoch": "2028-Sep-03 08:00",
+   "epochMs": 1851580800000.0,
+   "row": {
+    "t": "2028-Sep-03 08:00",
+    "az": 6.780676,
+    "el": 5.220694,
+    "radiusDeg": 0.26348042,
+    "rangeKm": 151285691.793
+   },
+   "cachedRow": {
+    "az": 6.780676,
+    "el": 5.220694
+   }
+  },
+  {
+   "body": "earth",
+   "slug": "malapert-massif",
+   "lat": -85.988,
+   "lonEast": 2.0577,
+   "epoch": "2028-Sep-03 08:00",
+   "epochMs": 1851580800000.0,
+   "row": {
+    "t": "2028-Sep-03 08:00",
+    "az": 359.53242,
+    "el": 8.283245,
+    "radiusDeg": 0.90150125,
+    "rangeKm": 405385.325
+   },
+   "cachedRow": {
+    "az": 359.53242,
+    "el": 8.283245
+   }
+  }
+ ]
+}

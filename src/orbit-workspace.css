@@ -1,0 +1,75 @@
+/* Orbital UI only: dashboard, surface controls and the approved opening keep
+   their existing layout. Rendering and scene quality are unchanged. */
+.orbit-time-toggle,.orbit-play-label,.space-nav-label,.orbit-menu-explain{display:none}
+.orbit-intro{position:absolute;left:12px;bottom:8px;max-width:370px;padding:18px;border:1px solid #262626;border-radius:12px;background:#000e;color:#fafafa}
+.orbit-intro h1{font-size:23px;font-weight:550;line-height:1.2}
+.orbit-intro h1:focus-visible{outline:2px solid #dfc187;outline-offset:5px;border-radius:2px}
+.orbit-loading-status{flex-shrink:0;align-self:flex-start;max-width:100%;padding:0 10px;color:#b8c3cf;font-size:11px;line-height:1.5}
+.orbit-loading-status button{margin-left:10px;min-height:44px;color:#4cc9f0;text-decoration:underline}
+.orbit-timeline-context{margin:0;padding:0 12px 4px;color:#a1a1aa;font-size:11px;line-height:16px}
+.orbit-timeline-context strong{font-weight:550;color:#e4e4e7}
+.orbit-intro p{font-size:13px;line-height:1.5;color:#a1a1aa;margin:9px 0 14px}
+.orbit-intro>div{display:flex;gap:8px}
+.orbit-intro button{min-height:44px;padding:9px 12px;border:1px solid #333;border-radius:8px;font-size:12px;cursor:pointer}
+.orbit-intro button:first-child{background:#fafafa;border-color:#fafafa;color:#000}
+.landsight-workspace[data-orbit=true] .buri-corner{bottom:112px}
+.landsight-workspace[data-orbit=true] .buri-launch{display:flex;align-items:center;gap:8px;width:auto;height:50px;border-radius:26px;padding:4px 14px 4px 4px;background:#141414;color:#fafafa;border-color:#b9aa83}
+.landsight-workspace[data-orbit=true] .buri-launch>span{width:40px;height:40px;flex-shrink:0}
+.landsight-workspace[data-orbit=true] .buri-launch strong{font-size:13px;font-weight:550}
+
+@media(max-width:767px),(max-height:500px) and (max-width:1023px){
+ .landsight-workspace[data-orbit=true] .workspace-bar{gap:4px;padding:6px 8px 0}
+ .landsight-workspace[data-orbit=true] .workspace-bar .tool-button,
+ .landsight-workspace[data-orbit=true] .workspace-tabs button{min-height:44px;min-width:44px}
+ .landsight-workspace[data-orbit=true] .workspace-tabs{margin-left:auto}
+ .landsight-workspace[data-orbit=true] .brand>span:last-child,
+ .landsight-workspace[data-orbit=true] .workspace-bar .explain-toggle{display:none}
+ .landsight-workspace[data-orbit=true] .workspace-bar .brand{gap:0}
+ .landsight-workspace[data-orbit=true] .tools-menu{max-height:70dvh;overflow-y:auto}
+ .landsight-workspace[data-orbit=true] .tools-menu button{min-height:44px}
+ .landsight-workspace[data-orbit=true] .tools-menu .orbit-menu-explain{display:flex}
+ .landsight-workspace[data-orbit=true] .playback-bar{margin:0;padding:4px 0;gap:4px}
+ .landsight-workspace[data-orbit=true] .playback-bar .prediction-label{max-width:none;white-space:nowrap;font-size:11px}
+ .landsight-workspace[data-orbit=true] .orbit-time-toggle{display:inline-flex;align-items:center;justify-content:center}
+ .landsight-workspace[data-orbit=true] .orbit-play-label{display:inline;margin-left:6px}
+ .landsight-workspace[data-orbit=true] .playback-bar .tool-button{display:inline-flex;align-items:center;justify-content:center}
+ .landsight-workspace[data-orbit=true] .workspace-bar:not([data-time-expanded=true]) .time-advanced{display:none}
+ .landsight-workspace[data-orbit=true] .workspace-bar[data-time-expanded=true] .playback-bar{flex-wrap:wrap}
+ .landsight-workspace[data-orbit=true] .workspace-bar[data-time-expanded=true] .playback-bar>div{flex-wrap:wrap;justify-content:flex-end}
+ .landsight-workspace[data-orbit=true] .workspace-bar[data-time-expanded=true] .epoch-readout{display:block}
+ .landsight-workspace[data-orbit=true] .ribbon-container{display:none}
+ .landsight-workspace[data-orbit=true]:has(.workspace-bar[data-time-expanded=true]) .ribbon-container{display:block;max-height:105px;overflow:visible}
+ .landsight-workspace[data-orbit=true] .space-navigator{top:0;left:auto;right:2px;width:min(100%,380px);padding:4px;max-height:min(50dvh,320px,calc(100% - 88px));overflow-y:auto}
+ .landsight-workspace[data-orbit=true] .space-nav-row{max-width:none;margin:0;padding:0;gap:2px}
+ .landsight-workspace[data-orbit=true] .space-nav-row>button{display:flex;align-items:center;gap:4px;min-height:44px;padding:7px;font-size:11px;white-space:nowrap}
+ .landsight-workspace[data-orbit=true] .body-picker{min-width:0;flex:1}
+ .landsight-workspace[data-orbit=true] .body-picker select{min-height:44px;min-width:0;width:100%;font-size:12px}
+ .landsight-workspace[data-orbit=true] .space-nav-label{display:inline}
+ .landsight-workspace[data-orbit=true] .space-navigator:not([data-expanded=true]) :is(.space-quick,.lunar-view-shortcuts,.space-toggle-row,.body-context,.space-provenance){display:none}
+ .landsight-workspace[data-orbit=true] .space-navigator[data-expanded=true] :is(.space-quick button,.lunar-view-shortcuts button,.orbit-toggle,.space-settings label){min-height:44px;align-items:center}
+ .landsight-workspace[data-orbit=true] .space-navigator[data-expanded=true] .space-quick{display:flex;flex-wrap:wrap;gap:8px}
+ .landsight-workspace[data-orbit=true] .orbit-intro{left:2px;right:2px;bottom:64px;max-width:380px;padding:12px}
+ .landsight-workspace[data-orbit=true] .orbit-intro h1{font-size:20px}
+ .landsight-workspace[data-orbit=true] .orbit-intro p{font-size:12px;margin:6px 0 10px}
+ .landsight-workspace[data-orbit=true] .orbit-intro button{flex:1;padding:8px}
+ .landsight-workspace[data-orbit=true] .workspace-welcome{left:2px;right:2px;bottom:64px;width:auto;max-width:380px;max-height:40%;padding:12px}
+ .landsight-workspace[data-orbit=true] .workspace-welcome :is(.eyebrow,p,.welcome-links,.welcome-conditions,.welcome-choice small){display:none}
+ .landsight-workspace[data-orbit=true] .workspace-welcome h1{font-size:20px;line-height:1.2;margin:0 0 8px;letter-spacing:0}
+ .landsight-workspace[data-orbit=true] .welcome-choices{display:flex;gap:8px;margin:0}
+ .landsight-workspace[data-orbit=true] .welcome-choice{flex:1;min-height:48px;padding:8px;font-size:12px}
+ .landsight-workspace[data-orbit=true]:has(.space-navigator[data-expanded=true],.workspace-bar[data-time-expanded=true]) :is(.orbit-intro,.workspace-welcome){display:none}
+ .landsight-workspace[data-orbit=true] .buri-corner{bottom:max(12px,env(safe-area-inset-bottom));right:12px}
+ .landsight-workspace[data-orbit=true] .buri-launch{height:44px}
+ .landsight-workspace[data-orbit=true] .buri-launch>span{width:34px;height:34px}
+ .landsight-workspace[data-orbit=true]:has(.workspace-bar[data-time-expanded=true]) .buri-corner{bottom:140px}
+}
+@media(max-height:500px) and (max-width:1023px){
+ .landsight-workspace[data-orbit=true] .workspace-bar{flex-wrap:nowrap}
+ .landsight-workspace[data-orbit=true] .playback-bar{width:auto;margin-left:auto;border:0}
+ .landsight-workspace[data-orbit=true] .orbit-intro{max-width:340px;bottom:8px}
+ .landsight-workspace[data-orbit=true] .workspace-welcome{max-width:340px;bottom:8px;max-height:65%}
+}
+@media(max-width:767px),(max-height:500px) and (max-width:1023px){
+ .landsight-workspace[data-orbit=true] .workspace-welcome p.moon-orbit-context{display:block;font-size:12px;line-height:1.45;margin:0 0 10px}
+ .landsight-workspace[data-orbit=true] .workspace-welcome{max-height:min(55%,260px)}
+}

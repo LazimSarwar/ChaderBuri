@@ -1,0 +1,18 @@
+# Local working files: never uploaded to Vercel
+.env*
+/data/
+/work/
+/resource/
+/dist/
+/docs/
+/.playwright-mcp/
+node_modules/
+/*.png
+/*.jpeg
+/*.jpg
+/*.dart
+/visit-check.json
+/lp_ephem_manifest.json
+/project instruction.txt
+/space-apps-2026-build-guide.html
+/api/*.ts

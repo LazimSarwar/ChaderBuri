@@ -1,0 +1,32 @@
+node_modules/
+dist/
+.env
+.env.local
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.DS_Store
+data/dem/
+data/space-cache/
+data/benchmark-cache/
+data/rover-cache/
+.playwright-mcp/
+
+data/research-cache/
+
+# Local development tools, private reference material and review output
+.agents/
+.claude/
+.mcp.json
+skills-lock.json
+/outputs/
+/work/
+/resource/
+/project instruction.txt
+/*build-guide.html
+/atlas*.png
+/map-*.png
+/tab-*.png
+/lp_*.dart
+/lp_ephem_manifest.json

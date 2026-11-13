@@ -1,0 +1,182 @@
+{
+  "version": 2,
+  "createdUTC": "2026-11-09T15:22:13.239099+00:00",
+  "title": "Barker et al. 2021 \u00c2\u00b7 Site 1 ROI 4 \u00c2\u00b7 Table 2, case A",
+  "paper": "https://doi.org/10.1016/j.pss.2020.105119",
+  "paperUrl": "https://ntrs.nasa.gov/api/citations/20205009660/downloads/Mike%20Barker_%20Paper_%20Improved%20Lola.pdf",
+  "dataUrl": "https://pgda.gsfc.nasa.gov/products/78",
+  "start": "2024-01-01T00:00:00Z",
+  "stop": "2026-01-01T00:00:00Z",
+  "hours": 17544,
+  "pixelCount": 532,
+  "pixelScaleM": 5,
+  "areaM2": 13300,
+  "roiCentroidXYM": [
+    -11287.5,
+    -12167.5
+  ],
+  "comparisonType": "Nominal regional comparison, not replication of the published uncertainty ensemble",
+  "matching": [
+    "Published ROI raster centres and area",
+    "Two-year interval; hourly half-open sampling",
+    "1 m and 5 m observer heights",
+    "DE421 Moon mean Earth frame",
+    "0.5\u00c2\u00b0 azimuth horizon sampling"
+  ],
+  "differences": [
+    "One nominal DEM, not 100 uncertainty clones; published illumination and LCIP use the 1st percentile and LCSP the 99th percentile",
+    "Uniform solar-disc area weighting instead of published 550 nm limb darkening",
+    "5 m near-field through 5 km; 20/120 m far-field through 220 km instead of published 80/240 m products",
+    "Geometric DE440 Sun positions; no light-time/aberration or Earth-eclipse mask"
+  ],
+  "acceptance": "No numerical pass/fail threshold: the nominal mean and an ensemble percentile are different statistics",
+  "rows": [
+    {
+      "mastHeightM": 1,
+      "nominal": {
+        "meanPct": 77.45836549107398,
+        "longestDarkDays": 10.059053884711778,
+        "longestLightDays": 192.54448621553883
+      },
+      "published": {
+        "meanPct": 69.61,
+        "longestDarkDays": 13.27,
+        "longestLightDays": 136.49
+      },
+      "difference": {
+        "meanPct": 7.848365491073977,
+        "longestDarkDays": -3.2109461152882215,
+        "longestLightDays": 56.054486215538816
+      }
+    },
+    {
+      "mastHeightM": 5,
+      "nominal": {
+        "meanPct": 88.54643808890958,
+        "longestDarkDays": 3.888941102756892,
+        "longestLightDays": 232.0815319548872
+      },
+      "published": {
+        "meanPct": 88.12,
+        "longestDarkDays": 4.0,
+        "longestLightDays": 231.2
+      },
+      "difference": {
+        "meanPct": 0.4264380889095776,
+        "longestDarkDays": -0.11105889724310813,
+        "longestLightDays": 0.8815319548872083
+      }
+    }
+  ],
+  "sources": [
+    {
+      "path": "naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "path": "pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "path": "moon_pa_de421_1900-2050.bpc",
+      "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf"
+    },
+    {
+      "path": "moon_080317.tf",
+      "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+    },
+    {
+      "path": "de440s.bsp",
+      "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2"
+    },
+    {
+      "path": "Site01_final_adj_5mpp_surf.tif",
+      "sha256": "3ba7b97cb00a2bcf21189c3aeb535f65afc21207154ab9f0d43c5bdc1f7e747e"
+    },
+    {
+      "path": "Site01_ROIs.tgz",
+      "sha256": "40b961417a344ce0274aecbab522e171a22f658507d82e8fb4d7bc97526ffc4f"
+    },
+    {
+      "path": "barker2021.pdf",
+      "sha256": "99bf83472a2ccc87df3764fd87459a612e9dfa8620969107f758933ea6dc9af3"
+    },
+    {
+      "path": "ldem_85s_20m.img",
+      "sha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2"
+    },
+    {
+      "path": "ldem_75s_120m.img",
+      "sha256": "ae3afc3c75c33d43666ca06c83ca08f0b12ef03b7d36d2d791d972730794391b"
+    }
+  ],
+  "cloneErrorSource": null,
+  "audit": {
+    "referenceTable": "Table 2, case A, ROI 4; values checked against rendered page 8",
+    "rasterCentresVerified": true,
+    "mastHeightMeaning": "Observer height above ground, not terrain pixel resolution",
+    "statisticalMismatch": "Nominal regional mean versus 1st/99th percentile across 100 spatially correlated terrain clones",
+    "causalStatus": "The paper explains an optimistic nominal bias from near-field horizon uncertainty. Its magnitude has not been isolated in Landsight.",
+    "unresolved": [
+      "100 original clone calculations",
+      "Matched 550 nm limb darkening",
+      "Matched 80/240 m far-field terrain"
+    ],
+    "pixelMetricRanges": {
+      "1": {
+        "meanPct": {
+          "min": 70.03686236516825,
+          "max": 85.11184256294038
+        },
+        "longestDarkDays": {
+          "min": 5.291666666666667,
+          "max": 21.208333333333332
+        },
+        "longestLightDays": {
+          "min": 87.29166666666667,
+          "max": 221.70833333333334
+        }
+      },
+      "5": {
+        "meanPct": {
+          "min": 85.66630393038861,
+          "max": 90.43068122105784
+        },
+        "longestDarkDays": {
+          "min": 3.75,
+          "max": 4.666666666666667
+        },
+        "longestLightDays": {
+          "min": 220.29166666666666,
+          "max": 233.41666666666666
+        }
+      }
+    },
+    "radialSamplingM": {
+      "nearFieldStep": 0.25,
+      "nearFieldReach": 500,
+      "localTerrainReach": 5000,
+      "maximum": 220000.0,
+      "sampleCount": 4450
+    },
+    "horizonCacheSignature": "0dda76a16b5902760047002baf3365bff686a8854809febe83ed1092beeb7cf3",
+    "horizonCacheSha256": "c45b52ab8c1624d900cd32977ec8a59c54f30de7e00774c52ba90eccbd06e659",
+    "sunCacheSha256": "78ca5ac41cd20f7726ff8079324b95bc492aa18d151a79a39c376588d704dd45",
+    "generatorSha256": "b23cc23262998f87d0c1b611c06d00229bd99603d60b819f0baf3d6d919d0f78",
+    "discDiagnostic": {
+      "model": "Linear limb darkening; all coefficients from 0 to 1, not a matched 550 nm measurement",
+      "streaksUnchanged": true,
+      "meanBoundsPct": {
+        "1": {
+          "lower": 77.3284615650149,
+          "upper": 77.59407973486547
+        },
+        "5": {
+          "lower": 88.45091603870111,
+          "upper": 88.66688426506836
+        }
+      },
+      "mathSha256": "652918115328fb3c06e4b52229186e82ea88c205bcd1de01d8ec8fad54030345"
+    }
+  }
+}

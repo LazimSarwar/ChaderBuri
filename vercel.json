@@ -1,0 +1,12 @@
+{
+  "framework": "vite",
+  "installCommand": "npm ci",
+  "buildCommand": "npx vite build",
+  "outputDirectory": "dist",
+  "functions": {
+    "api/companion.mjs": {
+      "includeFiles": "public/data/{sites.json,prediction-index.json,missions.json,ephemeris/**,horizons/**,dispersion/**,dsn/**,validation/**,benchmark/**}",
+      "maxDuration": 60
+    }
+  }
+}

@@ -1,0 +1,80 @@
+{
+ "version": 1,
+ "createdUTC": "2026-10-16T21:10:48.953514+00:00",
+ "method": "Duty-cycle classification re-run under alternative model choices: V0 shipped (point-sun centre vs terrain mask, hourly), V1 solar-disc fraction >= 50% above the mask, V2 point-sun on a 10-min linear interpolation. The spread bounds model-choice sensitivity of headline percentages; it is not a measurement error bar. The terrain axis is covered by the Barker 2021 clone ensemble (see horizons residuals and benchmark audit).",
+ "rows": [
+  {
+   "slug": "shackleton-rim",
+   "litPctPoint1h": 52.66,
+   "litPctDisc1h": 52.66,
+   "litPctPoint10min": 52.65,
+   "maxAbsSpreadPct": 0.01,
+   "linkPct": 52.49
+  },
+  {
+   "slug": "shackleton-floor",
+   "litPctPoint1h": 0.0,
+   "litPctDisc1h": 0.0,
+   "litPctPoint10min": 0.0,
+   "maxAbsSpreadPct": 0.0,
+   "linkPct": 0.0
+  },
+  {
+   "slug": "malapert-massif",
+   "litPctPoint1h": 64.35,
+   "litPctDisc1h": 64.35,
+   "litPctPoint10min": 64.34,
+   "maxAbsSpreadPct": 0.0,
+   "linkPct": 80.73
+  },
+  {
+   "slug": "polar-high-point",
+   "litPctPoint1h": 62.47,
+   "litPctDisc1h": 62.47,
+   "litPctPoint10min": 62.46,
+   "maxAbsSpreadPct": 0.0,
+   "linkPct": 74.67
+  },
+  {
+   "slug": "im-1-odysseus-site",
+   "litPctPoint1h": 46.33,
+   "litPctDisc1h": 46.33,
+   "litPctPoint10min": 46.33,
+   "maxAbsSpreadPct": 0.01,
+   "linkPct": 100.0
+  },
+  {
+   "slug": "de-gerlache-rim",
+   "litPctPoint1h": 83.24,
+   "litPctDisc1h": 83.24,
+   "litPctPoint10min": 83.24,
+   "maxAbsSpreadPct": 0.0,
+   "linkPct": 57.46
+  },
+  {
+   "slug": "haworth-rim",
+   "litPctPoint1h": 21.12,
+   "litPctDisc1h": 21.12,
+   "litPctPoint10min": 21.13,
+   "maxAbsSpreadPct": 0.01,
+   "linkPct": 0.0
+  },
+  {
+   "slug": "faustini-rim",
+   "litPctPoint1h": 55.5,
+   "litPctDisc1h": 55.5,
+   "litPctPoint10min": 55.54,
+   "maxAbsSpreadPct": 0.04,
+   "linkPct": 41.07
+  },
+  {
+   "slug": "nobile-rim",
+   "litPctPoint1h": 43.52,
+   "litPctDisc1h": 43.52,
+   "litPctPoint10min": 43.55,
+   "maxAbsSpreadPct": 0.03,
+   "linkPct": 34.53
+  }
+ ],
+ "maxSpreadPct": 0.04
+}

@@ -1,0 +1,13 @@
+/* Reuse the existing assignment/debrief inside the field's scrollable tool sheet. */
+.field-sheet[data-tool=review] .field-sheet-body{overscroll-behavior:contain;overflow-wrap:anywhere;font-size:calc(14px*var(--f-fs));line-height:1.55}
+.field-sheet[data-tool=review] :is(.expedition-menu>button,.decision-choices button){font-size:inherit;min-height:44px}
+.field-sheet[data-tool=review] .expedition-menu small{font-size:calc(13px*var(--f-fs))}
+.field-sheet[data-tool=review] .assignment-steps{padding-left:22px}
+.field-sheet[data-tool=review] .assignment-steps li{margin-block:8px}
+.field-sheet[data-tool=review] .expedition-assignment-review :is(h3,h4){font-size:calc(16px*var(--f-fs));line-height:1.4}
+.field-sheet[data-tool=review] .decision-evidence dl{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.field-sheet[data-tool=review] .decision-evidence dd{margin:0}
+.field-sheet[data-tool=review] .decision-evidence :is(strong,dl){font-size:inherit}
+.field-sheet[data-tool=review] .tool-button{font-size:inherit;min-height:44px;white-space:normal}
+.field-sheet[data-tool=review] .field-button{margin-top:14px}
+@media(max-height:500px) and (max-width:1023px){.field-hud .field-sheet[data-tool=review]{left:var(--f-edge);right:var(--f-edge);width:auto;max-width:none}}

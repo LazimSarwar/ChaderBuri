@@ -1,0 +1,41 @@
+/* Quiet, shared report card: solar amber identifies the source without repainting the lunar scene. */
+.space-weather{color:var(--f-ink,var(--ink,#fafafa));font:calc(14px*var(--f-fs,1))/1.5 "Inter Variable",Inter,system-ui,sans-serif;border:1px solid var(--f-soft,rgba(255,255,255,.18));border-radius:10px;background:var(--f-panel,rgba(4,4,5,.94));min-width:0}
+.space-weather *{box-sizing:border-box}
+.space-weather>details>summary{list-style:none;display:flex;align-items:center;gap:10px;min-height:56px;padding:10px 14px;cursor:pointer}
+.space-weather>details>summary::-webkit-details-marker{display:none}
+.space-weather>details>summary>svg:first-child{color:var(--f-sun,#f5b942);flex:none}
+.space-weather>details>summary>svg:last-child{margin-left:auto;flex:none}
+.space-weather>details[open]>summary>svg:last-child{transform:rotate(180deg)}
+.space-weather>details>summary span{display:grid;gap:1px;min-width:0}
+.space-weather summary strong{font-size:calc(15px*var(--f-fs,1));line-height:1.3}
+.space-weather summary small{font-size:calc(12px*var(--f-fs,1));color:var(--f-ink2,#d4d4d8)}
+.space-weather-body{padding:0 14px 14px;min-width:0}
+.space-weather-body p{margin:10px 0;max-width:72ch}
+.space-weather-intro{color:var(--f-ink2,#d4d4d8)}
+.space-weather-dates{display:grid;gap:3px;font-size:calc(12px*var(--f-fs,1));color:var(--f-dim,#a1a1aa);font-variant-numeric:tabular-nums}
+.space-weather-clock,.space-weather-status{border-left:2px solid var(--f-sun,#f5b942);padding:6px 10px;background:rgba(245,185,66,.05)}
+.space-weather-types{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:14px}
+.space-weather button{font:inherit;color:inherit;cursor:pointer;min-height:44px;border:1px solid var(--f-soft,rgba(255,255,255,.18));border-radius:7px;background:transparent;padding:8px 10px}
+.space-weather button:disabled{opacity:.6;cursor:wait}
+.space-weather-types button{display:grid;gap:3px;text-align:left;font-size:calc(13px*var(--f-fs,1));min-width:0;overflow-wrap:anywhere}
+.space-weather-types button strong{font-size:calc(12px*var(--f-fs,1));font-weight:500;color:var(--f-ink2,#d4d4d8)}
+.space-weather-types button[aria-pressed=true]{border-color:var(--f-sun,#f5b942);background:rgba(245,185,66,.08)}
+.space-weather-meaning{font-size:calc(13px*var(--f-fs,1))}
+.space-weather-feed-time{font-size:calc(12px*var(--f-fs,1));color:var(--f-dim,#a1a1aa)}
+.space-weather-events{list-style:none;padding:0;margin:10px 0;display:grid}
+.space-weather-events li{padding:11px 0;border-top:1px solid var(--f-soft,rgba(255,255,255,.16));min-width:0}
+.space-weather-events li>div{display:grid;gap:2px}
+.space-weather-events li strong{font-size:calc(14px*var(--f-fs,1));font-weight:600}
+.space-weather-events time{font-size:calc(12px*var(--f-fs,1));color:var(--f-ink2,#d4d4d8)}
+.space-weather-events li p{font-size:calc(12px*var(--f-fs,1));margin:4px 0;color:var(--f-ink2,#d4d4d8)}
+.space-weather a{color:var(--f-earth,#4cc9f0);display:inline-flex;align-items:center;gap:5px;min-height:44px;text-underline-offset:3px;overflow-wrap:anywhere}
+.space-weather-events a{font-size:calc(13px*var(--f-fs,1))}
+.space-weather-empty{font-size:calc(13px*var(--f-fs,1));color:var(--f-ink2,#d4d4d8)}
+.space-weather-explain{border-top:1px solid var(--f-soft,rgba(255,255,255,.16));margin-top:12px;font-size:calc(13px*var(--f-fs,1))}
+.space-weather-explain summary{padding:10px 0;min-height:44px;cursor:pointer;color:var(--f-ink,#fafafa)}
+.space-weather-explain p{color:var(--f-ink2,#d4d4d8)}
+.space-weather-actions{display:flex;flex-wrap:wrap;align-items:center;gap:4px 12px;margin-top:12px}
+.space-weather-actions button{display:inline-flex;gap:6px;align-items:center;font-size:calc(13px*var(--f-fs,1))}
+.space-weather-actions a{font-size:calc(12px*var(--f-fs,1))}
+.space-weather :is(button,a,summary):focus-visible{outline:2px solid var(--f-earth,#4cc9f0);outline-offset:3px}
+@media(max-width:360px){.space-weather>details>summary{padding:9px 10px}.space-weather-body{padding:0 10px 10px}.space-weather-types{gap:5px}.space-weather-types button{padding:7px}}

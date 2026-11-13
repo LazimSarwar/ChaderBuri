@@ -1,0 +1,126 @@
+/* The landscape is the stage. Ivory instruments, blue Earth, amber Sun and the guide's existing warm type.
+   Details expand on request; no blur, extra WebGL passes, or continuous decorative animation. */
+.field-caption-detail {font-size:13px;color:var(--f-ink2);margin:4px 0 8px}
+.field-caption-detail summary {cursor:pointer;min-height:28px;display:flex;align-items:center;text-decoration:underline;text-underline-offset:3px}
+.field-caption-detail p {font:inherit;line-height:1.5!important;color:var(--f-ink2)}
+.field-caption-name {display:flex;gap:6px;align-items:center;flex-wrap:wrap;letter-spacing:0}
+.field-caption-steps {margin-left:auto;border:1px solid var(--f-soft);border-radius:6px;padding:5px 8px;min-height:36px;background:none;font-size:12px!important;color:var(--f-ink2)}
+.field-journey-actions {display:grid;gap:6px;margin-top:12px}
+.field-objective-blocked {color:var(--f-ink2);font-size:14px}
+.field-time-outside {display:grid;gap:8px;border-left:2px solid var(--f-sun);padding:8px 12px;margin-bottom:10px;font-size:14px}
+.field-time .field-back-before {margin:0 0 12px;width:100%}
+.field-time .field-changed {font-size:14px;margin:0 0 12px}
+.field-event-note {font-size:13px;color:var(--f-dim);margin:4px 0 10px}
+.mission-outside {display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:4px 10px;color:var(--f-sun)}
+.mission-outside button {background:none;border:0;text-decoration:underline;text-underline-offset:3px;min-height:36px;font-size:12px}
+.mission-strip-context[data-outside=true] {border-left:2px solid var(--f-sun)}
+.site-comparison>label {display:block;font-size:15px;font-weight:600;margin:4px 0 8px}
+.site-comparison>select {width:100%;min-height:44px;padding:8px;background:#101316;color:var(--f-ink);border:1px solid var(--f-line);border-radius:6px;font:inherit;font-size:14px}
+.comparison-context {font-size:13px!important;color:var(--f-dim);margin:8px 0 14px!important}
+.field-hud .console-sheet[aria-label="Compare sites"]>.decision-body>p {display:none}
+.field-hud .console-sheet,.field-hud .field-sheet {background:rgba(5,8,11,.98)}
+.field-hud .field-toast:not(.is-alert) {top:auto;bottom:calc(var(--f-strip) + 20px);background:#11171c;pointer-events:none;z-index:25}
+.comparison-pair {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.comparison-pair>section {min-width:0;border-left:2px solid var(--f-line);padding:4px 12px 10px}
+.comparison-pair>section:first-child {border-color:var(--f-earth)}
+.comparison-position {font-size:12px;color:var(--f-dim)}
+.comparison-pair h3 {font-size:16px!important;margin:4px 0!important;overflow-wrap:anywhere}
+.comparison-pair p {font-size:13px!important;margin:4px 0 12px!important}
+.comparison-pair [data-meets=true] {color:#9fe0b4}.comparison-pair [data-meets=false] {color:#f3c27a}
+.comparison-pair dl {margin:0 0 10px;display:grid;gap:6px}
+.comparison-pair dl>div {display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 10px;font-size:13px}
+.comparison-pair dt {color:var(--f-ink2)}.comparison-pair dd {margin:0;font-weight:600}
+.comparison-pair .field-button {font-size:13px;min-height:44px;width:100%;padding:6px}
+.comparison-explanation {margin:16px 0;font-size:14px;line-height:1.5}
+.comparison-explanation ul {padding-left:20px}.comparison-explanation p {font-size:14px!important}
+.comparison-explanation>summary {cursor:pointer;min-height:44px;align-content:center;text-decoration:underline;text-underline-offset:3px}
+.comparison-key {font-size:14px!important;line-height:1.4!important;margin:8px 0 12px!important}
+.field-time .field-time-returns {margin:0 0 12px;gap:6px}
+.field-hud .decision-readout[data-mode=why] {background:#090c10}
+.decision-readout[data-mode=why] .decision-site {margin:2px 0 4px}
+.decision-readout[data-mode=why] .decision-epoch {font-size:13px;margin:4px 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:4px 10px}
+.decision-readout[data-mode=why] .decision-epoch button {font-size:12px;padding:4px 8px;min-height:36px}
+.decision-why h3 {font-size:calc(18px*var(--f-fs));margin:8px 0}
+.decision-why [data-meets=true] {color:#9fe0b4}.decision-why [data-meets=false] {color:#f3c27a}
+.decision-why>p {font-size:calc(14px*var(--f-fs));line-height:1.5;margin:8px 0}
+.decision-why-facts {margin:12px 0;display:grid;gap:10px}
+.decision-why-facts>div {display:grid;grid-template-columns:1fr auto;gap:4px 12px;border-bottom:1px solid var(--f-soft);padding-bottom:10px}
+.decision-why-facts dt {font-size:calc(14px*var(--f-fs));color:var(--f-ink2)}
+.decision-why-facts dd {font-size:calc(14px*var(--f-fs));font-weight:600;margin:0;text-align:right;align-content:center}
+.decision-why-facts small {grid-column:1/-1;font-size:calc(12px*var(--f-fs));color:var(--f-dim)}
+.decision-why .decision-why-scope {font-size:calc(12px*var(--f-fs));color:var(--f-ink2)}
+.decision-readout[data-mode=why] details>summary {min-height:44px;align-content:center;font-size:14px;cursor:pointer}
+.field-map-loading {margin:0 0 8px;padding:8px 10px;border-left:2px solid var(--f-earth);font-size:14px;background:#11171c}
+.field-arrival-range {font-size:14px;margin:8px 0 12px;color:var(--f-ink2);line-height:1.4}
+.field-arrival-orientation {font-size:13px;color:var(--f-ink2);margin-top:8px}
+.field-arrival-orientation summary {min-height:36px;align-content:center;cursor:pointer}
+.field-arrival-orientation p {margin:4px 0 8px}
+@media(min-width:761px) {
+  .field-hud .mission-chips button {min-height:44px;padding:6px 9px;font-size:calc(13px*var(--f-fs))}
+  .field-hud .mission-chips button span {line-height:1.3}
+  .field-hud .mission-chips button strong {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:calc(12px*var(--f-fs));line-height:1.3;margin-top:4px}
+  .field-hud[data-travelling=true] .mission-chips button strong {display:none}
+}
+.comparison-full {margin-top:20px;border-top:1px solid var(--f-soft);padding-top:10px}
+.comparison-full>summary {cursor:pointer;min-height:44px;align-content:center;font-size:14px}
+.field-hud[data-chat=true] :is(.field-companion,.field-objective,.mission-console,.field-hint,.field-joystick,.field-jump) {visibility:hidden}
+.landsight-workspace:has(.field-hud[data-chat=true]) .luna-panel {background:#090c10}
+@media(max-width:760px) {
+  .field-hud .field-top {gap:4px 6px}
+  .field-hud .field-status {padding:5px 8px;gap:1px}
+  .field-hud .field-status strong {font-size:calc(13px*var(--f-fs));line-height:1.25}
+  .field-hud .field-status span,.field-hud .field-status small {font-size:calc(12px*var(--f-fs));gap:3px 6px}
+  .field-hud .field-status .field-now {font-size:11px;min-height:30px;padding:2px 5px}
+  .field-hud .field-status .field-dot {width:5px;height:5px}
+  .field-hud .field-corner {gap:4px;flex-wrap:nowrap}
+  .field-hud .field-corner .field-icon-button {width:36px;height:40px;border-radius:6px}
+  .field-hud .field-corner .field-pill {display:none}
+  .field-hud .field-compass-track {height:37px}
+  .field-hud .field-compass-marks {height:37px}
+  .field-hud .field-mark,.field-hud .field-tick b {font-size:12px}
+  .field-hud .field-heading {font-size:11px;margin-top:1px}
+  .field-hud .mission-strip {top:var(--f-centre-top,130px)}
+  .field-hud .mission-strip-context {font-size:calc(12px*var(--f-fs));margin-bottom:3px;padding:2px 4px}
+  .field-hud .mission-chips button {min-height:44px;padding:5px 7px;font-size:12px}
+  .field-hud .mission-chips button span {margin:0;line-height:1.2}
+  .field-hud .mission-chips>button strong {display:none}
+  .field-hud .mission-chips[data-expanded=true]>button strong {display:block;font-size:11px;margin-top:4px}
+  .field-hud .field-objective,.field-hud:has(.field-mission-note) .field-objective {top:var(--f-decision-bottom,var(--f-centre-top,140px))}
+  .field-hud .field-objective[data-open=true] {max-height:calc(100dvh - var(--f-decision-bottom,210px) - var(--f-strip) - 24px)}
+  .field-hud:has(.field-companion:not([data-hidden=true]) .field-caption.is-pinned) .field-objective:not([data-open=true]) {display:none}
+  .field-hud .field-companion,.field-hud:has(.field-objective) .field-companion {top:var(--f-decision-bottom,var(--f-centre-top,140px));gap:6px}
+  .field-hud .field-companion-portrait {display:none}
+  .field-hud .field-companion-body {width:100%;max-height:max(120px,min(42dvh,calc(100dvh - var(--f-decision-bottom,210px) - var(--f-strip) - 150px)));overflow-y:auto}
+  .field-hud .field-caption {padding:7px 10px;border-radius:8px;background:rgba(4,6,8,.97)}
+  .field-hud .field-caption-name {font-size:12px}
+  .field-hud .field-caption p {font-size:calc(16px*var(--f-fs));line-height:1.3}
+  .field-hud .field-caption-steps {min-height:36px;font-size:11px!important}
+  .field-hud .field-caption-detail {margin:0 0 4px;font-size:12px}
+  .field-hud .field-caption-detail p {font-size:13px}
+  .field-hud[data-decision] .field-objective,.field-hud[data-tool] .field-objective,.field-hud:has(.field-ask) .field-objective {display:none}
+  .field-hud .field-sheet,.field-hud .field-card-slot,.field-hud .field-ground-card {top:var(--f-decision-bottom,var(--f-centre-top,140px));bottom:calc(var(--f-strip) + 16px);max-height:none}
+  .field-hud .field-sheet {height:auto}
+  .field-hud .field-arrival {top:var(--f-centre-top,140px);max-height:calc(100dvh - var(--f-centre-top,140px) - var(--f-strip) - 24px)}
+  .field-hud:has(.field-ask) .field-companion {top:var(--f-decision-bottom,var(--f-centre-top,140px))}
+  .field-hud:has(.field-ask) .field-companion-body {max-height:none;overflow:visible}
+  .field-hud .field-ask {max-height:calc(100dvh - var(--f-decision-bottom,210px) - var(--f-strip) - 24px)!important;background:#090c10}
+  .field-hud .field-hint {font-size:11px;padding:4px 6px;max-width:170px;bottom:calc(var(--f-strip) + 22px)}
+  .field-hud .field-joystick {width:88px;height:88px}
+  .field-hud .field-joystick-knob {width:38px;height:38px}
+  .field-hud .field-jump {width:62px;height:62px;font-size:12px}
+  .field-hud .console-sheet>.decision-body>p:first-child,.field-hud .console-sheet>.decision-body>.decision-caption {font-size:12px;margin:4px 0 10px}
+  .comparison-pair {gap:8px}
+  .comparison-pair>section {padding:4px 8px}
+  .comparison-pair h3 {font-size:14px!important}
+  .comparison-pair dl>div {display:block;font-size:12px}
+  .comparison-pair dd {font-size:15px}
+  .field-hud .mission-outside {font-size:11px}
+}
+@media(max-width:760px) and (max-height:540px) {
+  .field-hud .field-status small,.field-hud .mission-strip-context>span:first-child {display:none}
+  .field-hud .field-companion {max-width:55vw;right:auto}
+  .field-hud .field-caption-detail {display:none}
+  .field-hud .field-joystick {width:64px;height:64px;bottom:calc(var(--f-strip) + 16px)}
+  .field-hud .field-jump {width:48px;height:48px;bottom:calc(var(--f-strip) + 22px)}
+}
+@media(prefers-reduced-motion:no-preference) {.comparison-pair>section {transition:border-color .15s ease}}

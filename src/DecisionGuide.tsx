@@ -1,0 +1,42 @@
+import { guideRepair } from './lib/guideRepair'
+import { DecisionReceipt } from './DecisionReceipt'
+import type { PredictionIndex } from './lib/predictionIndex'
+import type { Site } from './data'
+import type { ExploreSamples } from './GuideFootprint'
+import type { EphRow,Horizon } from './data'
+import { horizonAt } from './data'
+import { sampleSky } from './lib/science'
+import { nextHorizonCrossing } from './lib/attribution'
+import { eventJourney } from './lib/surfaceExplorer'
+import type { DecisionGuide as Guide,DecisionPair } from './lib/explorationDecision'
+import { DecisionAssumptions,DecisionEvidence,formatDecisionUTC } from './DecisionDebrief'
+import { useMemo,useState } from 'react'
+import type { FailurePreview,PreviewWindow } from './lib/failurePreview'
+import type { RobustnessAssessment } from './architect/robustness'
+import { GuideRobustness } from './GuideRobustness'
+import { FailureFocus } from './FailureFocus'
+import { GuideRepair,type GuideRepairContext } from './GuideRepair'
+import { guideRecommendation } from './lib/guideRepair'
+import type { Scn } from './architect/comparison'
+
+export type DecisionPreview={row:number;running:boolean;progress:number;canRestore:boolean;stop:()=>void;restore:()=>void;keep:()=>void}
+export function DecisionGuide(p:{run:Guide;pair:DecisionPair;sunRows:EphRow[];horizon:Horizon;preview:DecisionPreview;onRun:(run:Guide)=>void;onFace:(az:number,el:number)=>void;onPreview:(window:PreviewWindow,label:string,scenario?:Scn)=>void;site:Site;index:PredictionIndex;onExplore:ExploreSamples;onCompare:()=>void;repairContext:GuideRepairContext;onRepairCompare:(scenarios:Scn[],note:string)=>void;onEnd:()=>void;failures:{a:FailurePreview|null;b:FailurePreview|null}|null;robustness:{a:RobustnessAssessment;b:RobustnessAssessment}|null}){
+ const {run,pair}=p,sun=sampleSky(p.sunRows,run.originRow),mask=horizonAt(p.horizon,sun.az),clear=sun.el>mask
+ const [activeFailure,setActiveFailure]=useState<'A'|'B'|null>(()=>run.story?(run.story.original.row===pair.rowA?'A':'B'):null)
+ const [failureRequest,setFailureRequest]=useState(0)
+ const [repairLabel,setRepairLabel]=useState<'A'|'B'|null>(()=>run.story?(run.story.original.row===pair.rowA?'A':'B'):null)
+ const [failureExpanded,setFailureExpanded]=useState(false)
+ const repairScenario=useMemo(()=>repairLabel?{id:0,slug:pair.siteSlug,row:repairLabel==='A'?pair.rowA:pair.rowB,c:pair.constraints}:null,[repairLabel,pair])
+
+ const crossing=useMemo(()=>nextHorizonCrossing(p.sunRows,new Date(pair.utcA),p.horizon,!clear),[p.sunRows,p.horizon,pair.utcA,clear])
+ const window=eventJourney(run.originRow,crossing?.hours??null,p.sunRows.length-1)
+ return <><h3>Why is this window difficult?</h3><p className="decision-step">{run.step+1} / 3 · {['Read the skyline','Watch conditions change','Make a mission decision'][run.step]}</p><p>Starting scene · {formatDecisionUTC(pair.utcA)}</p>
+ {run.step===0&&<><p>At the Sun's bearing ({sun.az.toFixed(1)}°), the cached target skyline is {mask.toFixed(2)}°. The Sun centre is {sun.el.toFixed(2)}°: {clear?'above':'at or below'} this mask.</p><p>That direction explains sunlight access. Battery survival also depends on how long the light lasts and the lander's demand.</p><button className="tool-button" onClick={()=>p.onFace(sun.az,mask+1)}>Return & face target skyline</button><p className="visit-field-scope">Returns the camera to the target and starts a fresh trail. The skyline is a cached bearing; ridge distance is not supplied.</p><button className="tool-button" onClick={()=>p.onRun({...run,step:1})}>Next: watch the Sun</button></>}
+ {run.step===1&&<><p>{crossing?`The next estimated Sun-centre ${clear?'set':'rise'} is ${crossing.atUTC} UTC.`:'No future Sun-centre crossing was found in cached coverage.'}</p><p>A short preview spans one hour before and after this crossing. It returns the camera to the target and starts a fresh trail. Scene UTC advances; your comparison keeps the starting date above.</p><button className="tool-button" disabled={!window||p.preview.running} onClick={()=>{if(window)p.onPreview(window,`Sun ${clear?'setting':'rising'} at target`,{id:0,slug:pair.siteSlug,row:pair.rowA,c:pair.constraints})}}>Preview next Sun {clear?'set':'rise'}</button>{p.preview.running&&<><progress aria-label="Guided time preview" max={1} value={p.preview.progress}/><button className="tool-button" onClick={p.preview.stop}>Stop preview</button></>}{p.preview.canRestore&&<><button className="tool-button" onClick={p.preview.restore}>Restore pre-preview date</button><button className="tool-button" onClick={p.preview.keep}>Keep preview date</button></>}<button className="tool-button" disabled={p.preview.running} onClick={()=>p.onRun({...run,step:2})}>Next: compare landing dates</button><button className="visit-text-button" onClick={()=>p.onRun({...run,step:0})}>Back to skyline</button></>}
+ {run.step===2&&<><p>Compare the starting date with a seven-day slip. Hardware and requirements are identical; each verdict includes separate footprint and height checks.</p><DecisionAssumptions pair={pair}/><DecisionEvidence pair={pair} compact collapsedOriginal={repairLabel} takeaway={guideRecommendation(pair,p.robustness)} afterVerdict={(label,result)=>{
+  const key=label==='A'?'a':'b',failure=p.failures?.[key],assessment=p.robustness?.[key]
+  return <>{assessment&&repairLabel!==label&&<GuideRobustness assessment={assessment} nominal={result} context={p.repairContext} scenario={{id:0,slug:pair.siteSlug,row:label==='A'?pair.rowA:pair.rowB,c:pair.constraints}} onExplore={p.onExplore} onCompare={p.onRepairCompare}/>} {!result.pass&&(failure?<><button className="tool-button guide-failure-button" disabled={p.preview.running} onClick={()=>{setActiveFailure(label);setRepairLabel(null);setFailureExpanded(false);setFailureRequest(v=>v+1);p.onPreview(failure.window,`${label} · ${failure.title}`,{id:0,slug:pair.siteSlug,row:label==='A'?pair.rowA:pair.rowB,c:pair.constraints})}}>Show why {label} fails</button>{activeFailure===label&&(repairLabel!==label?<><FailureFocus failure={failure} label={label} preview={p.preview} request={failureRequest}/><button className="tool-button guide-failure-button" onClick={()=>{p.preview.restore();setRepairLabel(label);const original={id:0,slug:pair.siteSlug,row:label==='A'?pair.rowA:pair.rowB,c:pair.constraints},repair=guideRepair(p.repairContext.series,original);p.onRun({...run,source:run.source??{datasetId:p.index.datasetId,model:p.index.model.version},story:run.story&&run.story.original.row===original.row&&JSON.stringify(run.story.original.c)===JSON.stringify(original.c)&&JSON.stringify(run.story.repair?.c)===JSON.stringify(repair?.repaired.c)?run.story:{original:repair?.original??original,repair:repair?.repaired,reason:run.story?.reason??''}})}}>Try a repair</button></>:repairScenario&&<><GuideRepair scenario={repairScenario} context={p.repairContext} onApply={p.onRepairCompare} onExplore={p.onExplore} onCandidate={later=>{if(run.story)p.onRun({...run,story:{...run.story,later}})}}/><details className="guide-original" open={failureExpanded} onToggle={e=>setFailureExpanded(e.currentTarget.open)}><summary>What failed?</summary>{failureExpanded&&<FailureFocus failure={failure} label={label} preview={p.preview} request={failureRequest}/>}</details></>)}</>:<p className="visit-field-scope">Limiting-event preview unavailable. Inspect the full evidence in the planner.</p>)}</>
+ }}/>{!activeFailure&&p.preview.canRestore&&<div className="guide-preview-controls">{p.preview.running&&<button className="tool-button" onClick={p.preview.stop}>Stop time preview</button>}<button className="tool-button" onClick={p.preview.restore}>Restore pre-preview date</button></div>}{run.compared&&<p role="status">Comparison opened in mission planning. Revisit the evidence or keep exploring.</p>}<button className="tool-button" disabled={!pair.a||!pair.b} onClick={p.onCompare}>{repairLabel?'Compare original dates in planner':'Compare these dates in planner'}</button><p className="visit-field-scope">Scene previews leave both mission dates fixed. Opening comparison restores the starting scene date.</p><button className="visit-text-button" disabled={p.preview.running} onClick={()=>{setActiveFailure(null);p.onRun({...run,step:1})}}>Back to time preview</button></>}
+ {run.story&&<DecisionReceipt guide={run} context={p.repairContext} index={p.index} site={p.site} onGuide={p.onRun} onCompare={p.onRepairCompare}/>}
+ <button className="visit-text-button" onClick={p.onEnd}>End guide & restore starting date</button></>
+}

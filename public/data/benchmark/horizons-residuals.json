@@ -1,0 +1,126 @@
+{
+ "version": 1,
+ "createdUTC": "2026-10-16T20:47:45.640255+00:00",
+ "method": "Cached hourly az/el re-queried live from JPL Horizons (DE441, topocentric, site observer heights); separation via atan2 cross/dot. Provenance check, not an independent astronomical validation.",
+ "gateMaxDeg": 0.05,
+ "controlGateMinDeg": 5.0,
+ "results": [
+  {
+   "slug": "shackleton-rim",
+   "target": "sun",
+   "samples": 52,
+   "maxDeg": 1.21e-06,
+   "rmsDeg": 5.7e-07,
+   "medianDeg": 0.0,
+   "worst": {
+    "t": "2027-Sep-13 16:00",
+    "cachedAz": 161.969365,
+    "cachedEl": 0.968281,
+    "liveAz": 161.969365,
+    "liveEl": 0.968281,
+    "deltaDeg": 1.21e-06
+   }
+  },
+  {
+   "slug": "shackleton-rim",
+   "target": "earth",
+   "samples": 52,
+   "maxDeg": 1.21e-06,
+   "rmsDeg": 6.2e-07,
+   "medianDeg": 0.0,
+   "worst": {
+    "t": "2026-Nov-13 16:00",
+    "cachedAz": 136.73526,
+    "cachedEl": -5.02069,
+    "liveAz": 136.73526,
+    "liveEl": -5.02069,
+    "deltaDeg": 1.21e-06
+   }
+  },
+  {
+   "slug": "malapert-massif",
+   "target": "sun",
+   "samples": 52,
+   "maxDeg": 1.21e-06,
+   "rmsDeg": 5.6e-07,
+   "medianDeg": 0.0,
+   "worst": {
+    "t": "2026-Dec-15 16:00",
+    "cachedAz": 99.414166,
+    "cachedEl": 0.706929,
+    "liveAz": 99.414166,
+    "liveEl": 0.706929,
+    "deltaDeg": 1.21e-06
+   }
+  },
+  {
+   "slug": "malapert-massif",
+   "target": "earth",
+   "samples": 52,
+   "maxDeg": 1.21e-06,
+   "rmsDeg": 4.9e-07,
+   "medianDeg": 0.0,
+   "worst": {
+    "t": "2027-Jan-16 16:00",
+    "cachedAz": 350.334498,
+    "cachedEl": 10.245333,
+    "liveAz": 350.334498,
+    "liveEl": 10.245333,
+    "deltaDeg": 1.21e-06
+   }
+  },
+  {
+   "slug": "faustini-rim",
+   "target": "sun",
+   "samples": 52,
+   "maxDeg": 1.21e-06,
+   "rmsDeg": 5.4e-07,
+   "medianDeg": 0.0,
+   "worst": {
+    "t": "2027-Oct-15 16:00",
+    "cachedAz": 288.913724,
+    "cachedEl": 2.437213,
+    "liveAz": 288.913724,
+    "liveEl": 2.437213,
+    "deltaDeg": 1.21e-06
+   }
+  },
+  {
+   "slug": "faustini-rim",
+   "target": "earth",
+   "samples": 52,
+   "maxDeg": 1.21e-06,
+   "rmsDeg": 4.7e-07,
+   "medianDeg": 0.0,
+   "worst": {
+    "t": "2026-Dec-15 16:00",
+    "cachedAz": 288.179832,
+    "cachedEl": 2.14276,
+    "liveAz": 288.179832,
+    "liveEl": 2.14276,
+    "deltaDeg": 1.21e-06
+   }
+  }
+ ],
+ "negativeControl": {
+  "slug": "shackleton-rim",
+  "target": "sun",
+  "shiftHours": 37,
+  "samples": 12,
+  "medianDeg": 18.749413,
+  "minDeg": 18.715284,
+  "failsGate": true
+ },
+ "passed": true,
+ "queries": 324,
+ "provenance": {
+  "generator": "scripts/build_horizons_residuals.py",
+  "generatorSha256": "cb4a7750f7f944ce082b8e3415430a281d5b3b3569f8b15b7954eace93951557",
+  "source": "NASA/JPL Horizons live API",
+  "sites": [
+   "shackleton-rim",
+   "malapert-massif",
+   "faustini-rim"
+  ]
+ }
+}

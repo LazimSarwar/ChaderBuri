@@ -1,0 +1,37 @@
+/* One visible path through the existing tools; scene and mission calculations stay separate. */
+.dash-header.dash-journey-header{height:auto;min-height:68px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:12px;padding:10px 20px}
+.dash header.dash-journey-header .mission-journey{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;min-width:0;order:initial}
+.dash-journey-header .mission-journey button{height:auto;min-height:44px;padding:7px 8px;white-space:normal;line-height:1.25;justify-content:flex-start;font-size:12px}
+.mission-journey button>span{display:grid;place-items:center;flex:none;width:20px;height:20px;border:1px solid #444;border-radius:50%;font-size:11px;color:#b5b5bd}
+.dash-journey-header .mission-journey button[aria-current=step]{background:#171b1d;color:#fafafa;box-shadow:inset 0 -2px #4cc9f0}
+.mission-journey button[aria-current=step]>span{border-color:#4cc9f0;color:#4cc9f0}
+.mission-journey button:disabled{opacity:.45;cursor:default}
+.journey-tools{position:relative;flex:none}
+.journey-tools summary{display:flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:7px 10px;border:1px solid #333;border-radius:8px;cursor:pointer;font-size:13px;list-style:none;white-space:nowrap}
+.journey-tools summary::-webkit-details-marker{display:none}
+.journey-tools[open] summary{border-color:#4cc9f0}
+.journey-tools nav{position:absolute;z-index:85;right:0;top:calc(100% + 8px);width:min(280px,calc(100vw - 24px));max-height:65dvh;overflow:auto;padding:6px;background:#090909;border:1px solid #3f3f46;border-radius:10px;box-shadow:0 8px 28px #000a}
+.journey-tools nav button{display:flex;align-items:center;gap:10px;min-height:44px;width:100%;padding:8px 10px;border-radius:6px;font-size:13px;text-align:left;line-height:1.4}
+.journey-tools nav button:hover,.journey-tools nav button[aria-current=page]{background:#202024;color:#fafafa}
+.dash-journey-header :is(button,summary):focus-visible{outline:2px solid #4cc9f0;outline-offset:2px}
+.journey-back-short{display:none}
+@media(max-width:1439px){
+ .dash-header.dash-journey-header{grid-template-columns:1fr auto;gap:8px}
+ .dash-journey-header .mission-journey{grid-column:1/-1;grid-row:2;flex-basis:auto;flex-wrap:initial}
+ .dash-journey-header .mission-journey button{justify-content:center;font-size:13px}
+}
+@media(max-width:767px){
+ .dash header.dash-header.dash-journey-header{padding:7px 10px;min-height:0;gap:6px;display:grid;grid-template-columns:1fr}
+ .dash-journey-header .dash-brand{display:none}
+ .dash.dash .dash-journey-header .dash-header-actions{grid-column:1;grid-row:1;order:initial;margin:0;width:100%;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:5px;align-items:stretch}
+ .dash.dash .dash-journey-header .mission-journey{display:grid;grid-column:1;grid-row:2;grid-template-columns:repeat(4,minmax(0,1fr));gap:3px;order:initial}
+ .dash-journey-header .mission-journey button{flex-direction:column;gap:3px;font-size:11px;padding:5px 2px;min-height:62px;text-align:center}
+ .mission-journey button>span{width:18px;height:18px;font-size:10px}
+ .dash-journey-header .dash-header-actions :is(.dash-text-size,.dash-ask,.dash-close),.dash-journey-header .journey-tools summary{display:flex;flex-direction:column;justify-content:center;gap:3px;min-width:0;min-height:48px;height:100%;width:100%;padding:5px 3px;font-size:12px;line-height:1.2;white-space:normal;text-align:center}
+ .dash-journey-header .dash-header-actions :is(.dash-text-size,.dash-ask,.dash-close)>svg{flex:none}
+ .dash-journey-header .dash-ask img{margin:0;width:20px;height:20px}
+ .dash-journey-header .journey-tools summary svg{order:-1;flex:none}
+ .journey-back-long{display:none}.journey-back-short{display:inline}
+ .journey-tools nav{left:0;right:auto}
+ .dash-mission-verdict{white-space:normal;max-width:100%;overflow-wrap:anywhere}
+}

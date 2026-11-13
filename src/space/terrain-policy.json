@@ -1,0 +1,12 @@
+{
+  "referenceRadiusM": 1737400,
+  "siteRadiusM": 40000,
+  "orbitalFloorM": 25000,
+  "maxTerrainAltitudeM": 50000,
+  "gridHalfSteps": 64,
+  "maxPatchHalfExtentM": 400000,
+  "maxPatchRings": 5,
+  "maxGridStepM": 6250,
+  "altitudeSpacingFactor": 0.012,
+  "altitudeLimitsM": {"ridge5": 1500, "polar20": 3000, "polar120": 30000, "global": 1000000000}
+}

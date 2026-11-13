@@ -1,0 +1,58 @@
+.mission-setup{position:fixed;inset:0;z-index:180;display:grid;place-items:center;padding:16px;background:#000b;color:#fafafa;font-family:"Inter Variable",system-ui,sans-serif;font-size:15px;line-height:1.55}
+.mission-setup *{box-sizing:border-box}
+.mission-setup-dialog{display:flex;flex-direction:column;width:min(760px,100%);max-height:calc(100dvh - 32px);background:#050505;border:1px solid #353535;border-radius:14px;overflow:hidden;box-shadow:0 18px 80px #0008}
+.mission-setup-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px 12px 24px;border-bottom:1px solid #262626;flex-shrink:0;font-size:14px;font-weight:600}
+.mission-setup-header small{display:block;font-size:12px;font-weight:400;color:#a1a1aa}
+.mission-setup button{cursor:pointer;font:inherit;min-height:44px;color:inherit}
+.mission-setup-header button{display:grid;place-items:center;width:44px;border-radius:8px;border:1px solid #303030;background:#050505}
+.mission-setup :focus-visible{outline:2px solid #4cc9f0;outline-offset:3px}
+.mission-setup-body{padding:24px;overflow-y:auto;overscroll-behavior:contain;min-height:0;scrollbar-width:thin}
+.mission-setup h2{font-size:clamp(23px,4vw,29px);line-height:1.25;letter-spacing:-.5px;font-weight:600;margin:0 0 14px}
+.mission-setup h2:focus{outline:none}
+.mission-setup h3{font-size:20px;line-height:1.35;font-weight:600;margin:24px 0 12px}
+.mission-setup p{margin:0 0 18px;color:#c7c7ce;max-width:68ch}
+.mission-setup strong{color:#fafafa;font-weight:600}
+.mission-setup-field{display:grid;gap:6px;margin:20px 0;color:#fafafa;min-width:0}
+.mission-setup-field>span{font-weight:500;font-size:14px}
+.mission-setup-field input{width:100%;min-width:0;min-height:46px;padding:9px 12px;border:1px solid #3f3f46;border-radius:7px;background:#0b0b0b;color:#fafafa;font:inherit;color-scheme:dark}
+.mission-setup-field small{font-size:13px;color:#a1a1aa;line-height:1.5}
+.mission-setup-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 18px}
+.mission-setup-choices{display:grid;gap:10px;margin:20px 0}
+.mission-setup-choices>button{display:flex;align-items:flex-start;gap:12px;width:100%;padding:14px;text-align:left;border:1px solid #343434;border-radius:9px;background:#050505}
+.mission-setup-choices>button:hover{background:#111;border-color:#52525b}
+.mission-setup-choices>button[aria-checked=true]{border-color:#d4d4d8;background:#121212}
+.mission-setup-choices small{display:block;color:#a1a1aa;font-size:13px;font-weight:400;margin-top:3px;line-height:1.5}
+.mission-setup-radio{width:19px;height:19px;border:1px solid #71717a;border-radius:50%;flex-shrink:0;display:grid;place-items:center;margin-top:3px}
+.mission-setup-choices [aria-checked=true] .mission-setup-radio{background:#fafafa;color:#000;border-color:#fafafa}
+.mission-setup p.mission-setup-note{font-size:13px;color:#a1a1aa;border-left:2px solid #3f3f46;padding-left:12px;margin-top:20px}
+.mission-setup-limits{padding:12px 0;font-size:14px;line-height:1.7}
+.mission-setup-details{border-top:1px solid #262626;padding-top:14px;margin:20px 0}
+.mission-setup summary{cursor:pointer;min-height:44px;align-content:center;color:#e4e4e7;font-size:14px}
+.mission-setup-details p{font-size:13px;margin-top:8px;line-height:1.6}
+.mission-setup-review{display:flex;flex-wrap:wrap;gap:7px;margin:18px 0;font-size:13px}
+.mission-setup-review>span{padding:5px 9px;border:1px solid #303030;border-radius:5px;color:#dedee4}
+.mission-setup-results{padding:0;margin:16px 0;list-style:none;display:grid;gap:14px}
+.mission-setup-results>li{padding:16px;border:1px solid #303030;border-radius:9px}
+.mission-setup-result-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.mission-setup-result-head>span{font-size:12px;color:#ff9caf}
+.mission-setup-result-head>span[data-pass=true]{color:#73dfb3}
+.mission-setup-results p{font-size:13px;margin:10px 0 0}
+.mission-setup-results dl{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:16px 0 0}
+.mission-setup-results dt{font-size:12px;color:#a1a1aa}
+.mission-setup-results dd{font-size:20px;font-weight:600;margin:3px 0 0;color:#fafafa;font-variant-numeric:tabular-nums}
+.mission-setup-results details{margin-top:8px}
+.mission-setup-error{border:1px solid #79404a;border-radius:8px;padding:12px;margin:18px 0;color:#ffc2cc;font-size:14px}
+.mission-setup-error ul{padding-left:20px;margin:7px 0 0}
+.mission-setup-ask{display:flex;align-items:center;justify-content:center;gap:8px;margin:18px 0 0;padding:8px 10px;border:1px solid #343434;border-radius:7px;background:#050505;font-size:13px!important;text-align:left}
+.mission-setup-footer{display:flex;justify-content:space-between;gap:10px;padding:14px 24px;border-top:1px solid #262626;flex-shrink:0;background:#050505}
+.mission-setup-footer button{display:flex;align-items:center;justify-content:center;gap:8px;padding:9px 14px;border-radius:8px;font-size:14px;font-weight:600;border:1px solid #3f3f46}
+.mission-setup-secondary{background:#050505}
+.mission-setup-footer .mission-setup-primary{background:#fafafa;color:#000;border-color:#fafafa}
+.mission-setup button:disabled{opacity:.45;cursor:default}
+.mission-setup[data-embedded=true]{position:relative;inset:auto;z-index:auto;display:block;min-height:100%;padding:0;background:#000}
+.mission-setup[data-embedded=true] .mission-setup-dialog{width:100%;max-width:860px;max-height:none;margin:0 auto;border:0;border-radius:0;box-shadow:none;background:#000;overflow:visible}
+.mission-setup[data-embedded=true] .mission-setup-header{padding-top:18px}
+.mission-setup[data-embedded=true] .mission-setup-body{overflow:visible}
+.mission-setup[data-embedded=true] .mission-setup-footer{position:sticky;bottom:0;background:#000;z-index:1}
+@media(max-width:540px){.mission-setup{padding:8px}.mission-setup-dialog{max-height:calc(100dvh - 16px);border-radius:10px}.mission-setup-header{padding:10px 12px 10px 16px}.mission-setup-body{padding:20px 16px}.mission-setup-fields{grid-template-columns:1fr;gap:0}.mission-setup-footer{padding:12px}.mission-setup-footer button{font-size:13px;padding:9px 11px}.mission-setup-footer svg{width:14px;flex-shrink:0}.mission-setup-results>li{padding:12px}.mission-setup-results dd{font-size:18px}.mission-setup-results dt{font-size:11px}.mission-setup-ask{width:100%}}
+@media(max-height:420px){.mission-setup{padding:6px}.mission-setup-dialog{max-height:calc(100dvh - 12px)}.mission-setup-header{padding-block:4px}.mission-setup-footer{padding-block:7px}.mission-setup-body{padding-block:16px}}

@@ -1,0 +1,576 @@
+{
+  "version": 1,
+  "start": "2026-09-01T00:00:00Z",
+  "stop": "2028-12-31T00:00:00Z",
+  "hours": 20448,
+  "frame": "ICRF / J2000",
+  "timeScale": "UTC (SPICE converts UTC to ET for orientation)",
+  "correction": "Geometric simultaneous states; no light-time or aberration",
+  "interpolation": "Cubic Hermite position/velocity; quaternion slerp orientation",
+  "kernels": [
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+      "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc",
+      "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/gm_de440.tpc",
+      "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/moon_pa_de421_1900-2050.bpc",
+      "sha256": "656f90616403d75a75f0cd6c8830fc5b44f8cb4facb5ccb8915e752b397520cf"
+    },
+    {
+      "url": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/fk/satellites/moon_080317.tf",
+      "sha256": "78732477b96f9863e7b0d65bcee3c22b8707ca5ed0db56d1173319cb2e8c7993"
+    }
+  ],
+  "bodies": [
+    {
+      "name": "Sun",
+      "id": 10,
+      "parent": null,
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 695700.0,
+      "radiiKm": [
+        695700.0,
+        695700.0,
+        695700.0
+      ],
+      "parentGM": null,
+      "vectors": "/data/space/sun.vectors.bin",
+      "attitude": "/data/space/sun.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_SUN",
+      "texture": "/textures/space/sun.jpg",
+      "source": null,
+      "bodyGM": 132712440041.27939
+    },
+    {
+      "name": "Mercury",
+      "id": 199,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 2439.7731,
+      "radiiKm": [
+        2440.53,
+        2440.53,
+        2438.26
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/mercury.vectors.bin",
+      "attitude": "/data/space/mercury.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_MERCURY",
+      "texture": "/textures/space/mercury.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=199&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "fdab04c7ad65c2627f7d8b942c180c60c1efb5541f19f79ebca6f7130c935fb4",
+        "retrievedUTC": "2026-10-12T14:10:21.633198+00:00"
+      },
+      "bodyGM": 22031.868551400003
+    },
+    {
+      "name": "Venus",
+      "id": 299,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 6051.8,
+      "radiiKm": [
+        6051.8,
+        6051.8,
+        6051.8
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/venus.vectors.bin",
+      "attitude": "/data/space/venus.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_VENUS",
+      "texture": "/textures/space/venus-clouds.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=299&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "559ff686d6f68080932cc62300a0e233c370a21b281f5bfd568797ea9b290abb",
+        "retrievedUTC": "2026-10-12T14:10:21.590058+00:00"
+      },
+      "bodyGM": 324858.592
+    },
+    {
+      "name": "Earth",
+      "id": 399,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 6371.0004,
+      "radiiKm": [
+        6378.1366,
+        6378.1366,
+        6356.7519
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/earth.vectors.bin",
+      "attitude": "/data/space/earth.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_EARTH",
+      "texture": null,
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=399&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "ba4617435d373be365a26795fb32b4a904fbf879c718aaae9f0b8b372a9489ba",
+        "retrievedUTC": "2026-10-12T14:10:24.265775+00:00"
+      },
+      "bodyGM": 398600.4355070226
+    },
+    {
+      "name": "Moon",
+      "id": 301,
+      "parent": "Earth",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 1737.4,
+      "radiiKm": [
+        1737.4,
+        1737.4,
+        1737.4
+      ],
+      "parentGM": 398600.4355070226,
+      "vectors": "/data/space/moon.vectors.bin",
+      "attitude": "/data/space/moon.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "MOON_ME_DE421",
+      "texture": "/textures/space/moon-map.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=301&CENTER=500%40399&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "11afaee44556b8275ebbc402e8cacc7544d8135b3f37bda81710a5bbacd746d4",
+        "retrievedUTC": "2026-10-12T14:10:25.991903+00:00"
+      },
+      "bodyGM": 4902.800118457549
+    },
+    {
+      "name": "Mars",
+      "id": 499,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 3389.5136,
+      "radiiKm": [
+        3396.19,
+        3396.19,
+        3376.2
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/mars.vectors.bin",
+      "attitude": "/data/space/mars.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_MARS",
+      "texture": "/textures/space/mars.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=499&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "68bdb7c1daea1b8530deff581309dab9b4b5453ed4f9e9ed2840ebf4158d84a6",
+        "retrievedUTC": "2026-10-12T14:10:27.231359+00:00"
+      },
+      "bodyGM": 42828.37362069909
+    },
+    {
+      "name": "Jupiter",
+      "id": 599,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 69911.3084,
+      "radiiKm": [
+        71492.0,
+        71492.0,
+        66854.0
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/jupiter.vectors.bin",
+      "attitude": "/data/space/jupiter.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_JUPITER",
+      "texture": "/textures/space/jupiter-map.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=599&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "a8e96ba853d2cb08bf426efe171bf956635c7b83c632daddc3bec70b16c1ed98",
+        "retrievedUTC": "2026-10-12T14:10:29.089561+00:00"
+      },
+      "bodyGM": 126686531.9003704
+    },
+    {
+      "name": "Saturn",
+      "id": 699,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 58231.993,
+      "radiiKm": [
+        60268.0,
+        60268.0,
+        54364.0
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/saturn.vectors.bin",
+      "attitude": "/data/space/saturn.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_SATURN",
+      "texture": "/textures/space/saturn-map.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=699&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "edc227a7bbc9e859e496a04caa914f9b9aa87a38e61b2750ad40c0501e104346",
+        "retrievedUTC": "2026-10-12T14:10:29.853775+00:00"
+      },
+      "bodyGM": 37931206.23436167
+    },
+    {
+      "name": "Uranus",
+      "id": 799,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 25362.1545,
+      "radiiKm": [
+        25559.0,
+        25559.0,
+        24973.0
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/uranus.vectors.bin",
+      "attitude": "/data/space/uranus.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_URANUS",
+      "texture": "/textures/space/uranus.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=799&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "61e84f50e8a1200b5c3876331131e5d3f8538ea3d5f3f396412c72548055e9c3",
+        "retrievedUTC": "2026-10-12T14:10:32.410604+00:00"
+      },
+      "bodyGM": 5793951.256527211
+    },
+    {
+      "name": "Neptune",
+      "id": 899,
+      "parent": "Sun",
+      "stepHours": 6,
+      "count": 3409,
+      "radiusKm": 24622.1895,
+      "radiiKm": [
+        24764.0,
+        24764.0,
+        24341.0
+      ],
+      "parentGM": 132712440041.27939,
+      "vectors": "/data/space/neptune.vectors.bin",
+      "attitude": "/data/space/neptune.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_NEPTUNE",
+      "texture": "/textures/space/neptune.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=899&CENTER=500%4010&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=360m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "79b167cfff6267f59bafc5e85aacdef6e7a411979e16032f8e514c449cac12a6",
+        "retrievedUTC": "2026-10-12T14:10:32.944832+00:00"
+      },
+      "bodyGM": 6835103.145462294
+    },
+    {
+      "name": "Phobos",
+      "id": 401,
+      "parent": "Mars",
+      "stepHours": 0.5,
+      "count": 40897,
+      "radiusKm": 11.0483,
+      "radiiKm": [
+        13.0,
+        11.4,
+        9.1
+      ],
+      "parentGM": 42828.37362069909,
+      "vectors": "/data/space/phobos.vectors.bin",
+      "attitude": "/data/space/phobos.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_PHOBOS",
+      "texture": "/textures/space/phobos.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=401&CENTER=500%40499&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=30m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "ea1d0025cf8b2bc47bcc29b2f52f84e2193ce14d9d83345a26e96594a48c0574",
+        "retrievedUTC": "2026-10-12T14:10:37.551609+00:00"
+      },
+      "bodyGM": 0.0007087546066894452
+    },
+    {
+      "name": "Deimos",
+      "id": 402,
+      "parent": "Mars",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 6.2031,
+      "radiiKm": [
+        7.8,
+        6.0,
+        5.1
+      ],
+      "parentGM": 42828.37362069909,
+      "vectors": "/data/space/deimos.vectors.bin",
+      "attitude": "/data/space/deimos.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_DEIMOS",
+      "texture": "/textures/space/deimos.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=402&CENTER=500%40499&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "1bf9d676307f88ddc6a934c6c078c26d001e645c77d79475ac8e1faf42ffa83b",
+        "retrievedUTC": "2026-10-12T14:10:37.030890+00:00"
+      },
+      "bodyGM": 9.615569648120313e-05
+    },
+    {
+      "name": "Io",
+      "id": 501,
+      "parent": "Jupiter",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 1821.4908,
+      "radiiKm": [
+        1829.4,
+        1819.4,
+        1815.7
+      ],
+      "parentGM": 126686531.9003704,
+      "vectors": "/data/space/io.vectors.bin",
+      "attitude": "/data/space/io.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_IO",
+      "texture": "/textures/space/io.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=501&CENTER=500%40599&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "cf9b5dd689078201ee49a113212c15ef72e4c09818ddae9b0bb4733207d658ff",
+        "retrievedUTC": "2026-10-12T14:10:41.221757+00:00"
+      },
+      "bodyGM": 5959.915466180539
+    },
+    {
+      "name": "Europa",
+      "id": 502,
+      "parent": "Jupiter",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 1560.7994,
+      "radiiKm": [
+        1562.6,
+        1560.3,
+        1559.5
+      ],
+      "parentGM": 126686531.9003704,
+      "vectors": "/data/space/europa.vectors.bin",
+      "attitude": "/data/space/europa.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_EUROPA",
+      "texture": "/textures/space/europa.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=502&CENTER=500%40599&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "5e0f0ccf0286e947f8e2b27b2c1d24da0f951265bb8481b9de92f08d51e2c3b0",
+        "retrievedUTC": "2026-10-12T14:10:41.690420+00:00"
+      },
+      "bodyGM": 3202.712099607295
+    },
+    {
+      "name": "Ganymede",
+      "id": 503,
+      "parent": "Jupiter",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 2631.2,
+      "radiiKm": [
+        2631.2,
+        2631.2,
+        2631.2
+      ],
+      "parentGM": 126686531.9003704,
+      "vectors": "/data/space/ganymede.vectors.bin",
+      "attitude": "/data/space/ganymede.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_GANYMEDE",
+      "texture": "/textures/space/ganymede.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=503&CENTER=500%40599&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "e349b1697c03ae6978dbd4ea0e61f9acd0c617bc194268eb315f6a47e3ef32fb",
+        "retrievedUTC": "2026-10-12T14:10:45.430281+00:00"
+      },
+      "bodyGM": 9887.832752719638
+    },
+    {
+      "name": "Callisto",
+      "id": 504,
+      "parent": "Jupiter",
+      "stepHours": 2,
+      "count": 10225,
+      "radiusKm": 2410.3,
+      "radiiKm": [
+        2410.3,
+        2410.3,
+        2410.3
+      ],
+      "parentGM": 126686531.9003704,
+      "vectors": "/data/space/callisto.vectors.bin",
+      "attitude": "/data/space/callisto.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_CALLISTO",
+      "texture": "/textures/space/callisto.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=504&CENTER=500%40599&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=120m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "9290504dedde5f8dda66e8137261028e5050cbeeffcfb56a679c54a7fbbbea81",
+        "retrievedUTC": "2026-10-12T14:10:44.980517+00:00"
+      },
+      "bodyGM": 7179.283402579837
+    },
+    {
+      "name": "Enceladus",
+      "id": 602,
+      "parent": "Saturn",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 252.0768,
+      "radiiKm": [
+        256.6,
+        251.4,
+        248.3
+      ],
+      "parentGM": 37931206.23436167,
+      "vectors": "/data/space/enceladus.vectors.bin",
+      "attitude": "/data/space/enceladus.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_ENCELADUS",
+      "texture": "/textures/space/enceladus.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=602&CENTER=500%40699&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "eef7c3cc415d79ccee011816be4e596996eeeab972f59f02766deb1afadbd181",
+        "retrievedUTC": "2026-10-12T14:10:48.841065+00:00"
+      },
+      "bodyGM": 7.210366688598896
+    },
+    {
+      "name": "Titan",
+      "id": 606,
+      "parent": "Saturn",
+      "stepHours": 2,
+      "count": 10225,
+      "radiusKm": 2574.8,
+      "radiiKm": [
+        2575.15,
+        2574.78,
+        2574.47
+      ],
+      "parentGM": 37931206.23436167,
+      "vectors": "/data/space/titan.vectors.bin",
+      "attitude": "/data/space/titan.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_TITAN",
+      "texture": "/textures/space/titan.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=606&CENTER=500%40699&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=120m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "43653d2d02d66a6bff01f127fbe44ebb1cfa965f0a7a0df3c592b1db5c3df3b2",
+        "retrievedUTC": "2026-10-12T14:10:49.220237+00:00"
+      },
+      "bodyGM": 8978.137095521046
+    },
+    {
+      "name": "Titania",
+      "id": 703,
+      "parent": "Uranus",
+      "stepHours": 2,
+      "count": 10225,
+      "radiusKm": 788.9,
+      "radiiKm": [
+        788.9,
+        788.9,
+        788.9
+      ],
+      "parentGM": 5793951.256527211,
+      "vectors": "/data/space/titania.vectors.bin",
+      "attitude": "/data/space/titania.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_TITANIA",
+      "texture": "/textures/space/titania.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=703&CENTER=500%40799&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=120m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "506699f65613198506e024b2e43156957dcbe19fb2a6d721b46ed5b4b2f91b48",
+        "retrievedUTC": "2026-10-12T14:10:52.318702+00:00"
+      },
+      "bodyGM": 226.9437003741248
+    },
+    {
+      "name": "Oberon",
+      "id": 704,
+      "parent": "Uranus",
+      "stepHours": 2,
+      "count": 10225,
+      "radiusKm": 761.4,
+      "radiiKm": [
+        761.4,
+        761.4,
+        761.4
+      ],
+      "parentGM": 5793951.256527211,
+      "vectors": "/data/space/oberon.vectors.bin",
+      "attitude": "/data/space/oberon.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_OBERON",
+      "texture": "/textures/space/oberon.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=704&CENTER=500%40799&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=120m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "271e8492a51874e6c5e70e284e08022b689c53fce37db68914d776012003f221",
+        "retrievedUTC": "2026-10-12T14:10:53.360295+00:00"
+      },
+      "bodyGM": 205.3234302535623
+    },
+    {
+      "name": "Triton",
+      "id": 801,
+      "parent": "Neptune",
+      "stepHours": 1,
+      "count": 20449,
+      "radiusKm": 1352.6,
+      "radiiKm": [
+        1352.6,
+        1352.6,
+        1352.6
+      ],
+      "parentGM": 6835103.145462294,
+      "vectors": "/data/space/triton.vectors.bin",
+      "attitude": "/data/space/triton.attitude.bin",
+      "attitudeStepHours": 1,
+      "attitudeCount": 20449,
+      "attitudeFrame": "IAU_TRITON",
+      "texture": "/textures/space/triton.jpg",
+      "source": {
+        "url": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=801&CENTER=500%40899&EPHEM_TYPE=VECTORS&START_TIME=2026-09-01&STOP_TIME=2028-12-31&STEP_SIZE=60m&REF_PLANE=FRAME&REF_SYSTEM=ICRF&VEC_TABLE=2&VEC_CORR=NONE&OUT_UNITS=KM-S&TIME_TYPE=UT&CSV_FORMAT=YES",
+        "rawSha256": "c4476c20b81b46d095f95ee7c31f9360cdf35170a7fa60047eb7dd2493098083",
+        "retrievedUTC": "2026-10-12T14:10:56.689975+00:00"
+      },
+      "bodyGM": 1428.495462910464
+    }
+  ]
+}

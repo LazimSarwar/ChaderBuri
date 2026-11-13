@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "leibnitz-beta-plateau",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -85.9627,
+  "lonEast": -2.3725,
+  "heightM": 4993,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/leibnitz-beta-plateau.mesh.bin",
+  "uv": "/data/surface/leibnitz-beta-plateau.uv.bin",
+  "minHeightM": 4569.2,
+  "maxHeightM": 4993.49,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "55251af4d18b8bb588fd7d0ab9a40d39af39046254df9d666020f4e328c012f3",
+  "uvSha256": "bd9cd1a9f42107c6522e4f7b4d8ece28c1ddabaca88f062858cce667ff234312"
+}

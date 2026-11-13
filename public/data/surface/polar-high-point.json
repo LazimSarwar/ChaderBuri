@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "polar-high-point",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -85.2327,
+  "lonEast": 36.595,
+  "heightM": 6800,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/polar-high-point.mesh.bin",
+  "uv": "/data/surface/polar-high-point.uv.bin",
+  "minHeightM": 6503.37,
+  "maxHeightM": 6799.99,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "f2320ce3eceae0ac4d30daa39fbd25f0f67af9ca8f7c9f61c56aeb57ea854fc5",
+  "uvSha256": "6d6b3ee925b18761cf7c2939488725bda785aca81e3cd44ab6a4810b2554ff34"
+}

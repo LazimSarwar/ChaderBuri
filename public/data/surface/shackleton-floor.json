@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "shackleton-floor",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -89.625,
+  "lonEast": 118.7512,
+  "heightM": -2872,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/shackleton-floor.mesh.bin",
+  "uv": "/data/surface/shackleton-floor.uv.bin",
+  "minHeightM": -2872.41,
+  "maxHeightM": -2456.44,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "a78572a9787331a328ef852e859e387bcb8cd7385250891d579e3f529e682a20",
+  "uvSha256": "5cec74e23d7e19924f11436dcaaa569c636aff30c96f3a54107bfde649c6eae5"
+}

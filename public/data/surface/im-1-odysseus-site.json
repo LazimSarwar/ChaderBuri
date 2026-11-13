@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "im-1-odysseus-site",
+  "gridSize": 65,
+  "spacingM": 120,
+  "lat": -80.3,
+  "lonEast": 1.3,
+  "heightM": 2713,
+  "dem": "ldem_75s_120m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/im-1-odysseus-site.mesh.bin",
+  "uv": "/data/surface/im-1-odysseus-site.uv.bin",
+  "minHeightM": 2113.04,
+  "maxHeightM": 2961.05,
+  "demSha256": "ae3afc3c75c33d43666ca06c83ca08f0b12ef03b7d36d2d791d972730794391b",
+  "meshSha256": "b13753a6e07d4bad5c46d7617f24c7f0e32f07540428f8dfce2df7bf52989b9d",
+  "uvSha256": "34384c30ca7ebab4aef80e53067595b1e2ea0271542f1596050b679ee79a1afa"
+}

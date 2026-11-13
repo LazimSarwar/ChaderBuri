@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "de-gerlache-kocher-massif",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -88.4493,
+  "lonEast": -67.9022,
+  "heightM": 1580,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/de-gerlache-kocher-massif.mesh.bin",
+  "uv": "/data/surface/de-gerlache-kocher-massif.uv.bin",
+  "minHeightM": 1194.94,
+  "maxHeightM": 1580.36,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "37e366b974b2b571a5fe4455988391882c0903153f9771dfdf3af13acf25f700",
+  "uvSha256": "9bfed9817e236cc0ba0ff71738ae38c8c1c91e5fa42390b6b6c744cad53e9820"
+}

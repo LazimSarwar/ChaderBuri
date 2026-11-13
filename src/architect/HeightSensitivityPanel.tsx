@@ -1,0 +1,9 @@
+import type { RobustnessAssessment } from './robustness'
+import type { Horizon } from '../data'
+
+export function HeightSensitivityPanel({slug,horizon,assessment}:{slug:string;horizon:Horizon;assessment:RobustnessAssessment}){
+  const check=assessment.height,runs=check.status==='ready'?check.data:[]
+  return <section className="mt-4 rounded-xl border border-edge p-4" aria-label="Observer-height sensitivity"><h3 className="font-display text-base">Does observer height change the result?</h3><p className="mt-2 text-xs leading-5 text-inkdim">The nominal verdict uses {horizon.observerHeightAboveGroundM??0} m above ground; visitor eye height depends on stance (1.7 m standing, 1.1 m crouching). These diagnostic runs use separately recomputed horizons. They do not change the nominal recommendation.</p>
+    {check.status!=='ready'?<p className="mt-2 text-xs" role="status">{check.status==='loading'?'Loading measured height scenarios…':'Height sensitivity unavailable; not assessed.'}</p>:<><div className="benchmark-table-wrap"><table className="benchmark-table"><thead><tr><th>Height</th><th>Enabled requirements</th><th>Sun centre</th><th>Minimum battery</th></tr></thead><tbody>{runs.map(r=><tr key={r.height}><th>{r.height} m{r.height===0?' · nominal':r.height===3?' · test height':''}</th><td>{r.result.pass?'Meet':'Miss'}</td><td>{r.result.litPct.toFixed(1)}%</td><td>{r.result.power?`${r.result.power.minPct.toFixed(1)}%`:'Not assessed'}</td></tr>)}</tbody></table></div><p className="mt-2 text-xs leading-5 text-inkdim">Same DEM, horizon-march method and hardware. Apparent rays are translated along local up; differential light-time is not recomputed. This is height sensitivity, not an independent accuracy bound or a landing-safety assessment.</p><a className="mt-2 block text-xs text-earth underline" href={`/data/validation/sites/${slug}.json`} target="_blank" rel="noreferrer">Height profiles & source fingerprints ↗</a></>}
+  </section>
+}

@@ -1,0 +1,14 @@
+/* Phone results put the next decision before the longer mission explanation. */
+.field-objective[data-narrow=true] .field-antenna-primary{margin-top:8px;margin-bottom:10px}
+.field-objective[data-narrow=true] .field-antenna-primary .field-button{min-width:0;width:100%;white-space:normal}
+@media(min-width:360px){.field-objective[data-narrow=true] .field-antenna-primary{grid-template-columns:repeat(2,minmax(0,1fr))}.field-objective[data-narrow=true] .field-antenna-primary .field-button{padding-inline:8px}}
+/* Short landscape screens use the available width so both primary actions fit above the fold. */
+@media(max-height:500px) and (min-width:480px) and (max-width:1023px){
+ .field-hud .field-objective[data-complete=true][data-narrow=true]{left:var(--f-edge);right:var(--f-edge);width:auto}
+ .field-objective[data-complete=true][data-narrow=true] .field-objective-head{padding-block:4px;min-height:44px}
+ .field-objective[data-complete=true][data-narrow=true] .field-objective-body{padding-top:4px}
+ .field-objective[data-complete=true][data-narrow=true] .field-objective-summary{margin-top:0;padding-block:4px}
+ .field-objective[data-complete=true][data-narrow=true] .field-objective-summary>strong:first-child{font-size:12px;line-height:1.2}
+ .field-objective[data-complete=true][data-narrow=true] .field-objective-summary>p{line-height:1.3}
+ .field-objective[data-complete=true][data-narrow=true] .field-antenna-primary{margin-top:4px;grid-template-columns:repeat(2,minmax(0,1fr))}
+}

@@ -1,0 +1,419 @@
+{
+  "schemaVersion": 1,
+  "generatedUTC": "2026-11-11T07:42:04.174Z",
+  "datasetId": "d31daf419689e0c505b7c0e87363dba640e27953cff1ddf75006e2edb16dd655",
+  "coverage": {
+    "start": "2026-09-01",
+    "stop": "2028-12-31",
+    "samples": 20449,
+    "stepHours": 1
+  },
+  "files": {
+    "/data/benchmark/barker2021-roi4-ensemble.json": {
+      "sha256": "aa594c30891fb2d0b83686ed0ac839fae58358ec04ca18ac17be92749c4ae8a9",
+      "bytes": 23782
+    },
+    "/data/benchmark/barker2021-roi4-matched-ensemble.json": {
+      "sha256": "d9be669d006865828a9660a02a3ba236c613569a2384b64defe727c19cbac2e4",
+      "bytes": 23852
+    },
+    "/data/benchmark/barker2021-roi4.json": {
+      "sha256": "0c5b8a70c3351f524a586d0f16abc227dc3209594cb74ab327e23ef2371e2f6f",
+      "bytes": 6423
+    },
+    "/data/dispersion/amundsen-rim.json": {
+      "sha256": "d9c2b431c74f828deddacb2014510c36ad296a4b585c4e27a059beca6f0af2f4",
+      "bytes": 51232
+    },
+    "/data/dispersion/connecting-ridge-extension.json": {
+      "sha256": "eaba72ff5ca6c11146639b695174ee263f8652f10837257e83940c7ec2b0fb3f",
+      "bytes": 52171
+    },
+    "/data/dispersion/connecting-ridge.json": {
+      "sha256": "ca40bcd44808a0112b768c3195786a13c4525b6eaa1efb01db67e21f6a45b4d2",
+      "bytes": 51083
+    },
+    "/data/dispersion/de-gerlache-kocher-massif.json": {
+      "sha256": "f83c8c91c39a16daa567af0046b398f2c90ab0b71a5dccbabeb77714c63bb866",
+      "bytes": 52364
+    },
+    "/data/dispersion/de-gerlache-rim.json": {
+      "sha256": "8d9baed1f133187d481767cd83c45b4cc2682a8800bc72713de7069b3945153b",
+      "bytes": 52468
+    },
+    "/data/dispersion/faustini-rim.json": {
+      "sha256": "e77b08f8743c9807458dac0e2d64378402164ded25f871545e04585b33cedd1b",
+      "bytes": 51270
+    },
+    "/data/dispersion/haworth-rim.json": {
+      "sha256": "80dd08c624b348555baeffcbea484ef69e6a5372f2ab05d1378d20928e9505b7",
+      "bytes": 53708
+    },
+    "/data/dispersion/im-1-odysseus-site.json": {
+      "sha256": "ba4dedf3d09c862764675f3bf50488964b35d1d41332b904d2c3688b6ba5c9fa",
+      "bytes": 48846
+    },
+    "/data/dispersion/leibnitz-beta-plateau.json": {
+      "sha256": "997cb8e5a22d7eaee76fd4c0232cdd25533685e1dce09ef04c70b55c4c7defcf",
+      "bytes": 52707
+    },
+    "/data/dispersion/malapert-massif.json": {
+      "sha256": "2ca19216880ba73a61ef016f94f0e51a0681c503be24eb34067c96f202276efb",
+      "bytes": 52603
+    },
+    "/data/dispersion/nobile-rim.json": {
+      "sha256": "68880675a4f09bdcca78051c89f3bf8561787ab1f9bc1e05f34e1a2781ae1136",
+      "bytes": 52360
+    },
+    "/data/dispersion/polar-high-point.json": {
+      "sha256": "73b583d4aff9312be8f186b713fab4ed64736d668583b904fa51583883c9061d",
+      "bytes": 51755
+    },
+    "/data/dispersion/shackleton-floor.json": {
+      "sha256": "93014d6563130d0b2ff30fe8eaea304c71be88f2ce9ca49423d99372effe6627",
+      "bytes": 55642
+    },
+    "/data/dispersion/shackleton-rim.json": {
+      "sha256": "b78b5fb70d9a1d4476e890a8f545656589600ab107fd9f1b3c6794d2c033dd26",
+      "bytes": 52185
+    },
+    "/data/dutycycle/amundsen-rim.json": {
+      "sha256": "79b1d9b3e7f738661104c72f4d16e271c5cff6a41cb1687ee7b35ed0989f2d9c",
+      "bytes": 251
+    },
+    "/data/dutycycle/connecting-ridge-extension.json": {
+      "sha256": "8a13e47a9756d36abdd4c7ddcd6f9ddb7db248f6b51356e6d27db6667380eb7f",
+      "bytes": 267
+    },
+    "/data/dutycycle/connecting-ridge.json": {
+      "sha256": "11f827197e9fbced16264444c832c696c79b49b72302469bb2a4e2f26a6df5c0",
+      "bytes": 256
+    },
+    "/data/dutycycle/de-gerlache-kocher-massif.json": {
+      "sha256": "2891c221de112a2c79e6564140cd981cc6571cf604a6528794e76bbf03eec637",
+      "bytes": 266
+    },
+    "/data/dutycycle/de-gerlache-rim.json": {
+      "sha256": "d57362d3ee67f0acecf7945b23ecee507a011a73b0e0c063f3ed71dd2fed6ac2",
+      "bytes": 257
+    },
+    "/data/dutycycle/faustini-rim.json": {
+      "sha256": "7901f8c0de8e85909120861bd96b09d76cf4cfcb6829e92e7883cf651df1bad1",
+      "bytes": 252
+    },
+    "/data/dutycycle/haworth-rim.json": {
+      "sha256": "62697defc3217fe9a8a20fe35017b80b1d5eda485537df10729a523a475e5a04",
+      "bytes": 246
+    },
+    "/data/dutycycle/im-1-odysseus-site.json": {
+      "sha256": "5c61fa7a085ee5b715841ca7f5adb8d895a2990ccc8c92f3fafdbfd0c17daacd",
+      "bytes": 260
+    },
+    "/data/dutycycle/leibnitz-beta-plateau.json": {
+      "sha256": "c6e0fb5361e0e715621eb60ec8748d8c7389f72af73a16b62b96773dec7b409b",
+      "bytes": 263
+    },
+    "/data/dutycycle/malapert-massif.json": {
+      "sha256": "f0021a0b0444d43b2648e3b0ef69d77a1eaf30d04913c52e1e6799916010653d",
+      "bytes": 256
+    },
+    "/data/dutycycle/nobile-rim.json": {
+      "sha256": "78c087a2b57e5086b18444c6143b2887eb3e0e2426b1f8ec00b9a1e7193545df",
+      "bytes": 249
+    },
+    "/data/dutycycle/polar-high-point.json": {
+      "sha256": "2b18bc20dafc187f225904e2c1625044e6016d33149ffcff9bcef03300138172",
+      "bytes": 257
+    },
+    "/data/dutycycle/shackleton-floor.json": {
+      "sha256": "7ba0000abb01ffa8b5c9b56e46eec6c1cfcc10f1f4b9b9db06bdfa0d7ea27f38",
+      "bytes": 247
+    },
+    "/data/dutycycle/shackleton-rim.json": {
+      "sha256": "c60f421eeb83cf2ab94c9ee473c94baa554e6be1e1c2a19e94024f15d1981385",
+      "bytes": 255
+    },
+    "/data/ephemeris/amundsen-rim.earth.json": {
+      "sha256": "ae8320e96369d63edb34bcecc2f7799cd7199e1724be2df3728117e3b9b4f0af",
+      "bytes": 2046363
+    },
+    "/data/ephemeris/amundsen-rim.sun.json": {
+      "sha256": "8c23dc156763e813da8c8815bbadd8d62a10a7f83b55c00d340dc5abc4d2a61a",
+      "bytes": 2101913
+    },
+    "/data/ephemeris/connecting-ridge-extension.earth.json": {
+      "sha256": "5941a378669d8f296cc16a8155255ffa084f5dbdb1c3cb2597721bf272d21da4",
+      "bytes": 2044867
+    },
+    "/data/ephemeris/connecting-ridge-extension.sun.json": {
+      "sha256": "b47079f9e07d9aafc168433d1f7f8ecce4c4cf9a45ab06982230c806a76c4ce4",
+      "bytes": 2101996
+    },
+    "/data/ephemeris/connecting-ridge.earth.json": {
+      "sha256": "9b2db3a70a7a069309d22dab877c15e453ad8d6ca583ea1c4053b8f43caf5e0f",
+      "bytes": 2044996
+    },
+    "/data/ephemeris/connecting-ridge.sun.json": {
+      "sha256": "c759ecc05b792c42b07a960bc1396a8e90a0460cb426a7e0f0b63e6c82e8bb29",
+      "bytes": 2102050
+    },
+    "/data/ephemeris/de-gerlache-kocher-massif.earth.json": {
+      "sha256": "6dea905c873237350933ad512633c6afd179685bb1563a01beccbfa74cf8c648",
+      "bytes": 2026108
+    },
+    "/data/ephemeris/de-gerlache-kocher-massif.sun.json": {
+      "sha256": "a79a3729f990d3358db18dcd0276c9a3e9eb87f155afb012b2e484e992820683",
+      "bytes": 2101422
+    },
+    "/data/ephemeris/de-gerlache-rim.earth.json": {
+      "sha256": "352aff2c6f349d051d113d452aecfeb4989d326d277e78fe0bec09d93ac8a80a",
+      "bytes": 2026375
+    },
+    "/data/ephemeris/de-gerlache-rim.sun.json": {
+      "sha256": "793a792a73948292c4403759d104be0908d8db2aac77501cfdeb3a4e4de04073",
+      "bytes": 2101215
+    },
+    "/data/ephemeris/faustini-rim.earth.json": {
+      "sha256": "f18b5419ff4dfcc9c051705972ae31d5cf603d3e422629ae2d7d7f64cdb87665",
+      "bytes": 2046096
+    },
+    "/data/ephemeris/faustini-rim.sun.json": {
+      "sha256": "6c3b4e512571370c363bf24e0c7b1087c5a813f6e8a80760970d68eacc40c4d0",
+      "bytes": 2101793
+    },
+    "/data/ephemeris/haworth-rim.earth.json": {
+      "sha256": "e863ae1294bbd1361edbe9238730250fe5d4d65453dd4d8abf66d7c4b99ab4d2",
+      "bytes": 2026922
+    },
+    "/data/ephemeris/haworth-rim.sun.json": {
+      "sha256": "b6a45d67a20d1845b30a235ab3d8f0ebf0cd7facb9cf17ca1d3c9964af6a6909",
+      "bytes": 2101863
+    },
+    "/data/ephemeris/im-1-odysseus-site.earth.json": {
+      "sha256": "1f07d1db7fc2966f0f15634fa853bc91de48cd12fd8ce0ad08e88cf9ad935d1c",
+      "bytes": 2029111
+    },
+    "/data/ephemeris/im-1-odysseus-site.sun.json": {
+      "sha256": "19110efabcc9edb566acd60c477fe7748820db996c5ce7e5f963d3e68400b2e3",
+      "bytes": 2104121
+    },
+    "/data/ephemeris/leibnitz-beta-plateau.earth.json": {
+      "sha256": "55f53c74deb4c579199b0183205486ed91fca351563d2857aadc30e8a483f6fb",
+      "bytes": 2020023
+    },
+    "/data/ephemeris/leibnitz-beta-plateau.sun.json": {
+      "sha256": "b8ab1b650444719785a006df57dbd74ad823dee9d45951a985fa833bfde2ba49",
+      "bytes": 2101863
+    },
+    "/data/ephemeris/malapert-massif.earth.json": {
+      "sha256": "5d0112f524948fe72039ba75f45efa414e0d3fbdae144402d437c8fa20a9e638",
+      "bytes": 2029460
+    },
+    "/data/ephemeris/malapert-massif.sun.json": {
+      "sha256": "a54508577a55b5703641f4b0ca9bec80dd43c9f638adbef24d8b739e7daa31cf",
+      "bytes": 2102006
+    },
+    "/data/ephemeris/nobile-rim.earth.json": {
+      "sha256": "1df98badae94553c91168349d8bae5f0a0f67ea53a5d1ca7932a508793a1a01d",
+      "bytes": 2044291
+    },
+    "/data/ephemeris/nobile-rim.sun.json": {
+      "sha256": "258b3f058026a873fc89ea5f5c71a8ba92158799f84671ae711e0486b55f98bc",
+      "bytes": 2101925
+    },
+    "/data/ephemeris/polar-high-point.earth.json": {
+      "sha256": "6faaa85c52875f429390935157701932f1173741494fbf16aca26e9e43f3f693",
+      "bytes": 2043723
+    },
+    "/data/ephemeris/polar-high-point.sun.json": {
+      "sha256": "27abe06614de4590422c224a0fd7a7b0520e2c438b5bf029d63b9b4e54974b7e",
+      "bytes": 2101779
+    },
+    "/data/ephemeris/shackleton-floor.earth.json": {
+      "sha256": "f546e14bb39728a2a90d5267526762548fa7cc4bd81ef715798bceceedfe77a7",
+      "bytes": 2047438
+    },
+    "/data/ephemeris/shackleton-floor.sun.json": {
+      "sha256": "e82b83c5355fdf352547137de17a5419915f574c04d565b7fdffdb7760da4aa7",
+      "bytes": 2100373
+    },
+    "/data/ephemeris/shackleton-rim.earth.json": {
+      "sha256": "933faddcd7d6927a122c9c3de35b210903fbc5117a651ac2f6eb36cfa0394861",
+      "bytes": 2047144
+    },
+    "/data/ephemeris/shackleton-rim.sun.json": {
+      "sha256": "d7842bee8592d90aeb818558af065a53149a444b889b2c944df4d0a5e3a1317c",
+      "bytes": 2100339
+    },
+    "/data/horizons/amundsen-rim.json": {
+      "sha256": "11f54901732966fef9f4995366848f9bb2ef12a92937148d86695edcc0f44008",
+      "bytes": 2312
+    },
+    "/data/horizons/connecting-ridge-extension.json": {
+      "sha256": "67e881e3c66d325bf02c2a07444730aa026d2d558239b4e0405e277a247ea81c",
+      "bytes": 2364
+    },
+    "/data/horizons/connecting-ridge.json": {
+      "sha256": "bd5a7433898ab6f60eb41c6ec37d680cf40fbced77db6901edd8906700d18a21",
+      "bytes": 2278
+    },
+    "/data/horizons/de-gerlache-kocher-massif.json": {
+      "sha256": "d0dea51c9c8725b2527e872fb8f7c109f4a209e1b824d0546b434002edd199a1",
+      "bytes": 2516
+    },
+    "/data/horizons/de-gerlache-rim.json": {
+      "sha256": "073a31d3215a26f9d6bfbc07d88765597428fabb108bda77b1cff85f045ccfa1",
+      "bytes": 2526
+    },
+    "/data/horizons/faustini-rim.json": {
+      "sha256": "c4112484f4d4622bcf6746e999dfb5eead813dbf2ee12bf665536cae096905dc",
+      "bytes": 2385
+    },
+    "/data/horizons/haworth-rim.json": {
+      "sha256": "c17598c354677bf3d973bf64ed03799b309db9fe08484f88ce76785d28c84345",
+      "bytes": 2391
+    },
+    "/data/horizons/im-1-odysseus-site.json": {
+      "sha256": "d0ebd7cbe96f2081b2d117d330e8bfeae50afa2cd8d663340c4c0e6a6cffcab0",
+      "bytes": 2150
+    },
+    "/data/horizons/leibnitz-beta-plateau.json": {
+      "sha256": "d37fbb904aeb347499700e25a38642406326c7fb08a3100e1713b1900f9ac66e",
+      "bytes": 2510
+    },
+    "/data/horizons/malapert-massif.json": {
+      "sha256": "9d3dc2d93bca3c8a449aa736a46a9aa58829df916e851ca7a5d061f73bbdaeae",
+      "bytes": 2523
+    },
+    "/data/horizons/nobile-rim.json": {
+      "sha256": "b88ff3ef669d2428ca993ed1c1c970f9e8dab9c7276faf6e70af7459796912f0",
+      "bytes": 2361
+    },
+    "/data/horizons/polar-high-point.json": {
+      "sha256": "6827cf9939076d913e2f58e14b727b148a9b7a0a1ed9b537e33a180df8d5830d",
+      "bytes": 2512
+    },
+    "/data/horizons/shackleton-floor.json": {
+      "sha256": "eaba8372c381dff6b152c51ff2a6ea5bf2bf62a4c3a8e8f42d3eb5147c8c54bc",
+      "bytes": 2517
+    },
+    "/data/horizons/shackleton-rim.json": {
+      "sha256": "f9574af31b278b8d114b329431c509e1fe7c5656728f09cdd1f3721c057cf574",
+      "bytes": 2373
+    },
+    "/data/missions.json": {
+      "sha256": "0f8ad6bd1cc045a9f8f16a5171eab0dc200768e730319572e90813469a6ca20d",
+      "bytes": 34686
+    },
+    "/data/sites.json": {
+      "sha256": "2d26df38b16fd95278f0ed8bf16e98f9e73d7b50422424df846d4ba8affde482",
+      "bytes": 4627
+    },
+    "/data/terrain/manifest.json": {
+      "sha256": "f34088fde061854bc534081d47096c8b183c4b69eb140663170392dbfb6cf72e",
+      "bytes": 15333
+    },
+    "/data/validation/sites/amundsen-rim.json": {
+      "sha256": "400f9b97287ade356415436e15f01166a0924f47249013081497610edc493599",
+      "bytes": 11622
+    },
+    "/data/validation/sites/connecting-ridge-extension.json": {
+      "sha256": "690eb018007ad53185c50b19bebb91d68c3b05ea7093c4ab4358c8f2915e93f4",
+      "bytes": 11729
+    },
+    "/data/validation/sites/connecting-ridge.json": {
+      "sha256": "283274ea9013056575c625ccf964d1ebba5c4fa64bc1f6adc17ea1f3568ffa45",
+      "bytes": 11449
+    },
+    "/data/validation/sites/de-gerlache-kocher-massif.json": {
+      "sha256": "58befcb570d9654f58e0ccd6258f7213ff103fec37c2d19339783d0daa23064a",
+      "bytes": 12293
+    },
+    "/data/validation/sites/de-gerlache-rim.json": {
+      "sha256": "daeac4eb67c3cf6de535718320291936465588d9a60435befe9e8d6e880d57eb",
+      "bytes": 12362
+    },
+    "/data/validation/sites/faustini-rim.json": {
+      "sha256": "994279ddb376872a3e387fa7604bbc5b39640b7044fc4fad59c1846633a87c06",
+      "bytes": 11861
+    },
+    "/data/validation/sites/haworth-rim.json": {
+      "sha256": "1713f2b67aff735efd88ac50847025784c528e72aa00d2670e65daeff136b941",
+      "bytes": 11901
+    },
+    "/data/validation/sites/im-1-odysseus-site.json": {
+      "sha256": "0a77f2350bc0a79480b953ff66e980f427594ec8604c9d5c98d95183922cef7f",
+      "bytes": 10908
+    },
+    "/data/validation/sites/leibnitz-beta-plateau.json": {
+      "sha256": "ac16ed23a1f06421a34c9952fd757c342e67fd5b8872f70ecd043ef96a34042e",
+      "bytes": 12301
+    },
+    "/data/validation/sites/malapert-massif.json": {
+      "sha256": "05f18d2c6f03d69a939a29ef76121a1c25ec06f48c1fc9669596b334abd43ba7",
+      "bytes": 12339
+    },
+    "/data/validation/sites/nobile-rim.json": {
+      "sha256": "59d9b72937155ba734f086e80de770a8244bbcdecf0ff5449e8d91b6a7f09a1d",
+      "bytes": 11791
+    },
+    "/data/validation/sites/polar-high-point.json": {
+      "sha256": "5b2bbeb60cb486a53e0fe9cc5fbcb8a27ca9a5468578f88168ef43775fa8e60f",
+      "bytes": 12350
+    },
+    "/data/validation/sites/shackleton-floor.json": {
+      "sha256": "49abb9f1b30225076fa420d4271ffcc117e3dab89e0399797383cecaffaa5fac",
+      "bytes": 12375
+    },
+    "/data/validation/sites/shackleton-rim.json": {
+      "sha256": "536f437a3885b519f155b6096907e9b9234633106a03532fa03806c8ca541692",
+      "bytes": 11816
+    },
+    "/data/validation/transitions.json": {
+      "sha256": "af12b6425cbc01cd2c9fd6c1ef62fc35fcc905205d4761d2f16bfca77730a68a",
+      "bytes": 138753
+    }
+  },
+  "model": {
+    "version": "screening-v2-6339902e01cb",
+    "sha256": "6339902e01cb100371179e6b5e78acf77cfc49dcc9d84d66242a56ab239c4360",
+    "files": {
+      "src/data.ts": "8469c44f088bfc80315102c3b6e2ac0159b886f2a3a07e4ce0b694f3bd3ab81c",
+      "src/lib/science.ts": "7eb63c0880e03f2a669979b798beb3cbad030bd74e6ab040ecd646fa5cc6d1df",
+      "src/lib/attribution.ts": "fa7f87d38f1d5f09a3393c266513a5055a2bb2971bc41fad5b7a5d455ee7d563",
+      "src/lib/visit.ts": "d6faeed478d85592e25841c7c471f16514fd1146258fc2b2e86c26f5d4f7f58d",
+      "src/lib/dsn.ts": "f5877dae700263b7df8147fa2f2567762def8c8633b1859e5aff11ca8222ff42",
+      "src/lib/heightSensitivity.ts": "6354268dda12e003d4ab5b2fd24aba934b74b863876ee1cf0df212faefc3ae30",
+      "src/lib/transitionValidation.ts": "541e07d8bda405c8610e48df738a0523ec00784dddf5b880305d6e4bf5b3132a",
+      "src/architect/solver.ts": "d38eb8707b970834ef58e0872d86f9ac3851c344c713d25af7c39fa5282a3e59",
+      "src/architect/power.ts": "758be0033a0e98706c4192bcdd5f8ab08e9d0689ca9a72f5ef3c80931c0a0878",
+      "src/architect/thermal.ts": "4bf54ad6b87e24089999a511fea21448d3ab0592c6904a057cea34457e6ee1fb",
+      "src/architect/dispersion.ts": "bc5442fa6101f284f9ab16da248bda5424dac4f3226e0faad50da9babcd571bb",
+      "src/architect/relay.ts": "5ce5d1abcbe4c902adccf2fb5382b68b3a0df6905ebb6e2cc0755114d28bf830",
+      "src/architect/comparison.ts": "bb90ab2bc7ea5b1608da2d59c0cca067987cf37252879035774986a1c56c7ba4",
+      "src/architect/robustness.ts": "66e02b41e79dc5dd68a8c475356aee8e5f66fa59ec4188c00b3eb5c4878aaee7",
+      "src/architect/missionBrief.ts": "f8a78d591ca13a5df235b76cd7eaa928332c1f13ba903db04ec53b70aca11b64",
+      "src/architect/comparisonContext.ts": "979923c933e28f9b8e03c45f6ce4f249379c299e7c84f57706c763e3840ef60c",
+      "src/architect/quickCompare.ts": "546e4dbed06b15c85c1031aba93d7a4c0530e0ff90a4489728e25ace8d9f0dcc",
+      "src/architect/landingDate.ts": "b88b991d044e8a91b09dd7d476debc96d9d4d28c42c089daad026cec0a9331ec",
+      "scripts/compute_horizons.py": "49ddaf16c1e9f5bc1e9883e632058f5ec3766c1a20b7075e9c619f262ddc32b2",
+      "scripts/fetch_ephemeris.py": "68f97eeb9d14e2ec560f4e345f99290f3e8c3f2de70ac5b3afc0075cddd600d6",
+      "scripts/build_mission_validation.py": "212e86185e1fd9d98bd96d2006ac97afb0671892ccb546b94df02a5ccf2ef3d1",
+      "src/lib/surfaceExplorer.ts": "e3f3c6a43bd8e04a0acd29675f324345052c3327095314d6976ab477c9d7e419",
+      "src/lib/astronautMotion.ts": "731f636f39657026bf3fd360997b67d0f4cd741d31e42f6a90b00ff0b197b34b",
+      "src/lib/fieldwork.ts": "214aec80c206371d09b8897d9253ebcbf68b6a3aa7b4802e56fc18ffb4d71fc4",
+      "src/lib/expedition.ts": "4106e27c8ba496149cafe6e59869e31c9cc7171b7b95d9ad61d055ced51086e1",
+      "src/lib/explorationDecision.ts": "4276a67e422af02f1dfa41c16f77cf98e1bc6c21b9090d705cb60cf7111ab4c9",
+      "src/lib/failurePreview.ts": "f77ab9a629e2bb8e7f3d6cb5b2ee8cb12301000cc98e8a16c174019f17291bcc",
+      "src/lib/guideRepair.ts": "46a28c8be25656a18c60e5925633a194da36c8227bbf5e3355748db82c1f3554",
+      "src/lib/sensitiveDate.ts": "f28019152bc1a2ed8e4944d642b1f41e4e77765f7491fcdb40057524168d8440",
+      "src/lib/scheduleTolerance.ts": "97716a48b9802c88072c500068c51fd2dcc217fbf8d27a4bca0025dcd98b170a",
+      "src/lib/decisionStory.ts": "e931ee6245fe9c13fef9905225b9f9a4546e1271543d752c2e7f2dc84bd9c329",
+      "src/lib/missionConsequence.ts": "a2d153d9e9320829611083791d5413a1a2e3dd4933e6e4969265aba55c35d19c",
+      "src/lib/sampleBearing.ts": "088d5194110b4bad8c29e24edbeff69776e434f59239cd606f02cd3fe978001d",
+      "src/architect/tradeoffs.ts": "315ae273da5e50595538b8aa2b3169f1e7c3865e1577d947a2cb29ca8628decc"
+    }
+  },
+  "analysisObserverHeightM": 0,
+  "notes": "Fingerprints identify downloaded uncompressed products. Dataset identity excludes generation time and model identity."
+}

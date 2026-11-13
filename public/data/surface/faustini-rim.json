@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "faustini-rim",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -87.1277,
+  "lonEast": 65.3089,
+  "heightM": 621,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/faustini-rim.mesh.bin",
+  "uv": "/data/surface/faustini-rim.uv.bin",
+  "minHeightM": 328.21,
+  "maxHeightM": 620.94,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "2675e7f3cc6be79cd0784d2ded17837552799e3c033890efadd22c3cd79b17b5",
+  "uvSha256": "ad17883fea7b4e5966a8cd0077177e54b222a5440f3f151994f66bcbf0c29b6a"
+}

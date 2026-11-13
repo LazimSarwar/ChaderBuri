@@ -1,0 +1,61 @@
+{
+ "version": 1,
+ "createdUTC": "2026-10-19T18:08:12.652950+00:00",
+ "start": "2026-09-01",
+ "stop": "2028-12-31",
+ "stepHours": 1,
+ "layout": "Float32 little-endian elevations (deg), station-major, hour-minor",
+ "stations": [
+  {
+   "name": "Goldstone",
+   "lat": 35.4267,
+   "lonEast": 243.1105,
+   "altKm": 0.915
+  },
+  {
+   "name": "Madrid",
+   "lat": 40.4272,
+   "lonEast": 356.9114,
+   "altKm": 0.73
+  },
+  {
+   "name": "Canberra",
+   "lat": -35.4022,
+   "lonEast": 148.9819,
+   "altKm": 0.42
+  }
+ ],
+ "counts": {
+  "hours": 20449,
+  "stations": 3
+ },
+ "source": "NASA/JPL Horizons observer queries, CENTER=coord@399 geodetic station coordinates (ITRF93), DE441",
+ "provenance": {
+  "generator": "scripts/build_dsn_geometry.py",
+  "generatorSha256": "895fd92b1f251870fc07fe945d8e7811792143fda063e7650d15ee6108a2ec50",
+  "payloadSha256": "b3f73708afdd09f51d980349282dbfdd3b35ce95283fe73466fa0051f90e2a84",
+  "perStation": {
+   "Goldstone": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27301%27&EPHEM_TYPE=OBSERVER&CENTER=%27coord%40399%27&COORD_TYPE=GEODETIC&SITE_COORD=%27243.1105%2C35.4267%2C0.9150%27&START_TIME=%272026-09-01%27&STOP_TIME=%272028-12-31%27&STEP_SIZE=%271h%27&QUANTITIES=%274%2C13%2C20%27",
+   "Madrid": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27301%27&EPHEM_TYPE=OBSERVER&CENTER=%27coord%40399%27&COORD_TYPE=GEODETIC&SITE_COORD=%27356.9114%2C40.4272%2C0.7300%27&START_TIME=%272026-09-01%27&STOP_TIME=%272028-12-31%27&STEP_SIZE=%271h%27&QUANTITIES=%274%2C13%2C20%27",
+   "Canberra": "https://ssd.jpl.nasa.gov/api/horizons.api?format=text&COMMAND=%27301%27&EPHEM_TYPE=OBSERVER&CENTER=%27coord%40399%27&COORD_TYPE=GEODETIC&SITE_COORD=%27148.9819%2C-35.4022%2C0.4200%27&START_TIME=%272026-09-01%27&STOP_TIME=%272028-12-31%27&STEP_SIZE=%271h%27&QUANTITIES=%274%2C13%2C20%27"
+  }
+ },
+ "validation": {
+  "Goldstone": {
+   "samples": 211,
+   "maxAbsDeltaDeg": 0.8586,
+   "meanAbsDeltaDeg": 0.2
+  },
+  "Madrid": {
+   "samples": 211,
+   "maxAbsDeltaDeg": 0.7571,
+   "meanAbsDeltaDeg": 0.2131
+  },
+  "Canberra": {
+   "samples": 211,
+   "maxAbsDeltaDeg": 0.8369,
+   "meanAbsDeltaDeg": 0.2015
+  }
+ },
+ "note": "Analytic fallback (src/lib/dsn.ts Astronomical Almanac formula, ~0.3 deg class) agrees with the SPICE-grade station geometry within the recorded deltas; the precomputed series is authoritative inside the window."
+}

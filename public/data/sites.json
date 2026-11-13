@@ -1,0 +1,142 @@
+[
+ {
+  "name": "Shackleton Rim",
+  "slug": "shackleton-rim",
+  "lat": -89.936,
+  "lonEast": -137.5077,
+  "kind": "candidate",
+  "siteHeightM": 1426,
+  "snap": "max",
+  "note": "Pole-facing crest of Shackleton's rim (crater center 10.5 km away), snapped to the local DEM maximum. Candidate Artemis/ILRS base region."
+ },
+ {
+  "name": "Shackleton Floor",
+  "slug": "shackleton-floor",
+  "lat": -89.625,
+  "lonEast": 118.7512,
+  "kind": "candidate",
+  "siteHeightM": -2872,
+  "snap": "min",
+  "note": "Selected local DEM minimum on Shackleton crater floor. The cached interval reports no hourly Sun-centre visibility; this calculation does not establish permanent shadow or detect water ice."
+ },
+ {
+  "name": "Malapert Massif (Artemis area)",
+  "slug": "malapert-massif",
+  "lat": -85.988,
+  "lonEast": 2.0577,
+  "kind": "candidate",
+  "siteHeightM": 5174,
+  "snap": "max",
+  "note": "Selected Malapert-region DEM maximum. The displayed DEM-anchored coordinate defines the prediction; it is not a certified landing point."
+ },
+ {
+  "name": "Polar High Point",
+  "slug": "polar-high-point",
+  "lat": -85.2327,
+  "lonEast": 36.595,
+  "kind": "candidate",
+  "siteHeightM": 6800,
+  "snap": "max",
+  "note": "A local high point in the LOLA south-polar cap (above the 1737.4 km reference sphere), selected to explore high-elevation illumination and Earth visibility."
+ },
+ {
+  "name": "IM-1 Odysseus Site",
+  "slug": "im-1-odysseus-site",
+  "lat": -80.3,
+  "lonEast": 1.3,
+  "kind": "clps",
+  "siteHeightM": 2713,
+  "snap": null,
+  "note": "Intuitive Machines IM-1 Odysseus landing region, Feb 2024, near Malapert A (approximate published coordinates; no DEM snap \u2014 it is a real landing site)."
+ },
+ {
+  "name": "de Gerlache Rim",
+  "slug": "de-gerlache-rim",
+  "lat": -88.664,
+  "lonEast": -68.4061,
+  "kind": "candidate",
+  "siteHeightM": 1815,
+  "snap": "max",
+  "note": "Rim crest of de Gerlache crater (~34 km), snapped to the local DEM maximum. Adjacent to the Artemis candidate region."
+ },
+ {
+  "name": "Haworth Rim",
+  "slug": "haworth-rim",
+  "lat": -86.2887,
+  "lonEast": 1.2877,
+  "kind": "candidate",
+  "siteHeightM": 2874,
+  "snap": "max",
+  "note": "Rim crest of Haworth crater (~26 km), snapped to the local DEM maximum. Haworth floor is a classic permanently shadowed ice target."
+ },
+ {
+  "name": "Faustini Rim",
+  "slug": "faustini-rim",
+  "lat": -87.1277,
+  "lonEast": 65.3089,
+  "kind": "candidate",
+  "siteHeightM": 621,
+  "snap": "max",
+  "note": "Rim crest of Faustini crater (~39 km), snapped to the local DEM maximum. Deep, ancient, permanently shadowed interior."
+ },
+ {
+  "name": "Nobile Rim",
+  "slug": "nobile-rim",
+  "lat": -84.8633,
+  "lonEast": 38.4721,
+  "kind": "candidate",
+  "siteHeightM": 6827,
+  "snap": "max",
+  "note": "Rim crest of Nobile crater (~73 km, central-peak crater), snapped to the local DEM maximum. Former VIPER rover exploration region."
+ },
+ {
+  "name": "Connecting Ridge",
+  "slug": "connecting-ridge",
+  "lat": -84.7692,
+  "lonEast": 36.2829,
+  "kind": "candidate",
+  "siteHeightM": 6358,
+  "snap": "max",
+  "note": "NASA Artemis III candidate region: the crest between the de Gerlache and Shackleton/Henson drainage, snapped to the local DEM maximum."
+ },
+ {
+  "name": "Connecting Ridge Extension",
+  "slug": "connecting-ridge-extension",
+  "lat": -84.563,
+  "lonEast": 39.6095,
+  "kind": "candidate",
+  "siteHeightM": 6659,
+  "snap": "max",
+  "note": "NASA Artemis III candidate region northeast of Connecting Ridge, snapped to the local DEM maximum."
+ },
+ {
+  "name": "Amundsen Rim",
+  "slug": "amundsen-rim",
+  "lat": -86.2884,
+  "lonEast": 77.9575,
+  "kind": "candidate",
+  "siteHeightM": 1112,
+  "snap": "max",
+  "note": "Rim crest of Amundsen crater (~105 km), snapped to the local DEM maximum. NASA Artemis III candidate region; classic volatile-science target south of the central peak."
+ },
+ {
+  "name": "Leibnitz Beta Plateau",
+  "slug": "leibnitz-beta-plateau",
+  "lat": -85.9627,
+  "lonEast": -2.3725,
+  "kind": "candidate",
+  "siteHeightM": 4993,
+  "snap": "max",
+  "note": "NASA Artemis III candidate region on the Leibnitz Beta plateau west of Malapert, snapped to the local DEM maximum."
+ },
+ {
+  "name": "de Gerlache-Kocher Massif",
+  "slug": "de-gerlache-kocher-massif",
+  "lat": -88.4493,
+  "lonEast": -67.9022,
+  "kind": "candidate",
+  "siteHeightM": 1580,
+  "snap": "max",
+  "note": "NASA Artemis III candidate region: the massif between de Gerlache and Kocher craters, snapped to the local DEM maximum."
+ }
+]

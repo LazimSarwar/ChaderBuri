@@ -1,0 +1,167 @@
+[
+  {
+    "body": "Mars",
+    "path": "/textures/space/mars.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Mars/Mars.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "12ec6bf02ebd42a246edc778cb2ce8c595b4d9f0892badf0bfff8abb2303c780"
+  },
+  {
+    "body": "Neptune",
+    "path": "/textures/space/neptune.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Neptune/Neptune.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "e9bb2b7bcfb98d3f1adc6f2e20e833a00c11e9677238d8a00ae7431214ca70aa"
+  },
+  {
+    "body": "Phobos",
+    "path": "/textures/space/phobos.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Mars%20-%20Phobos/Mars%20-%20Phobos.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "8ec807b353eb28f44b5aa24b8a887935ee5563f5b63bde2430a9988220f71463"
+  },
+  {
+    "body": "Deimos",
+    "path": "/textures/space/deimos.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Mars%20-%20Deimos/Mars%20-%20Deimos.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "204e89cc7dc128e9fa6ae5f14cc23dc7917a4a8ccab9feff1a9544d22b354dce"
+  },
+  {
+    "body": "Io",
+    "path": "/textures/space/io.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Jupiter%20-%20Io%20%28A%29/Jupiter%20-%20Io%20%28A%29.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "fdd79a58331864ec1f93035b3ebb92767b01715d2ce75d5b73cf8537b6af3382"
+  },
+  {
+    "body": "Europa",
+    "path": "/textures/space/europa.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Jupiter%20-%20Europa/Jupiter%20-%20Europa.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "50d01ca5c01352d1c507bb17fefd1c46ba11260305656250062c6cdac89c8ebf"
+  },
+  {
+    "body": "Ganymede",
+    "path": "/textures/space/ganymede.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Jupiter%20-%20Ganymede/Jupiter%20-%20Ganymede.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "1aa9d5a6f20e72230c13ce3d78592fc056e22f1e1ee39ea7acfa7e08d09fe173"
+  },
+  {
+    "body": "Callisto",
+    "path": "/textures/space/callisto.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Jupiter%20-%20Callisto/Jupiter%20-%20Callisto.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "b9f4fa5db94debabd12814853fd132db3449889646a490b6f95a897b2c47b121"
+  },
+  {
+    "body": "Enceladus",
+    "path": "/textures/space/enceladus.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Saturn%20-%20Enceladus/Saturn%20-%20Enceladus.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "4e16d38b98b788468e4f005b56d04282ccfe2f086eebfb1c0e5d20d8fd65ebef"
+  },
+  {
+    "body": "Titan",
+    "path": "/textures/space/titan.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Saturn%20-%20Titan/Saturn%20-%20Titan.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "a213516e3ccbe46bfbdb576963859c82c75799612ccab775ec3cf24b451feca0"
+  },
+  {
+    "body": "Titania",
+    "path": "/textures/space/titania.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Uranus%20-%20Titania/Uranus%20-%20Titania.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "087425752c8f5090965f5a4fac7d50a4c450563edd50b807bbc1d45ebeedd312"
+  },
+  {
+    "body": "Oberon",
+    "path": "/textures/space/oberon.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Uranus%20-%20Oberon/Uranus%20-%20Oberon.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "ed29842e1b1fb96ee9626a62d4ee7bbf53756997ef33b1edda2dbead43383460"
+  },
+  {
+    "body": "Triton",
+    "path": "/textures/space/triton.jpg",
+    "url": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/Images%20and%20Textures/Neptune%20-%20Triton/Neptune%20-%20Triton.jpg",
+    "credit": "NASA 3D Resources; historical/composite texture, not live imagery",
+    "sha256": "6a5015beaf860426d9505f054565c9ad28ba3822054d5b750c74b4d8e61eb4f3"
+  },
+  {
+    "body": "Mercury",
+    "path": "/textures/space/mercury.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_mercury.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "5a5c80607f643496bac9a631e71957def35ed788895f18b678ac849c2b38e48a"
+  },
+  {
+    "body": "Uranus",
+    "path": "/textures/space/uranus.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_uranus.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "d15239d46f82d3ea13d2b260b5b29b2a382f42f2916dae0694d0387b1204a09d"
+  },
+  {
+    "body": "Sun",
+    "path": "/textures/space/sun.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/8k_sun.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; downscaled from 8k to 2048x1024 for delivery, otherwise unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "0278d7cdc54a4d2c08829781a20cbfe41fef8de5fde3301956628b279153e0f6",
+    "reference": "https://github.com/simonvse/NEO-Orrery/blob/main/main.js",
+    "referenceAssetSha256": "f22b1cfb306ddce72a7e3b628668a0175b745038ce6268557cb2f7f1bdf98b9d"
+  },
+  {
+    "body": "Moon",
+    "path": "/textures/space/moon-map.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_moon.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "2764ba6535ea0481a062846ee033cc7a909dae05b31a8fd13f3e98f3a7fd92bd"
+  },
+  {
+    "body": "Venus",
+    "path": "/textures/space/venus-clouds.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_venus_atmosphere.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "225012ad4911730605c4e189ca2a3bf674fce50cc48aab4102b936b47d6991ac"
+  },
+  {
+    "body": "Saturn",
+    "path": "/textures/space/saturn-map.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_saturn.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "54a900ca9bf7ab62e70f862852759abdf342e6d6436a95a2fe9ebdb6bcd3bbac"
+  },
+  {
+    "body": "Jupiter",
+    "path": "/textures/space/jupiter-map.jpg",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "b0f04d005350252636b0e3396fc592548cbd9e9126b269d32d5c6abd4b0e4f2b"
+  },
+  {
+    "body": "Saturn rings",
+    "path": "/textures/space/saturn-rings.png",
+    "url": "https://www.solarsystemscope.com/textures/download/2k_saturn_ring_alpha.png",
+    "credit": "Solar System Scope / INOVE, CC BY 4.0; authored appearance map based on NASA imagery; unchanged",
+    "license": "https://creativecommons.org/licenses/by/4.0/",
+    "licenseSource": "https://ssi.solarsystemscope.com/textures/",
+    "sha256": "4b0644b2f3ef259fd0bfaedd9dc52f9e7d9738f65f50363e8c4dd19f650d7334"
+  }
+]

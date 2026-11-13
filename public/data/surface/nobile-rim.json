@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "nobile-rim",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -84.8633,
+  "lonEast": 38.4721,
+  "heightM": 6827,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/nobile-rim.mesh.bin",
+  "uv": "/data/surface/nobile-rim.uv.bin",
+  "minHeightM": 6369.38,
+  "maxHeightM": 6907.87,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "fe9c287a373d774aa586cd6b5aa096599a29ca75845304b57f4fe08ffe76618f",
+  "uvSha256": "0c23b6f47895d17ac59fd0fa15c96d45c1bc1d4f980e1c59f82f898c30f784c9"
+}

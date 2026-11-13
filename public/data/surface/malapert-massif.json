@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "malapert-massif",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -85.988,
+  "lonEast": 2.0577,
+  "heightM": 5174,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/malapert-massif.mesh.bin",
+  "uv": "/data/surface/malapert-massif.uv.bin",
+  "minHeightM": 4945.73,
+  "maxHeightM": 5173.5,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "19753eddd8e28408c66739ec64c91b656d7b8454299a77134ff60a36346ab525",
+  "uvSha256": "7330e3b9927f882325047cfbfe6b8e3fa738e96c46565153f8f6373b86cd14a8"
+}

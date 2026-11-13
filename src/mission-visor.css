@@ -1,0 +1,174 @@
+/* Mission Visor: a helmet heads-up display. Hairline instrument glass, monospaced
+   numerals, colour only for state (ok / warn / fail) and for the Sun and Earth. */
+.mission-visor{
+ --visor-ink:#dfe9ee;--visor-dim:#9fb6c1;--visor-line:#9fc3d03d;--visor-glass:#000000e0;
+ --visor-ok:#3ddc97;--visor-warn:#f0b45a;--visor-fail:#ff5d78;--visor-sun:#f5b942;--visor-earth:#4cc9f0;
+ --visor-mono:"JetBrains Mono Variable",ui-monospace,monospace;
+ position:absolute;inset:0;pointer-events:none;color:var(--visor-ink);font-family:"Inter Variable",system-ui,sans-serif;z-index:3
+}
+.mission-visor [data-status=ok]{--tone:var(--visor-ok)}
+.mission-visor [data-status=warn]{--tone:var(--visor-warn)}
+.mission-visor [data-status=fail]{--tone:var(--visor-fail)}
+
+/* Corner brackets of the visor frame. */
+.visor-frame i{position:absolute;width:30px;height:30px;border-color:#a9cbd85c;border-style:solid;border-width:0}
+.visor-frame i:nth-child(1){top:14px;left:14px;border-top-width:1px;border-left-width:1px}
+.visor-frame i:nth-child(2){top:14px;right:14px;border-top-width:1px;border-right-width:1px}
+.visor-frame i:nth-child(3){bottom:14px;left:14px;border-bottom-width:1px;border-left-width:1px}
+.visor-frame i:nth-child(4){bottom:14px;right:14px;border-bottom-width:1px;border-right-width:1px}
+
+/* Control bar: route back to Mission Control, visor toggle, per-group switches. */
+.visor-bar{position:absolute;top:calc(var(--surface-header-top,24px) + var(--surface-header-height,72px) + 12px);right:var(--surface-edge,24px);display:flex;align-items:center;gap:6px}
+.visor-control{display:inline-flex;align-items:center;gap:6px;min-height:34px;padding:6px 11px;border:1px solid var(--visor-line);border-radius:8px;background:var(--visor-glass);color:var(--visor-ink);font-size:12px}
+.visor-control kbd{font:10px var(--visor-mono);color:var(--visor-dim);border:1px solid var(--visor-line);border-radius:4px;padding:0 4px}
+.visor-control[aria-pressed=false]{color:var(--visor-dim)}
+.visor-chips{display:inline-flex;gap:2px;padding:3px;border:1px solid var(--visor-line);border-radius:8px;background:var(--visor-glass)}
+.visor-chips button{display:grid;place-items:center;width:28px;height:28px;border-radius:6px;color:var(--visor-dim)}
+.visor-chips button[aria-pressed=true]{color:var(--visor-ink);background:#9fc3d01f}
+.mission-visor button:focus-visible{outline:2px solid #eed58a;outline-offset:2px}
+
+/* Instrument groups. */
+.visor-groups{position:absolute;top:calc(var(--surface-header-top,24px) + var(--surface-header-height,72px) + 64px);left:var(--surface-edge,24px);display:flex;flex-direction:column;gap:10px;width:244px}
+.visor-groups[data-side=right]{left:auto;right:var(--surface-edge,24px)}
+.visor-group{padding:10px 12px 9px;border:1px solid var(--visor-line);border-left:2px solid var(--tone,var(--visor-line));border-radius:10px;background:var(--visor-glass);box-shadow:0 6px 22px #0005}
+.visor-groups[data-side=right] .visor-group{border-left-width:1px;border-right:2px solid var(--tone,var(--visor-line))}
+.visor-group>header{display:flex;align-items:center;gap:6px;margin-bottom:4px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--visor-dim)}
+.visor-group>header span{flex:1}
+.visor-group>header button{display:grid;place-items:center;width:20px;height:20px;border-radius:4px;color:var(--visor-dim);opacity:.6}
+.visor-group>header button:hover{opacity:1;background:#9fc3d01a}
+.visor-headline,.visor-detail{display:flex;width:100%;align-items:baseline;justify-content:space-between;gap:10px;text-align:left;border-radius:6px}
+.visor-headline:hover,.visor-detail:hover,.visor-headline[aria-expanded=true],.visor-detail[aria-expanded=true]{background:#9fc3d014}
+.visor-headline span{font-size:11px;color:var(--visor-dim)}
+.visor-headline span{flex:1 1 auto;min-width:0}
+.visor-headline strong{white-space:nowrap;font:600 20px/1.25 var(--visor-mono);color:var(--tone,var(--visor-ink));font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.visor-headline strong small,.visor-detail strong small{margin-left:3px;font-size:.62em;font-weight:500;color:var(--visor-dim)}
+.visor-detail{padding:2px 0}
+.visor-detail span{font-size:11px;color:var(--visor-dim)}
+.visor-detail strong{font:500 12px/1.5 var(--visor-mono);color:var(--tone,var(--visor-ink));font-variant-numeric:tabular-nums;white-space:nowrap}
+.visor-details{margin-top:4px;border-top:1px solid #9fc3d01f;padding-top:4px}
+.visor-battery{height:4px;margin:4px 0 2px;border-radius:2px;background:#9fc3d026;overflow:hidden}
+.visor-battery i{display:block;height:100%;background:var(--tone,var(--visor-ok));transition:width .4s}
+
+/* AR markers locked onto the Sun, Earth, the lander and the landing target. */
+.visor-markers{position:absolute;inset:0}
+.visor-marker{position:absolute;transform:translate(-13px,-13px);display:flex;align-items:flex-start;gap:8px}
+.visor-marker b{width:26px;height:26px;flex-shrink:0;border:1px solid var(--mark);border-radius:50%;box-shadow:0 0 0 3px #0003,inset 0 0 0 3px #0002}
+.visor-marker b::after{content:"";display:block;width:4px;height:4px;margin:10px auto 0;border-radius:50%;background:var(--mark)}
+.visor-marker span{display:flex;flex-direction:column;padding:3px 7px;margin-top:-2px;border-left:1px solid var(--mark);background:#000000c7}
+.visor-marker strong{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--mark)}
+.visor-marker small{font:11px/1.45 var(--visor-mono);color:var(--visor-ink);white-space:nowrap}
+[data-tone=sun]{--mark:var(--visor-sun)}[data-tone=earth]{--mark:var(--visor-earth)}[data-tone=lander]{--mark:#e3e7e9}[data-tone=target]{--mark:#c9b98a}
+.visor-edge{position:absolute;transform:translateY(-50%)}
+.visor-edge[data-side=left]{left:20px}.visor-edge[data-side=right]{right:20px}
+@media(min-width:768px){.visor-edge[data-side=left]{left:calc(var(--surface-edge,24px) + 258px)}.visor-edge[data-side=right]{right:calc(var(--surface-edge,24px) + 258px)}}
+.visor-edge span{display:inline-block;padding:3px 8px;border:1px solid var(--mark);border-radius:999px;background:#000000c7;font:10px var(--visor-mono);letter-spacing:.06em;color:var(--mark);text-transform:uppercase}
+
+/* Source card: kind, source and assumption behind every number. */
+.visor-source{position:absolute;left:50%;bottom:150px;transform:translateX(-50%);width:min(380px,calc(100% - 32px));max-height:calc(100% - 300px);overflow:auto;padding:14px 16px;border:1px solid var(--visor-line);border-radius:12px;background:#000000f5;box-shadow:0 12px 36px #0008}
+.visor-source header{display:flex;justify-content:space-between;align-items:center}
+.visor-source header span{font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:2px 7px;border-radius:4px;border:1px solid currentColor}
+.visor-source [data-kind=measured]{color:var(--visor-earth)}.visor-source [data-kind=calculated]{color:#c7dbe3}
+.visor-source [data-kind=estimated]{color:var(--visor-warn)}.visor-source [data-kind=illustrative]{color:#b9a7e6}
+.visor-source header button{display:grid;place-items:center;width:26px;height:26px;border-radius:6px;color:var(--visor-dim)}
+.visor-source h3{margin:10px 0 2px;font-size:13px;font-weight:550}
+.visor-source .visor-source-value{margin:0 0 8px;font:600 24px var(--visor-mono);color:var(--tone,var(--visor-ink))}
+.visor-source-value small{font-size:13px;color:var(--visor-dim)}
+.visor-source p{font-size:12px;line-height:1.6;color:#c2d3da;margin:6px 0}
+.visor-source p strong{display:block;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--visor-dim)}
+.visor-source dl{display:grid;gap:2px;margin:4px 0 8px}
+.visor-source dl div{display:flex;justify-content:space-between;gap:12px;font-size:12px}
+.visor-source dt{color:var(--visor-dim)}.visor-source dd{font-family:var(--visor-mono);color:var(--tone,var(--visor-ink))}
+.visor-source .buri-ask{margin-top:6px}
+
+/* The visor replaces the duplicated telemetry, and steps aside for open field cards. */
+.visit-interface[data-visor=on] .visit-telemetry{display:none}
+.visit-interface:has(.visit-field-card,.visit-tool-card) .mission-visor .visor-groups[data-side=right],
+.visit-interface:has(.visit-field-card,.visit-tool-card) .mission-visor .visor-bar{display:none}
+.visit-interface:has(.visit-field-card) .mission-visor .visor-source{display:none}
+
+/* Boot sequence when the visor comes online. */
+@media(prefers-reduced-motion:no-preference){
+ .mission-visor[data-on=true] .visor-frame i{animation:visor-bracket .7s cubic-bezier(.2,.8,.2,1) both}
+ .mission-visor[data-on=true] .visor-group{animation:visor-in .5s cubic-bezier(.2,.8,.2,1) both}
+ .mission-visor[data-on=true] .visor-groups .visor-group:nth-child(2){animation-delay:.12s}
+ .mission-visor[data-on=true] .visor-groups[data-side=right] .visor-group{animation-delay:.2s}
+ .mission-visor[data-on=true] .visor-groups[data-side=right] .visor-group:nth-child(2){animation-delay:.32s}
+ .visor-marker,.visor-edge{transition:opacity .2s}
+ @keyframes visor-in{from{opacity:0;transform:translateY(6px);filter:blur(2px)}to{opacity:1;transform:none;filter:none}}
+ @keyframes visor-bracket{from{opacity:0;transform:scale(1.6)}to{opacity:1;transform:none}}
+}
+
+/* Phones: headline-only strip above the walking controls. */
+@media(max-width:767px){
+ .visor-bar{top:auto;bottom:188px;right:12px}
+ .visor-control{min-height:32px;padding:5px 9px;font-size:11px}.visor-control kbd,.visor-chips{display:none}
+ .visor-groups,.visor-groups[data-side=right]{top:auto;bottom:128px;left:12px;right:auto;width:calc(50% - 16px);flex-direction:row;gap:6px}
+ .visor-groups[data-side=right]{left:auto;right:12px}
+ .visor-group{flex:1;min-width:0;padding:6px 7px}
+ .visor-group>header span,.visor-group>header button,.visor-details,.visor-battery{display:none}
+ .visor-group>header{margin-bottom:0}
+ .visor-headline{flex-direction:column;gap:0}
+ .visor-headline span{font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+ .visor-headline strong{font-size:14px;white-space:nowrap}
+ .visor-marker small{display:none}
+ .visor-source{bottom:200px;max-height:calc(100% - 320px)}
+}
+@media print{.mission-visor{display:none}}
+
+/* One set of markers: the visor's replace the scene's Sun/Earth labels and bearing pins. */
+.visit-interface[data-visor=on] .visit-hotspot{display:none}
+.landsight-workspace:has(.visit-interface[data-visor=on]) .space-label{display:none}
+.landsight-workspace:has(.buri-conversation) .mission-visor .visor-groups[data-side=right]{visibility:hidden}
+
+/* Landing simulation telemetry: same instrument language as the visor. */
+.landing-hud{--visor-ink:#dfe9ee;--visor-dim:#9fb6c1;--visor-line:#9fc3d03d;--visor-glass:#000000e0;--visor-mono:"JetBrains Mono Variable",ui-monospace,monospace;
+ position:absolute;inset:0;z-index:86;pointer-events:none;color:var(--visor-ink);font-family:"Inter Variable",system-ui,sans-serif}
+.landing-title{position:absolute;top:22px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;width:min(760px,calc(100% - 32px))}
+.landing-title>span{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--visor-dim)}
+.landing-title>strong{font:600 18px var(--visor-mono);letter-spacing:.04em;text-transform:uppercase}
+.landing-title ol{display:flex;gap:4px;margin:0;padding:0;list-style:none;flex-wrap:wrap;justify-content:center}
+.landing-title li{font-size:10px;letter-spacing:.06em;padding:3px 8px;border:1px solid var(--visor-line);border-radius:999px;color:#7f97a3;background:#000000b3}
+.landing-title li[data-state=done]{color:var(--visor-dim)}.landing-title li[data-state=now]{color:#000000;background:#e9d5a2;border-color:transparent;font-weight:600}
+.landing-column{position:absolute;top:34%;left:24px;display:flex;flex-direction:column;gap:8px;width:190px}
+.landing-column[data-side=right]{left:auto;right:24px}
+.landing-column>div{padding:8px 11px;border:1px solid var(--visor-line);border-radius:9px;background:var(--visor-glass)}
+.landing-column span{display:block;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--visor-dim)}
+.landing-column strong{display:flex;align-items:baseline;gap:4px;font:600 22px/1.3 var(--visor-mono);font-variant-numeric:tabular-nums}
+.landing-column strong b{font-weight:600}.landing-column strong small{font-size:12px;color:var(--visor-dim);font-weight:500}
+.landing-bar{display:block;height:3px;margin-top:5px;border-radius:2px;background:#9fc3d026;overflow:hidden}
+.landing-bar>i{display:block;height:100%;width:0;background:#e9d5a2}
+.landing-bracket{position:absolute;display:none;transform:translate(-50%,-50%);width:80px;height:80px}
+.landing-bracket i{position:absolute;width:14px;height:14px;border-color:#e9d5a2;border-style:solid;border-width:0}
+.landing-bracket i:nth-child(1){top:0;left:0;border-top-width:1.5px;border-left-width:1.5px}.landing-bracket i:nth-child(2){top:0;right:0;border-top-width:1.5px;border-right-width:1.5px}
+.landing-bracket i:nth-child(3){bottom:0;left:0;border-bottom-width:1.5px;border-left-width:1.5px}.landing-bracket i:nth-child(4){bottom:0;right:0;border-bottom-width:1.5px;border-right-width:1.5px}
+.landing-bracket span{position:absolute;left:calc(100% + 8px);top:0;white-space:nowrap;font:11px var(--visor-mono);padding:2px 6px;background:#000000c7;border-left:1px solid #e9d5a2;color:#e9d5a2;letter-spacing:.06em;text-transform:uppercase}
+.landing-callout{position:absolute;top:24%;left:50%;transform:translateX(-50%);margin:0}
+.landing-callout span{display:none;font:600 30px var(--visor-mono);letter-spacing:.3em;text-transform:uppercase;color:#e9d5a2;text-shadow:0 2px 14px #000c}
+.landing-hud[data-phase=contact] [data-for=contact],.landing-hud[data-phase=shutdown] [data-for=shutdown],.landing-hud[data-phase=landed] [data-for=landed]{display:block}
+.landing-footer{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);display:flex;align-items:center;gap:12px;width:min(820px,calc(100% - 32px));justify-content:center;flex-wrap:wrap;text-align:center}
+.landing-footer>span{font-size:11px;color:var(--visor-dim);max-width:520px}
+@media(prefers-reduced-motion:no-preference){.landing-callout span{animation:visor-in .35s both}.landing-column>div{animation:visor-in .5s both}}
+@media(max-width:767px){
+ .landing-column,.landing-column[data-side=right]{top:auto;bottom:118px;width:calc(50% - 18px);left:12px;gap:5px}
+ .landing-column[data-side=right]{left:auto;right:12px}
+ .landing-column>div{padding:5px 8px}.landing-column strong{font-size:16px}.landing-column>div:nth-child(n+3){display:none}
+ .landing-title{top:14px}.landing-title ol{display:none}.landing-title>strong{font-size:15px}
+ .landing-callout{top:30%}.landing-callout span{font-size:22px}
+ .landing-footer{bottom:14px}.landing-footer>span{font-size:10px}
+}
+/* During her guided tour the caption owns the bottom-left; the landing footer moves right. */
+@media(min-width:768px){.landsight-workspace[data-guiding=true] .landing-footer{left:auto;right:24px;transform:none;width:auto;max-width:440px;justify-content:flex-end;text-align:right}}
+@media(max-width:767px){.landsight-workspace:has(.landing-hud) .moon-walk{display:none}}
+.landing-callout span{white-space:nowrap;text-align:center}
+@media(max-width:767px){.landing-callout span{font-size:19px;letter-spacing:.16em}}
+
+/* NASA archive images in the site Details card. */
+.nasa-imagery{display:grid;gap:12px;margin:0 0 14px}
+.nasa-imagery h3{margin:0;font-size:11px!important;letter-spacing:.14em;text-transform:uppercase;color:#a8bec9;font-weight:600}
+.nasa-imagery figure{margin:0;border:1px solid #9cb9c533;border-radius:10px;overflow:hidden;background:#000000}
+.nasa-imagery img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;background:#000000}
+.nasa-imagery figcaption{display:grid;gap:4px;padding:10px 12px}
+.nasa-imagery figcaption strong{font-size:13px;font-weight:550;color:#e0edf2}
+.nasa-imagery figcaption span{font-size:12px;line-height:1.5;color:#b8cbd5}
+.nasa-imagery figcaption small{font-size:10.5px;color:#8fa6b1}
+.nasa-imagery figcaption a{font-size:12px;color:#7fd3ef}

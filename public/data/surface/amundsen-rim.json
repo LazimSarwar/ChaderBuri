@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "amundsen-rim",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -86.2884,
+  "lonEast": 77.9575,
+  "heightM": 1112,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/amundsen-rim.mesh.bin",
+  "uv": "/data/surface/amundsen-rim.uv.bin",
+  "minHeightM": 650.92,
+  "maxHeightM": 1136.48,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "ea3377c4195dcef87780add8d753b4a1da4b72e3df59d96ddd70ffe6954396a1",
+  "uvSha256": "cca709e02b5b153b4333fb74bc17bf2da045c43cd3e62beb2e04eda9d33cdce3"
+}

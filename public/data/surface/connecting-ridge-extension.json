@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "connecting-ridge-extension",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -84.563,
+  "lonEast": 39.6095,
+  "heightM": 6659,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/connecting-ridge-extension.mesh.bin",
+  "uv": "/data/surface/connecting-ridge-extension.uv.bin",
+  "minHeightM": 6348.38,
+  "maxHeightM": 6808.49,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "1740aacfc1d020dbca0852ac88ed74e6f347c6d4d80ecd43dc6b64f484a89d17",
+  "uvSha256": "aacb25592c013e318466f797dda5f16c84ca7bf9129fdda67c803d1c5b696440"
+}

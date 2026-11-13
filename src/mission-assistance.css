@@ -1,0 +1,25 @@
+.mission-support-nav{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding:6px 20px;border-bottom:1px solid #262626;flex-shrink:0;background:#000}
+.mission-support-nav button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;padding:8px 12px;border:1px solid #303036;border-radius:8px;color:#d4d4d8;font-size:13px;line-height:1.3}
+.mission-support-nav button[aria-current=page]{border-color:#4cc9f0;color:#fafafa;background:#4cc9f00a}
+.mission-support-nav button:hover{background:#151518;color:#fafafa}
+.mission-support-nav p{font-size:12px;color:#a1a1aa;margin-left:auto;max-width:44ch}
+.mission-weather-page{padding:28px;max-width:1000px!important}
+.mission-weather-page h1{font-size:28px;font-weight:600;line-height:1.25;letter-spacing:-.4px;color:#fafafa;margin-bottom:10px}
+.mission-weather-page>p{color:#b4b4bf;line-height:1.6;max-width:72ch;margin-bottom:20px}
+.field-status .field-weather-button{min-height:32px;padding:4px 8px;border:1px solid var(--f-soft);border-radius:6px;color:var(--f-ink);font-size:calc(12px*var(--f-fs));background:var(--f-panel)}
+.field-weather-button:focus-visible{outline:2px solid var(--f-earth);outline-offset:2px}
+@media(pointer:coarse){.field-hud .field-status .field-weather-button{min-height:44px}}
+.field-help-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.landsight-workspace:has(.dash:not([hidden])[data-workspace-panel=setup]) .buri-corner,.landsight-workspace:has(.dash:not([hidden])[data-workspace-panel=guide]) .buri-corner,.landsight-workspace:has(.dash:not([hidden])[data-workspace-panel=weather]) .buri-corner{display:none}
+.mission-weather-page>button:first-child{margin-bottom:16px}
+@media(max-width:767px){.mission-support-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:6px 8px;gap:5px}.mission-support-nav button{font-size:12px;gap:5px;padding:6px}.mission-support-nav p{display:none}.mission-weather-page{padding:22px 16px}.field-status .field-weather-button{min-height:32px}.dash:is([data-workspace-panel=setup],[data-workspace-panel=guide],[data-workspace-panel=weather]) .dash-nav{display:none}}
+@media(max-height:500px) and (max-width:1023px){
+ .dash:is([data-workspace-panel=setup],[data-workspace-panel=guide],[data-workspace-panel=weather]) .dash-header{height:auto;min-height:52px;padding:4px 8px;gap:8px;flex-wrap:nowrap}
+ .dash:is([data-workspace-panel=setup],[data-workspace-panel=guide],[data-workspace-panel=weather]) :is(.dash-brand,.dash-nav){display:none}
+ .dash:is([data-workspace-panel=setup],[data-workspace-panel=guide],[data-workspace-panel=weather]) .dash-header-actions{width:100%;justify-content:space-between}
+ .field-hud[data-primary=ask] :is(.field-top,.field-strip,.field-mission-note){visibility:hidden;pointer-events:none}
+ .field-hud[data-primary=ask]:has(.field-ask) .field-companion{top:8px!important;bottom:8px!important;left:8px!important;right:8px!important;width:auto!important;max-width:none!important;max-height:none!important;transform:none!important}
+ .field-hud[data-primary=ask] .field-companion-portrait{display:none!important}
+ .field-hud[data-primary=ask] .field-companion-body{height:100%;width:100%;min-height:0;max-height:none!important;display:flex;flex-direction:column;overflow:hidden}
+ .field-hud[data-primary=ask] .field-ask{height:100%;max-height:none!important;flex:1;min-height:0}
+}

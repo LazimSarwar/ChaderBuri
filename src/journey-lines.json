@@ -1,0 +1,10 @@
+{
+  "depart": "Come along. We're heading down to the south pole.",
+  "landed": "Here we are. Take a look along the ridge. Shall we look for the Sun, or turn toward Earth?",
+  "sunLit": "There it is. The whole Sun clears the ridge from here.",
+  "sunGrazing": "See that thin edge of light? Only part of the Sun clears the ridge.",
+  "sunShadow": "The Sun is in this direction, just out of sight behind the ridge.",
+  "earthUp": "There’s home. From this spot, Earth peeks above the skyline.",
+  "earthDown": "Home is that way. From this spot, the ridge hides Earth.",
+  "release": "Take your time. I'll be here if you need me."
+}

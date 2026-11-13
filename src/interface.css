@@ -1,0 +1,113 @@
+/* Interface surfaces over the Moon: pure black, quiet hairline borders, white text,
+   one blue accent for links and selection, colour only for real outcomes. */
+:is(.workspace-bar,.workspace-welcome,.site-selection,.space-navigator,.ribbon-container,.dash,.scenario-comparison){
+  --color-void:#000;--color-panel:#000;--color-panel2:#0a0a0a;
+  --color-paper:#000;--color-paper2:#0a0a0a;--color-paper3:#1f1f1f;
+  --color-ink:#fafafa;--color-inkdim:#a1a1aa;
+  --color-edge:#1f1f1f;--color-edge2:#333;--color-rule:#1f1f1f;
+  --color-earth:#4cc9f0;--color-sun:#f5b942;--color-sunhot:#ff8a5b;
+  --color-viable:#3ddc97;--color-danger:#ff5d78;--color-stamp:#4cc9f0;
+  color:var(--color-ink);color-scheme:dark;font-variant-numeric:tabular-nums;
+}
+.workspace-bar{background:#000;border:1px solid #1f1f1f;border-radius:12px;padding:12px 20px 0;box-shadow:none;backdrop-filter:none}
+.brand{font-size:20px;letter-spacing:-.6px;font-weight:650;gap:10px}
+.brand small{font-size:11px;letter-spacing:0;margin-top:2px;color:#a1a1aa}
+.brand-orbit{width:29px;height:29px;box-shadow:none}
+.workspace-tabs{gap:4px;margin-left:20px}
+.workspace-tabs button{font-size:13px;padding:9px 12px;border-radius:8px;color:#a1a1aa}
+.workspace-tabs button:hover{color:#fafafa;background:#111}
+.workspace-tabs button[aria-expanded="true"],.workspace-tabs button[aria-current]{background:#1a1a1a;color:#fafafa;box-shadow:none}
+.workspace-bar .tool-button{background:#000;color:#d4d4d8;border:1px solid #262626;border-radius:8px;font-size:12px}
+.workspace-bar .tool-button:hover{background:#111;color:#fafafa;border-color:#333}
+.workspace-bar .workspace-quick-compare{background:#fafafa;border-color:#fafafa;color:#000;padding:9px 14px;font-weight:600}
+.workspace-bar .workspace-quick-compare:hover{background:#e4e4e7;color:#000}
+.workspace-bar[data-compact="true"]{padding-bottom:12px}
+.epoch-readout{font-size:11px}.epoch-readout small{font-size:9px;letter-spacing:.04em;color:#71717a}.epoch-readout strong{font-weight:550;margin-top:2px}
+.playback-bar{border-top:1px solid #1f1f1f;padding:8px 0;margin-top:2px}
+.prediction-label{font-size:11px;letter-spacing:0;color:#a1a1aa}
+.tools-menu{background:#000;border:1px solid #262626;border-radius:10px;box-shadow:0 10px 35px #000;backdrop-filter:none;min-width:210px}
+.tools-menu button{font-size:13px;color:#d4d4d8}.tools-menu button:hover{background:#111;color:#fafafa}
+.workspace-welcome,.site-selection{background:#000;border:1px solid #1f1f1f;box-shadow:0 10px 35px #000;padding:28px;border-radius:14px;width:min(410px,calc(100% - 24px))}
+.workspace-welcome h1{font-size:32px;font-weight:600;line-height:1.15;letter-spacing:-1px;margin:12px 0 14px;color:#fafafa}
+.workspace-welcome>.eyebrow,.site-selection .eyebrow{font-size:11px;letter-spacing:.05em;color:#4cc9f0;font-weight:600}
+.workspace-welcome>p:not(.eyebrow){font-size:14px;line-height:1.7;color:#a1a1aa}
+:is(.workspace-welcome,.site-selection,.dash) .primary-action{background:#fafafa;border:1px solid #fafafa;color:#000;border-radius:8px;font-size:14px;font-weight:600;padding:12px 16px}
+:is(.workspace-welcome,.site-selection,.dash) .primary-action:hover{background:#e4e4e7}
+.welcome-explore{font-size:13px;line-height:1.6;margin-top:16px;text-underline-offset:4px;color:#d4d4d8}.welcome-conditions{display:none}
+.welcome-choices{display:grid;gap:8px;margin-top:22px}
+.welcome-choice{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:14px 16px;border:1px solid #262626;border-radius:12px;background:#000;color:#fafafa;text-align:left;cursor:pointer;transition:background .15s,border-color .15s}
+.welcome-choice>span:first-child{display:grid;gap:2px;font-size:15px;font-weight:600;letter-spacing:-.2px}
+.welcome-choice small{font-size:12.5px;font-weight:400;color:#a1a1aa;letter-spacing:0}
+.welcome-choice>span:last-child{font-size:18px;color:#a1a1aa}
+.welcome-choice:hover{background:#0f0f0f;border-color:#3f3f46}
+.welcome-choice.is-primary{background:#fafafa;border-color:#fafafa;color:#000}
+.welcome-choice.is-primary small,.welcome-choice.is-primary>span:last-child{color:#3f3f46}
+.welcome-choice.is-primary:hover{background:#e4e4e7}
+.welcome-choice:disabled{opacity:.5;cursor:default}
+.welcome-links{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:18px}
+.welcome-links button{font-size:13px;color:#a1a1aa;text-decoration:underline;text-decoration-color:#3f3f46;text-underline-offset:4px;cursor:pointer}
+.welcome-links button:hover{color:#fafafa;text-decoration-color:#a1a1aa}
+.welcome-links button:disabled{opacity:.5;cursor:default}
+.site-selection h2{font-size:25px;font-weight:600;letter-spacing:-.5px}
+.space-navigator{background:#000;border:1px solid #1f1f1f;box-shadow:0 8px 30px #000;backdrop-filter:none;border-radius:12px;padding:12px}
+.space-nav-row,.space-settings,.space-navigator .body-context{background:#000;border-color:#1f1f1f;box-shadow:none}
+.space-nav-row>button:hover{background:#111}.body-picker option{background:#000}.space-quick{gap:15px;font-size:13px}
+.body-context h2{font-weight:600}.space-navigator .body-context dl>div{border-color:#1f1f1f}
+
+/* Compare scenarios (opens over the mission plan) */
+.scenario-comparison{background:#000;border-radius:0}
+.scenario-comparison>header{padding:22px 24px 18px;gap:12px;background:#000;border-color:#1f1f1f}
+.scenario-comparison>header h2{font-size:26px;font-weight:600;letter-spacing:-.7px}.scenario-comparison>header>p{font-size:13px;line-height:1.6;color:#a1a1aa}
+.scenario-comparison>div{padding:20px}.scenario-comparison .scenario-cards{gap:16px}
+.scenario-cards>article{background:#000;border:1px solid #1f1f1f;border-radius:14px;padding:18px}
+.scenario-cards>article>div:first-child>strong{font-size:13px;font-weight:600;color:#a1a1aa}
+.scenario-cards>article>label,.landing-date-input{font-size:12px!important;margin-top:12px!important;color:#a1a1aa}
+.scenario-cards .comparison-input{font-family:var(--font-body);font-size:13px;padding:10px;margin-top:6px;background:#000;color:#fafafa;border:1px solid #262626;color-scheme:dark;border-radius:8px}
+.scenario-result{display:flex;align-items:center;gap:16px;justify-content:space-between;margin-top:20px}
+.scenario-cards .scenario-verdict{font-size:14px;margin-top:0;line-height:1.5;font-weight:600;max-width:180px}
+.scenario-battery{flex-shrink:0;text-align:right;color:#fafafa}.scenario-battery strong{display:block;font-size:30px;line-height:1.15;font-weight:600;letter-spacing:-1px}.scenario-battery span{display:block;font-size:11px;color:#a1a1aa;margin-top:4px}
+.scenario-explanation{font-size:12px;line-height:1.6;margin-top:8px;color:#a1a1aa}
+.mission-robustness.comparison-robustness{background:#0a0a0a;border:1px solid #1f1f1f;border-radius:10px;padding:12px;gap:10px;margin:16px 0}
+.comparison-robustness strong{font-size:11px;font-weight:600}.comparison-robustness p{font-size:12px;line-height:1.55}
+.comparison-robustness details,.comparison-robustness summary{font-size:12px}.comparison-robustness li{font-size:12px;margin-top:6px}
+.scenario-key-metrics{border:0;gap:18px 12px;margin:18px 0;padding:0}.scenario-key-metrics span{font-size:12px;color:#a1a1aa}.scenario-key-metrics strong{font-size:24px;letter-spacing:-.5px;font-weight:600;margin-top:6px;color:#fafafa}
+.scenario-key-metrics>span:last-child{grid-column:1/-1}.scenario-key-metrics>span:last-child strong{font-size:18px}
+.comparison-landing{background:transparent;border:0;border-top:1px solid #1f1f1f;border-radius:0;padding:16px 0;margin:20px 0}
+.comparison-landing h3{font-size:12px;font-weight:600;color:#a1a1aa;letter-spacing:0;margin-bottom:12px}
+.landing-crossing{margin:10px 0;gap:3px}.landing-crossing strong{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:#fafafa;font-weight:450}.landing-crossing b{font-weight:600}.landing-crossing span{font-size:11px;line-height:1.6}
+.comparison-landing details{margin-top:14px}.comparison-landing summary,.comparison-landing details>p{font-size:12px;line-height:1.6}.comparison-landing details>p{margin:8px 0;color:#a1a1aa}
+.comparison-share summary{font-size:12px}.comparison-notice{background:#0a0a0a;border:1px solid #1f1f1f;border-radius:10px;padding:10px 12px;color:#d4d4d8;font-size:12px;margin-bottom:16px}
+.comparison-causes{background:#000;border:1px solid #1f1f1f;border-radius:14px;padding:20px;margin-top:20px}.comparison-causes h3{font-size:21px}.comparison-causes h4{font-size:14px;margin-top:18px}.comparison-causes li{font-size:13px;line-height:1.7;margin-top:8px}
+.generation-attribution{gap:12px;margin-top:16px}.generation-attribution>span{background:#0a0a0a;border:1px solid #1f1f1f;border-radius:10px;font-size:12px;padding:12px}.generation-attribution span strong{font-size:19px}.generation-attribution p,.generation-attribution small{font-size:12px;line-height:1.65}
+.comparison-all-metrics summary{font-size:13px}.comparison-all-metrics .comparison-grid{background:#000;border:1px solid #1f1f1f;padding:16px;border-radius:10px}
+.comparison-mobile-tabs{position:sticky;top:-20px;z-index:5;background:#000;padding:5px 0 10px;gap:8px}
+.comparison-mobile-tabs button{flex:1;min-width:0;background:#000;border:1px solid #262626;border-radius:8px;font-size:12px;padding:10px 5px;color:#a1a1aa}
+.comparison-mobile-tabs button[aria-pressed="true"]{background:#1a1a1a;border-color:#3f3f46;color:#fafafa}
+
+/* Timeline ribbon */
+.ribbon-container{position:relative;z-index:45;overflow:visible;max-height:none}
+.ribbon-container>div{background:#000;border:1px solid #1f1f1f;box-shadow:none;backdrop-filter:none;border-radius:10px}
+.ribbon-container .uppercase{text-transform:none;letter-spacing:0}.ribbon-container .tracking-\[0\.18em\]{letter-spacing:0}
+.ribbon-sources{position:relative;font-size:11px;text-transform:none;letter-spacing:0;white-space:nowrap}
+.ribbon-sources summary{cursor:pointer;color:#4cc9f0}.ribbon-sources p{position:absolute;bottom:28px;right:0;width:270px;padding:12px;white-space:normal;line-height:1.65;background:#000;border:1px solid #262626;border-radius:8px;box-shadow:0 4px 20px #000}
+@media(min-width:1200px){
+ .scenario-comparison>header{grid-template-columns:minmax(0,1fr) auto auto;padding:18px 20px;gap:10px 16px}
+ .scenario-comparison>header>div:first-child{grid-column:1;grid-row:1}.scenario-comparison>header>button{grid-column:3;grid-row:1}
+ .scenario-comparison>header>.comparison-actions{grid-column:2;grid-row:1}.scenario-comparison>header>p{grid-column:1/-1;grid-row:2}
+}
+@media(max-width:1023px){
+ .workspace-tabs{margin-left:4px}.workspace-bar{padding:10px 14px 0}
+ .scenario-cards{display:block}.scenario-cards>article[data-mobile-active="false"]{display:none}
+ .scenario-cards>article{scroll-margin-top:50px}.comparison-mobile-tabs{display:flex}
+}
+@media(max-width:767px){
+ .workspace-bar{gap:8px;padding:10px 12px 0;border-radius:10px}.workspace-tabs button{font-size:12px;padding:8px}.playback-bar .prediction-label{max-width:85px;font-size:10px}
+ .workspace-welcome,.site-selection{width:100%;padding:22px;max-height:65%;border-radius:12px}.workspace-welcome h1{font-size:30px;line-height:1.15;letter-spacing:-.8px}.workspace-welcome h1 br{display:block}.workspace-welcome>p:not(.eyebrow){font-size:13px}
+ .space-navigator{padding:8px}
+ .scenario-comparison>header{padding:18px 16px 14px;gap:8px}.scenario-comparison>header h2{font-size:21px}.scenario-comparison>header>p{font-size:12px}.scenario-comparison>div{padding:12px}
+ .scenario-cards>article{padding:16px}.scenario-cards>article>label,.landing-date-input{margin-top:12px!important}.scenario-result{margin-top:16px}.scenario-cards .scenario-verdict{margin-top:0;font-size:13px}.scenario-battery strong{font-size:28px}
+ .comparison-mobile-tabs{top:-12px;padding:5px 0 10px;gap:8px}.comparison-mobile-tabs button{font-size:12px;padding:10px 5px}
+ .mission-robustness.comparison-robustness{padding:10px;gap:8px;margin:12px 0}.comparison-robustness strong{font-size:10px}.comparison-robustness p{font-size:11px}.scenario-key-metrics strong{font-size:22px}
+ .comparison-causes{padding:16px}.comparison-causes h3{font-size:19px}
+ .ribbon-container>div{padding:8px 10px}.ribbon-container .gap-4{gap:10px;font-size:10px}.ribbon-sources{font-size:10px}.ribbon-sources p{right:0;width:245px}
+}

@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "slug": "de-gerlache-rim",
+  "gridSize": 129,
+  "spacingM": 20,
+  "lat": -88.664,
+  "lonEast": -68.4061,
+  "heightM": 1815,
+  "dem": "ldem_85s_20m",
+  "source": "NASA LRO LOLA GDR V2.0 (PDS, LRO-L-LOLA-4-GDR-V1.0), polar stereographic",
+  "frame": "DE421 mean Earth/polar axis",
+  "coordinates": "metres: east, radial up, south; origin at nominal DEM ground",
+  "mesh": "/data/surface/de-gerlache-rim.mesh.bin",
+  "uv": "/data/surface/de-gerlache-rim.uv.bin",
+  "minHeightM": 1299.93,
+  "maxHeightM": 1815.42,
+  "demSha256": "d900ac0aa97fbb983f9898873ead759d870fdb33978afc17fb4e1fa526aa49b2",
+  "meshSha256": "4a06e918ed0b2df2429069e3949e51391cd72325682ff814664909b8587d7093",
+  "uvSha256": "a09642086eb9527f44f7fcb7952b92dae1dab2b84a233746e9ecf7ebf1de18ac"
+}

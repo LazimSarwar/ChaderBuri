@@ -1,0 +1,9 @@
+/* The landscape takes precedence during a walk or captured mouse look. Labels and controls stay accessible. */
+.field-hud[data-travelling=true] .field-strip{opacity:.72}
+.field-hud[data-travelling=true] .field-strip:hover,
+.field-hud[data-travelling=true] .field-strip:focus-within{opacity:1}
+@media(prefers-reduced-motion:no-preference){.field-hud .field-strip{transition:opacity .16s ease-out}}
+/* Keep the walking destination and Stop within thumb reach, clear of the compass and objective. */
+@media(max-width:760px){
+  .field-hud .field-walking{top:auto;bottom:calc(var(--f-strip) + 24px);max-width:calc(100% - 32px);width:max-content}
+}

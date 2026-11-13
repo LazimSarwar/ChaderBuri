@@ -1,0 +1,78 @@
+.buri-dock,.buri-corner{position:absolute;z-index:85;pointer-events:auto;font-family:inherit;right:max(16px,env(safe-area-inset-right));bottom:max(18px,env(safe-area-inset-bottom))}
+.buri-story{display:flex;align-items:flex-end;gap:0;width:min(450px,calc(100% - 28px));color:#ecf1ef;filter:drop-shadow(0 8px 16px #0005)}
+.buri-figure{width:102px;height:182px;object-fit:contain;flex-shrink:0;margin-right:-4px;z-index:1;pointer-events:none}
+.buri-bubble,.buri-conversation>.luna-panel{border:1px solid #637478;border-radius:16px;background:#000000fa;color:#edf2ee;box-shadow:0 8px 32px #0003}
+.buri-bubble{padding:15px 17px;min-width:0;max-height:80dvh;overflow:auto;flex:1}
+.buri-bubble header,.buri-conversation header{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.buri-bubble header>span{font-size:12px;color:#dcd1ad}.buri-bubble header button,.buri-conversation header button{padding:6px}
+.buri-bubble h2{font-size:21px;font-weight:550;line-height:1.22;margin:5px 0}.buri-bubble p{font-size:13px;line-height:1.55;margin:8px 0 12px}
+.buri-choices{display:flex;flex-wrap:wrap;gap:6px}.buri-choices button,.buri-shortcuts button{display:inline-flex;align-items:center;gap:5px;border:1px solid #7b90904d;border-radius:8px;padding:7px 9px;font-size:12px}
+.buri-choices .buri-primary{background:#e9d5a2;color:#000000;border-color:transparent}.buri-choices button:disabled{opacity:.55}
+.buri-read{display:flex;align-items:center;gap:6px;color:#c9d7d7;font-size:11px;margin-top:10px}.buri-bubble small{display:block;font-size:11px;color:#c1d2d2;margin-top:8px}
+.buri-launch{width:54px;height:54px;padding:3px;border-radius:50%;background:#e9d7ad;border:1px solid #9b8e6f;box-shadow:0 3px 16px #0005}.buri-launch span{display:block;position:relative;overflow:hidden;width:100%;height:100%;border-radius:50%;background:#32444c}.buri-launch img{position:absolute;width:152%;max-width:none;top:-2px;left:-26%}
+.buri-conversation{width:min(390px,calc(100% - 24px))}.buri-conversation>.luna-panel{position:relative;inset:auto;width:100%;max-width:none;max-height:min(72dvh,690px);overflow:auto;padding:14px 18px}
+.buri-chat-portrait{height:90px;width:62px;object-fit:contain;flex-shrink:0}.buri-shortcuts{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0}.buri-conversation .luna-heading{padding:4px 0}.buri-conversation .luna-chat:empty{display:none}
+.buri-conversation .luna-heading h3{color:#f0f0eb}.buri-dock button:focus-visible,.buri-launch:focus-visible{outline:2px solid #eed58a;outline-offset:2px}
+@media(max-width:700px){.buri-story,.buri-conversation{right:8px;bottom:max(8px,env(safe-area-inset-bottom))}.buri-figure{width:68px;height:126px}.buri-story{width:min(382px,calc(100% - 12px))}.buri-conversation>.luna-panel{max-height:72dvh}.buri-launch{width:46px;height:46px}.buri-corner{right:8px;bottom:max(8px,env(safe-area-inset-bottom))}.buri-whisper{max-width:min(290px,calc(100vw - 24px))}}
+@media(prefers-reduced-motion:no-preference){.buri-story,.buri-conversation{animation:buri-arrive .32s ease-out}@keyframes buri-arrive{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}}
+
+
+.buri-prediction{margin-bottom:8px}
+@media print{.buri-dock,.buri-launch{display:none!important}}
+
+/* Chader Buri calls out from her corner: a short remark beside the launcher. */
+.buri-corner{display:flex;flex-direction:column;align-items:flex-end;gap:10px;pointer-events:none}.buri-corner>*{pointer-events:auto}
+.buri-whisper{position:relative;max-width:300px;padding:11px 14px 10px;border:1px solid #637478;border-radius:16px 16px 4px 16px;background:#000000f7;color:#edf2ee;box-shadow:0 8px 28px #0004;margin-right:20px}
+.buri-whisper-name{display:block;font-size:11px;letter-spacing:.02em;color:#dcd1ad}
+.buri-whisper p{margin:4px 0 8px;font-size:13.5px;line-height:1.5}
+.buri-whisper-actions{display:flex;justify-content:space-between;align-items:center}
+.buri-whisper-actions button{font-size:12px;color:#c9d7d7;padding:3px 6px;border-radius:6px}.buri-whisper-actions button:first-child{color:#e9d5a2;border:1px solid #e9d5a240}
+.buri-whisper-actions button:focus-visible{outline:2px solid #eed58a;outline-offset:2px}
+.buri-launch{position:relative}.buri-launch[data-calling="true"]{box-shadow:0 0 0 3px #e9d5a255,0 3px 16px #0005}
+@media(prefers-reduced-motion:no-preference){
+ .buri-whisper{animation:buri-call .38s cubic-bezier(.2,.8,.3,1)}
+ @keyframes buri-call{from{opacity:0;transform:translate(8px,10px) scale(.96)}to{opacity:1;transform:none}}
+ .buri-launch[data-calling="true"]::after{content:"";position:absolute;inset:-3px;border-radius:50%;border:2px solid #e9d5a2;animation:buri-ring 1.6s ease-out 2}
+ @keyframes buri-ring{from{opacity:.8;transform:scale(1)}to{opacity:0;transform:scale(1.35)}}
+}
+/* Leave Chader Buri's corner free: Walk & jump steps left of her launcher on wider screens. */
+@media(min-width:768px){.landsight-workspace .visit-interface[data-immersive=true] .visit-move{right:calc(var(--surface-edge) + 66px)}}
+/* On phones the compass spans the footer; end it before Chader Buri's launcher. */
+@media(max-width:767px){.landsight-workspace .visit-interface[data-immersive=true] .visit-compass{width:calc(100% - 2*var(--surface-edge) - 54px);left:var(--surface-edge);right:auto;transform:none}}
+
+/* Permission card: her own idea waits for the visitor's Allow. */
+.buri-consent{margin:12px 0;padding:12px 14px;border:1px solid #e9d5a24d;border-left:3px solid #e9d5a2;border-radius:10px;background:#e9d5a20d}
+.buri-consent>span{display:block;font-size:11px;letter-spacing:.02em;color:#dcd1ad}
+.buri-consent p{margin:4px 0 10px;font-size:13px;line-height:1.5;color:#edf2ee}
+.buri-consent small{display:block;margin:-4px 0 8px;font-size:11px;color:#e3b071}
+.buri-consent div{display:flex;gap:8px}
+.buri-consent button{padding:8px 14px;border-radius:8px;font-size:12px;min-height:36px;border:1px solid #9ab5be36;color:#dce7e8}
+.buri-consent .buri-allow{background:#e9d5a2;color:#000000;border-color:transparent;font-weight:600}
+.buri-consent button:focus-visible,.luna-not-now:focus-visible{outline:2px solid #eed58a;outline-offset:2px}
+.luna-offer{display:flex;gap:8px;align-items:stretch}.luna-offer>button:first-child{flex:1}
+.luna-actions .luna-not-now{flex:0 0 auto;justify-content:center;color:#b9c8cc}
+/* "Ask Chader Buri about this" in dashboard headers and visor readouts. */
+.buri-ask{display:inline-flex;align-items:center;gap:6px;padding:5px 10px 5px 5px;border:1px solid #e9d5a240;border-radius:999px;color:#e9d5a2;font-size:12px;background:#e9d5a20a}
+.buri-ask img{width:22px;height:22px;border-radius:50%;object-fit:cover;object-position:50% 8%;background:#32444c}
+.buri-ask:hover{background:#e9d5a21a}.buri-ask:focus-visible{outline:2px solid #eed58a;outline-offset:2px}
+.workspace-drawer-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+@media(max-width:520px){.workspace-drawer-actions .buri-ask{font-size:0;padding:4px}.workspace-drawer-actions .buri-ask img{width:26px;height:26px}}
+.buri-whisper-actions .buri-whisper-offer{color:#000000;background:#e9d5a2;border-color:transparent;font-weight:600}
+
+/* Her speech bubble when she stands on the surface. */
+.buri-scene-bubble{position:relative;width:max-content;max-width:260px;padding:8px 11px;border:1px solid #e9d5a259;border-radius:12px 12px 3px 12px;background:#000000ee;color:#edf2ee;font:13px/1.45 "Inter Variable",system-ui,sans-serif;box-shadow:0 6px 20px #0006;transform:translate(-42%,0)}
+.buri-thinking{display:inline-flex;gap:4px;padding:2px 0}
+.buri-thinking i{width:6px;height:6px;border-radius:50%;background:#e9d5a2;opacity:.4}
+@media(prefers-reduced-motion:no-preference){.buri-thinking i{animation:buri-dot 1s ease-in-out infinite}.buri-thinking i:nth-child(2){animation-delay:.15s}.buri-thinking i:nth-child(3){animation-delay:.3s}@keyframes buri-dot{50%{opacity:1;transform:translateY(-2px)}}}
+
+/* Calculated explanations (authored from the dashboard's numbers, no AI) */
+.luna-brief .luna-answer{display:grid;gap:8px;padding-top:12px}
+.luna-brief .luna-answer>small{display:block}
+.luna-shown{padding-left:10px;border-left:2px solid #e9d5a2;color:#e9d5a2!important}
+.luna-next{color:#cfdde0!important}
+.luna-brief-offers{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px}
+.luna-brief-offers button{min-height:34px;padding:6px 12px;border:1px solid #e9d5a259;border-radius:8px;font-size:12px;color:#f1e6c6}
+.luna-brief-offers button:hover{background:#e9d5a214}
+.luna-brief-offers button:focus-visible,.luna-undo:focus-visible{outline:2px solid #eed58a;outline-offset:2px}
+.luna-undo{display:inline-flex;align-items:center;min-height:32px;margin:6px 0 2px;padding:4px 12px;border:1px solid #e9d5a259;border-radius:8px;font-size:12px;color:#f1e6c6}
+.luna-undo:hover{background:#e9d5a214}
