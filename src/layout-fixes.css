@@ -1,0 +1,87 @@
+/* Layout fixes from the multi-device UI audit (laptop 1366x650 and 1280x720, desktop, tablet, phones).
+   Loaded last so these override earlier layers. Each rule says what it prevents. */
+
+/* Landing simulation: the title and phase steps sit at the top centre, where the workspace tabs and
+   "Compare sites & dates" button were drawn over them. They are not usable during the 20-second landing. */
+.landsight-workspace:has(.landing-hud) :is(.workspace-tabs,.workspace-quick-compare,.playback-bar){visibility:hidden}
+/* On short screens the projected "Lander · 91 m" marker reaches the phase pills: keep the phase name, drop the pills. */
+@media (max-height:760px){.landing-hud .landing-title ol{display:none}.landing-hud .landing-title{top:14px}}
+/* Narrower screens (tablet, phones): the landing title has no free band beside the top bar, so the bar steps
+   aside for the 20-second landing (its own Skip landing button stays at the bottom). */
+@media (max-width:1099px){.landsight-workspace:has(.landing-hud) .workspace-bar{visibility:hidden}}
+/* Short landscape phones: four readouts per side do not fit in ~390px; keep altitude/vertical speed and
+   propellant/throttle so nothing runs off-screen or under the Skip landing button. */
+@media (max-height:500px){.landing-hud .landing-column>div:nth-child(n+3){display:none}}
+/* Chader Buri's portrait sits over the right end of the timeline caption during the landing. */
+.landsight-workspace:has(.landing-hud) .ribbon-container{padding-right:84px}
+
+/* Surface cards (lander, antenna, panel, ground, tool sheets) are moved below the mission strip by
+   mission-decisions.css, but their maximum height was still computed from the top of the screen, so tall cards
+   (the lander's "Start a power experiment") ran under the toolbar and off the bottom. Measure from the same top
+   and stop above the toolbar; the card scrolls inside. */
+@media (min-width:761px){
+  .field-hud:has(.field-decisions) :is(.field-card-slot,.field-ground-card,.field-sheet){max-height:calc(var(--f-tools-top,100%) - var(--f-decision-bottom,144px) - 12px)!important;overflow-y:auto}
+  /* The open objective card ran under Chader Buri's caption, hiding its last buttons: stop above the caption. */
+  .field-hud .field-objective[data-open=true]{max-height:calc(100% - var(--f-left-top,140px) - var(--f-companion-top,0px) - 16px);overflow-y:auto}
+}
+
+/* Tablets (761–1099px): six mission chips plus three action buttons spanned the width and ran over the objective
+   card. Use the phone pattern here too: "Why this site?", "Compare sites" and a Mission button that opens the
+   other tools; the strip stays to the right of the objective card. */
+@media (min-width:761px) and (max-width:1099px){
+  .field-hud .mission-strip{left:auto!important;right:var(--f-edge);width:max(300px,calc(100% - 390px))!important}
+  .field-hud .mission-chips{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .field-hud .mission-chips>button:nth-child(n+3):nth-child(-n+6){display:none}
+  .field-hud .mission-chips[data-expanded=true]>button:nth-child(n+3):nth-child(-n+6){display:block}
+  .field-hud .mission-chips .mission-phone-toggle{display:block}
+  .field-hud .mission-chips:not([data-expanded=true]) :is(.mission-route,.mission-return,.mission-review){display:none}
+  .field-hud .mission-chips :is(.mission-route,.mission-return,.mission-review){grid-column:auto;min-height:36px}
+  .field-hud .mission-chips button kbd{display:none}
+}
+/* Short landscape screens: the caption grew past the bottom edge. Keep it anchored above the toolbar and let its
+   text scroll inside the space left under the mission strip. */
+@media (min-width:761px) and (max-height:500px){
+  .field-hud .field-companion{top:auto!important;bottom:calc(var(--f-strip) + 20px)!important}
+  .field-hud .field-companion-body{max-height:calc(100dvh - var(--f-strip) - 28px - var(--f-objective-bottom,140px));overflow-y:auto}
+  .field-hud .field-caption p{font-size:15px;line-height:1.35}
+}
+/* Mid-size laptops: the centred arrival card reached Chader Buri's caption and covered its buttons. While the
+   arrival card is open its facts are on screen, so her caption waits (it returns when the card closes). */
+@media (min-width:761px) and (max-width:1499px){
+  .field-hud:has(.field-arrival) .field-companion .field-caption{display:none}
+}
+/* Moon view: 3D site labels were drawn over the "Explore the Moon from orbit" card. The 3D library gives each
+   label wrapper a huge inline z-index; cap it so interface cards and panels always sit above scene labels. */
+.landsight-workspace .workspace-welcome{z-index:40}
+div[style*="z-index"]:has(> .surface-label),div[style*="z-index"]:has(> .space-label){z-index:5!important}
+
+/* Welcome screen: the heading was centred but its two lines of text were left-aligned, and both buttons looked
+   primary. Centre the text block and make "Explore the Moon" clearly secondary to the one-week example. */
+.moon-opening .moon-opening-caption{text-align:center;justify-items:center}
+.moon-opening .moon-opening-caption :is(.moon-opening-intro,.moon-opening-ready){margin-inline:auto;text-align:center}
+.moon-opening .moon-opening-action .moon-opening-start:not(:first-child){background:#15130f;color:#f5eddb;border:1px solid #bbab88;font-weight:500}
+.moon-opening .moon-opening-action .moon-opening-start:not(:first-child):hover{background:#2a261d}
+
+/* "Explore the Moon from orbit" card: it was 410px wide with a 32px heading and tall buttons, covering most of
+   a short laptop screen and hiding the Moon it introduces. Same content, compact proportions. */
+@media (min-width:761px){
+  .landsight-workspace .workspace-welcome{width:min(340px,calc(100% - 24px));padding:18px 18px 16px;max-height:calc(100% - 16px)}
+  .landsight-workspace .workspace-welcome h1{font-size:24px;line-height:1.2;letter-spacing:-.4px;margin:8px 0}
+  .landsight-workspace .workspace-welcome h1 br{display:none}
+  .landsight-workspace .workspace-welcome>p:not(.eyebrow){font-size:13px;line-height:1.55;margin:0}
+  .landsight-workspace .welcome-choices{margin-top:14px;gap:6px}
+  .landsight-workspace .welcome-choice{padding:10px 12px;border-radius:10px}
+  .landsight-workspace .welcome-choice>span:first-child{font-size:14px}
+  .landsight-workspace .welcome-choice small{font-size:12px}
+  .landsight-workspace .welcome-links{margin-top:12px;gap:4px 12px}
+  .landsight-workspace .welcome-links button{font-size:12.5px}
+}
+/* Short laptop screens: one-line heading and tighter spacing so the links at the bottom stay visible. */
+@media (min-width:761px) and (max-height:760px){
+  .landsight-workspace .workspace-welcome{padding:14px 16px 12px}
+  .landsight-workspace .workspace-welcome h1{font-size:21px;margin:6px 0}
+  .landsight-workspace .workspace-welcome>p:not(.eyebrow){font-size:12.5px;line-height:1.45}
+  .landsight-workspace .welcome-choices{margin-top:10px}
+  .landsight-workspace .welcome-choice{padding:8px 12px}
+  .landsight-workspace .welcome-links{margin-top:8px}
+}

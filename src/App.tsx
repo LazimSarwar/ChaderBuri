@@ -29,6 +29,7 @@ const fmtMissionUTC = (d: Date) => `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]}
 import './dashboard.css'
 import './mission-assistance.css'
 import './orbit-workspace.css'
+import './layout-fixes.css'
 import './mission-journey.css'
 import { EvidencePanel } from './EvidencePanel'
 import { Ribbon } from './Ribbon'
