@@ -100,6 +100,18 @@ Solar System Scope maps cover the Moon, Mercury, Venus clouds, Jupiter, Saturn a
 
 [Scene provenance](public/data/space/manifest.json), [texture sources and fingerprints](public/data/space/assets.json), and [terrain provenance](public/data/terrain/manifest.json) record the supplied products. Further scientific references are documented in the model notes.
 
+## Use of AI
+
+This project was made with the help of AI tools. In line with the NASA Space Apps rules on Super Intelligence (SI), this is where and how they were used:
+
+- **Code and data:** AI coding assistants (Anthropic Claude Code and OpenAI Codex) helped write, debug and test the code, the data-pipeline scripts and the documentation. Every mission number in the app (sunlight, Earth visibility, battery, rankings) is computed by deterministic code from NASA LRO LOLA terrain and JPL Horizons data; AI does not calculate any result. More detail: [`docs/AI_USE.md`](docs/AI_USE.md).
+- **Images:** the Chader Buri character illustrations (the grandmother figure and the spinning-wheel artwork) are AI-generated.
+- **AI in the app:** Chader Buri's conversation uses Google Gemini. Her replies are checked so that every number she states comes from the calculation, the screen or the conversation.
+- **Video and audio:** the demo videos use AI voice-clone narration of the author's own voice and were assembled with AI help; each video shows "We took help of AI to make this video."
+- **Writing:** AI helped draft and edit text such as this README and the submission text.
+
+NASA logos, insignia and other NASA branding are not used or modified anywhere in the project.
+
 ## License
 
 First-party project code is licensed under the [MIT License](LICENSE), copyright 2026 Tanjil Sarwar Lazim. Third-party code, scientific data, images and textures retain their own terms and attribution, including Solar System Scope / INOVE CC BY 4.0. The [previous Apache License text](licenses/Apache-2.0-original.txt) is preserved separately.
